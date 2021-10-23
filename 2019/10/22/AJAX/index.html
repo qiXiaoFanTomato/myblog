@@ -1,0 +1,711 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon1.ico">
+  <link rel="icon" href="/img/favicon1.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="番茄">
+  <meta name="keywords" content="">
+  <meta name="description" content="AJAX一、JSON的概念 Javascript Object Notation JS对象标记。就是指js中对象。  12&amp;#123;&quot;name&quot;:&quot;mary&quot;, &quot;sex&quot;:&quot;女&quot;, &quot;age&quot;:20&amp;#125;[&amp;#123;&quot;id&quot;:1,&quot;name&quot;:&amp;q">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AJAX">
+<meta property="og:url" content="http://localhost:4000/2019/10/22/AJAX/index.html">
+<meta property="og:site_name" content="启小凡">
+<meta property="og:description" content="AJAX一、JSON的概念 Javascript Object Notation JS对象标记。就是指js中对象。  12&amp;#123;&quot;name&quot;:&quot;mary&quot;, &quot;sex&quot;:&quot;女&quot;, &quot;age&quot;:20&amp;#125;[&amp;#123;&quot;id&quot;:1,&quot;name&quot;:&amp;q">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-10-22T02:00:00.000Z">
+<meta property="article:modified_time" content="2021-10-22T09:40:37.458Z">
+<meta property="article:author" content="番茄">
+<meta name="twitter:card" content="summary_large_image">
+  
+  <title>AJAX - 启小凡</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"localhost","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":true},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"eJTg2E7lFVi4dnRJvshHXwAv-gzGzoHsz","app_key":"3u6s4XYeWREVbc16xYzSUnVd","server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>启小凡</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0)">
+                <i class="iconfont icon-image"></i>
+                切换背景
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') ;
+           background-size: cover;">
+           
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="AJAX">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      番茄
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2019-10-22 10:00" pubdate>
+        2019年10月22日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      22k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      69 分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-page-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">AJAX</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2021年10月22日 下午
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h3 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h3><h4 id="一、JSON的概念"><a href="#一、JSON的概念" class="headerlink" title="一、JSON的概念"></a>一、JSON的概念</h4><blockquote>
+<p>Javascript Object Notation JS对象标记。就是指js中对象。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript">&#123;<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;mary&quot;</span>, <span class="hljs-string">&quot;sex&quot;</span>:<span class="hljs-string">&quot;女&quot;</span>, <span class="hljs-string">&quot;age&quot;</span>:<span class="hljs-number">20</span>&#125;<br>[&#123;<span class="hljs-string">&quot;id&quot;</span>:<span class="hljs-number">1</span>,<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;mary&quot;</span>, <span class="hljs-string">&quot;sex&quot;</span>:<span class="hljs-string">&quot;女&quot;</span>, <span class="hljs-string">&quot;age&quot;</span>:<span class="hljs-number">20</span>,<span class="hljs-string">&quot;hobby&quot;</span>:[&#123;<span class="hljs-string">&quot;id&quot;</span>:<span class="hljs-number">1</span>,<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;打游戏&quot;</span>&#125;, &#123;<span class="hljs-string">&quot;id&quot;</span>:<span class="hljs-number">2</span>,<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;看小说&quot;</span>&#125;]&#125;,&#123;<span class="hljs-string">&quot;id&quot;</span>:<span class="hljs-number">2</span>,<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;lily&quot;</span>, <span class="hljs-string">&quot;sex&quot;</span>:<span class="hljs-string">&quot;女&quot;</span>, <span class="hljs-string">&quot;age&quot;</span>:<span class="hljs-number">20</span>,<span class="hljs-string">&quot;hobby&quot;</span>:[&#123;<span class="hljs-string">&quot;id&quot;</span>:<span class="hljs-number">1</span>,<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;打游戏&quot;</span>&#125;, &#123;<span class="hljs-string">&quot;id&quot;</span>:<span class="hljs-number">2</span>,<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;看小说&quot;</span>&#125;]&#125;]<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>特点：</p>
+<p>1、是一种轻量级的<a href>数据传输</a>格式。</p>
+<p>2、在网络中能够<a href>有效率</a>的传输。</p>
+</blockquote>
+<blockquote>
+<p><a href>注意：</a></p>
+<p>了解：xml格式：</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">student</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>mary<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">sex</span>&gt;</span>女<span class="hljs-tag">&lt;/<span class="hljs-name">sex</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">age</span>&gt;</span>20<span class="hljs-tag">&lt;/<span class="hljs-name">age</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">student</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">students</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">student</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">id</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">id</span>&gt;</span><br>    	<span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>mary<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">sex</span>&gt;</span>女<span class="hljs-tag">&lt;/<span class="hljs-name">sex</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">age</span>&gt;</span>20<span class="hljs-tag">&lt;/<span class="hljs-name">age</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">hobbies</span>&gt;</span><br>        	<span class="hljs-tag">&lt;<span class="hljs-name">hobby</span>&gt;</span><br>            	<span class="hljs-tag">&lt;<span class="hljs-name">id</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">id</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>打游戏<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br>            <span class="hljs-tag">&lt;/<span class="hljs-name">hobby</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">hobby</span>&gt;</span><br>            	<span class="hljs-tag">&lt;<span class="hljs-name">id</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">id</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>看小说<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br>            <span class="hljs-tag">&lt;/<span class="hljs-name">hobby</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">hobbies</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">student</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">student</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">id</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">id</span>&gt;</span><br>    	<span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>lily<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">sex</span>&gt;</span>女<span class="hljs-tag">&lt;/<span class="hljs-name">sex</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">age</span>&gt;</span>20<span class="hljs-tag">&lt;/<span class="hljs-name">age</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">hobbies</span>&gt;</span><br>        	<span class="hljs-tag">&lt;<span class="hljs-name">hobby</span>&gt;</span><br>            	<span class="hljs-tag">&lt;<span class="hljs-name">id</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">id</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>打游戏<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br>            <span class="hljs-tag">&lt;/<span class="hljs-name">hobby</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">hobby</span>&gt;</span><br>            	<span class="hljs-tag">&lt;<span class="hljs-name">id</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">id</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>看小说<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br>            <span class="hljs-tag">&lt;/<span class="hljs-name">hobby</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">hobbies</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">student</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">students</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>历史原因：</p>
+<p>在网络发展早期，使用的是xml格式传输数据，后来，移动互联网的兴起，导致需要体积较小的数据传输格式，JSON应运而生。</p>
+</blockquote>
+<h4 id="二、JSON解析"><a href="#二、JSON解析" class="headerlink" title="二、JSON解析"></a>二、JSON解析</h4><blockquote>
+<p>指在Java服务器上，将json字符串与Java对象之间相互转换的过程。</p>
+<p>即将JSON字符串转换成Java对象，或者将Java对象转换成JSON字符串。</p>
+</blockquote>
+<h5 id="2-1-原始的方式"><a href="#2-1-原始的方式" class="headerlink" title="2.1 原始的方式"></a>2.1 原始的方式</h5><blockquote>
+<p>手动拼接、切割解析字符串，然后使用反射处理。比较麻烦</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyTest</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>        Student student = <span class="hljs-keyword">new</span> Student(<span class="hljs-number">1</span>, <span class="hljs-string">&quot;张三&quot;</span>, <span class="hljs-string">&quot;男&quot;</span>, <span class="hljs-number">20</span>);<br>        <span class="hljs-comment">// &#123;&quot;id&quot;:1, &quot;name&quot;:&quot;mary&quot;, &quot;sex&quot;:&quot;女&quot;, &quot;age&quot;:20&#125;</span><br>        String str = <span class="hljs-string">&quot;&#123;\&quot;id\&quot;:&quot;</span>+student.getId()+<span class="hljs-string">&quot;, \&quot;name\&quot;:\&quot;&quot;</span>+student.getName()+<span class="hljs-string">&quot;\&quot;&#125;&quot;</span>;<br>        System.out.println(str);<br>        <span class="hljs-comment">// 先解析切割字符串，然后创建对象，并设置到对象的属性中</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h5 id="2-2-第三方库的处理方式"><a href="#2-2-第三方库的处理方式" class="headerlink" title="2.2 第三方库的处理方式"></a>2.2 第三方库的处理方式</h5><h6 id="2-2-1-FastJson"><a href="#2-2-1-FastJson" class="headerlink" title="2.2.1 FastJson"></a>2.2.1 FastJson</h6><blockquote>
+<p>FastJson是阿里出品的第三方库。</p>
+<p>核心是两个静态方法：</p>
+<p>JSON.toJSONString()：将对象转换成JSON字符串。</p>
+<p>JSON.parseObject()：将字符串转换成Java对象。</p>
+<p>导入依赖：fastjson-1.2.68.jar</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>    <span class="hljs-comment">// 使用fastjson</span><br>    Student student = <span class="hljs-keyword">new</span> Student(<span class="hljs-number">1</span>, <span class="hljs-string">&quot;张三&quot;</span>, <span class="hljs-string">&quot;男&quot;</span>, <span class="hljs-number">20</span>);<br>    <span class="hljs-comment">// 将对象转换成JSON字符串</span><br>    <span class="hljs-keyword">final</span> String s = JSON.toJSONString(student);<br>    System.out.println(s);<br>    <span class="hljs-comment">// 将上面的字符串重新转成对象</span><br>    <span class="hljs-keyword">final</span> Student student1 = JSON.parseObject(s, Student.class);<br>    System.out.println(student1);<br><br>    <span class="hljs-comment">// 集合的处理</span><br>    List&lt;Student&gt; list = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();<br>    list.add(<span class="hljs-keyword">new</span> Student(<span class="hljs-number">1</span>, <span class="hljs-string">&quot;张三&quot;</span>, <span class="hljs-string">&quot;男&quot;</span>, <span class="hljs-number">21</span>));<br>    list.add(<span class="hljs-keyword">new</span> Student(<span class="hljs-number">2</span>, <span class="hljs-string">&quot;李四&quot;</span>, <span class="hljs-string">&quot;男&quot;</span>, <span class="hljs-number">22</span>));<br>    list.add(<span class="hljs-keyword">new</span> Student(<span class="hljs-number">3</span>, <span class="hljs-string">&quot;王五&quot;</span>, <span class="hljs-string">&quot;男&quot;</span>, <span class="hljs-number">23</span>));<br>    <span class="hljs-comment">// 将集合对象转换成JSON字符串</span><br>    <span class="hljs-keyword">final</span> String s1 = JSON.toJSONString(list);<br>    System.out.println(s1);<br>    <span class="hljs-comment">// 将json字符串转换成集合对象</span><br>    <span class="hljs-keyword">final</span> List&lt;Student&gt; list1 = JSON.parseObject(s1, <span class="hljs-keyword">new</span> TypeReference&lt;List&lt;Student&gt;&gt;() &#123;&#125;);<br>    System.out.println(list1);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Data</span><br><span class="hljs-meta">@AllArgsConstructor</span><br><span class="hljs-meta">@NoArgsConstructor</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Student</span> </span>&#123;<br>    <span class="hljs-keyword">private</span> Integer id;<br>    <span class="hljs-comment">// name属性不进行json的转换</span><br>    <span class="hljs-meta">@JSONField(serialize = false)</span><br>    <span class="hljs-keyword">private</span> String name;<br>    <span class="hljs-keyword">private</span> String sex;<br>    <span class="hljs-keyword">private</span> Integer age;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h6 id="2-2-2-Jackson"><a href="#2-2-2-Jackson" class="headerlink" title="2.2.2 Jackson"></a>2.2.2 Jackson</h6><blockquote>
+<p>Jackson主要使用ObjectMapper对象来处理json。</p>
+<p>使用readValue和writeValue方法进行JSON的处理。</p>
+<p>导入依赖：</p>
+<p>jackson-annotations-2.9.10.jar</p>
+<p>jackson-core-2.9.10.jar</p>
+<p>jackson-databind-2.9.10.jar</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception</span>&#123;<br>    <span class="hljs-comment">// 使用jackson</span><br>    Student student = <span class="hljs-keyword">new</span> Student(<span class="hljs-number">1</span>, <span class="hljs-string">&quot;张三&quot;</span>, <span class="hljs-string">&quot;男&quot;</span>, <span class="hljs-number">20</span>);<br>    <span class="hljs-comment">// 创建一个ObjectMapper对象</span><br>    ObjectMapper mapper = <span class="hljs-keyword">new</span> ObjectMapper();<br>    <span class="hljs-comment">// 当对象的属性值为空时，也可以转换成json，而不会抛异常</span><br>    mapper.disable(SerializationFeature.FAIL_ON_EMPTY_BEANS);<br>    <span class="hljs-comment">// 将对象转换成JSON字符串</span><br>    <span class="hljs-keyword">final</span> String s = mapper.writeValueAsString(student);<br>    System.out.println(s);<br>    <span class="hljs-comment">// 将上面的字符串重新转成对象</span><br>    <span class="hljs-keyword">final</span> Student student1 = mapper.readValue(s, Student.class);<br>    System.out.println(student1);<br><br>    <span class="hljs-comment">// 集合的处理</span><br>    List&lt;Student&gt; list = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();<br>    list.add(<span class="hljs-keyword">new</span> Student(<span class="hljs-number">1</span>, <span class="hljs-string">&quot;张三&quot;</span>, <span class="hljs-string">&quot;男&quot;</span>, <span class="hljs-number">21</span>));<br>    list.add(<span class="hljs-keyword">new</span> Student(<span class="hljs-number">2</span>, <span class="hljs-string">&quot;李四&quot;</span>, <span class="hljs-string">&quot;男&quot;</span>, <span class="hljs-number">22</span>));<br>    list.add(<span class="hljs-keyword">new</span> Student(<span class="hljs-number">3</span>, <span class="hljs-string">&quot;王五&quot;</span>, <span class="hljs-string">&quot;男&quot;</span>, <span class="hljs-number">23</span>));<br>    <span class="hljs-comment">// 将集合对象转换成JSON字符串</span><br>    <span class="hljs-keyword">final</span> String s1 = mapper.writeValueAsString(list);<br>    System.out.println(s1);<br>    <span class="hljs-comment">// 将json字符串转换成集合对象</span><br>    List&lt;Student&gt; list1 = mapper.readValue(s1, <span class="hljs-keyword">new</span> TypeReference&lt;List&lt;Student&gt;&gt;() &#123;&#125;);<br>    System.out.println(list1);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Data</span><br><span class="hljs-meta">@AllArgsConstructor</span><br><span class="hljs-meta">@NoArgsConstructor</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Student</span> </span>&#123;<br>    <span class="hljs-keyword">private</span> Integer id;<br>    <span class="hljs-comment">// fastjson中对应name属性不进行json的转换</span><br><span class="hljs-comment">//    @JSONField(serialize = false)</span><br>    <span class="hljs-keyword">private</span> String name;<br>    <span class="hljs-comment">// jackson中对应sex属性不进行json的转换</span><br>    <span class="hljs-meta">@JsonIgnore</span><br>    <span class="hljs-keyword">private</span> String sex;<br>    <span class="hljs-comment">// jackson中将age属性对应js的int属性</span><br>    <span class="hljs-meta">@JsonProperty(&quot;int&quot;)</span><br>    <span class="hljs-keyword">private</span> Integer age;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h6 id="2-2-3-gson"><a href="#2-2-3-gson" class="headerlink" title="2.2.3 gson"></a>2.2.3 gson</h6><blockquote>
+<p>google的json处理库。</p>
+<p>使用gson对象。</p>
+<p>核心方法：</p>
+<p>gson.toJson() ：将对象转成json字符串。</p>
+<p>gson.fromJson()：将字符串转换成Java对象。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception</span>&#123;<br>    <span class="hljs-comment">// 使用gson</span><br>    Student student = <span class="hljs-keyword">new</span> Student(<span class="hljs-number">1</span>, <span class="hljs-string">&quot;张三&quot;</span>, <span class="hljs-string">&quot;男&quot;</span>, <span class="hljs-number">20</span>);<br>    <span class="hljs-comment">// 创建一个gson对象</span><br>    Gson gson = <span class="hljs-keyword">new</span> Gson();<br><br>    <span class="hljs-comment">// 将对象转换成JSON字符串</span><br>    <span class="hljs-keyword">final</span> String s = gson.toJson(student);<br>    System.out.println(s);<br>    <span class="hljs-comment">// 将上面的字符串重新转成对象</span><br>    <span class="hljs-keyword">final</span> Student student1 = gson.fromJson(s, Student.class);<br>    System.out.println(student1);<br><br>    <span class="hljs-comment">// 集合的处理</span><br>    List&lt;Student&gt; list = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();<br>    list.add(<span class="hljs-keyword">new</span> Student(<span class="hljs-number">1</span>, <span class="hljs-string">&quot;张三&quot;</span>, <span class="hljs-string">&quot;男&quot;</span>, <span class="hljs-number">21</span>));<br>    list.add(<span class="hljs-keyword">new</span> Student(<span class="hljs-number">2</span>, <span class="hljs-string">&quot;李四&quot;</span>, <span class="hljs-string">&quot;男&quot;</span>, <span class="hljs-number">22</span>));<br>    list.add(<span class="hljs-keyword">new</span> Student(<span class="hljs-number">3</span>, <span class="hljs-string">&quot;王五&quot;</span>, <span class="hljs-string">&quot;男&quot;</span>, <span class="hljs-number">23</span>));<br>    <span class="hljs-comment">// 将集合对象转换成JSON字符串</span><br>    <span class="hljs-keyword">final</span> String s1 = gson.toJson(list);<br>    System.out.println(s1);<br>    <span class="hljs-comment">// 将json字符串转换成集合对象</span><br>    List&lt;Student&gt; list1 = gson.fromJson(s1, <span class="hljs-keyword">new</span> TypeToken&lt;List&lt;Student&gt;&gt;() &#123;&#125;.getType());<br>    System.out.println(list1);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="三、浏览器中使用JS处理JSON解析"><a href="#三、浏览器中使用JS处理JSON解析" class="headerlink" title="三、浏览器中使用JS处理JSON解析"></a>三、浏览器中使用JS处理JSON解析</h4><blockquote>
+<p>在浏览器中，使用JS的过程中，也会遇到将json转成字符串，或者将字符串转成JSON过程。</p>
+<p>核心方法：</p>
+<p>JSON.stringfy() ：将JSON转成字符串</p>
+<p>JSON.parse()：将字符串转成JSON</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"></span><br><span class="javascript">	<span class="hljs-comment">// 创建json对象</span></span><br><span class="javascript">	<span class="hljs-keyword">var</span> stu = &#123;<span class="hljs-string">&quot;id&quot;</span>:<span class="hljs-number">1</span>,<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;张三&quot;</span>,<span class="hljs-string">&quot;sex&quot;</span>:<span class="hljs-string">&quot;男&quot;</span>,<span class="hljs-string">&quot;age&quot;</span>:<span class="hljs-number">20</span>&#125;;</span><br><span class="javascript">	<span class="hljs-built_in">console</span>.log(stu);</span><br><span class="javascript">	<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span>(stu));</span><br><span class="javascript">	<span class="hljs-comment">// 将JSON对象转成成字符串</span></span><br><span class="javascript">	<span class="hljs-keyword">var</span> str = <span class="hljs-built_in">JSON</span>.stringify(stu);</span><br><span class="javascript">	<span class="hljs-built_in">console</span>.log(str);</span><br><span class="javascript">	<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span>(str));</span><br><span class="javascript">	<span class="hljs-comment">// 将字符串转成json对象</span></span><br><span class="javascript">	<span class="hljs-keyword">var</span> stu1 = <span class="hljs-built_in">JSON</span>.parse(str);</span><br><span class="javascript">	<span class="hljs-built_in">console</span>.log(stu1);</span><br><span class="javascript">	<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span>(stu1));</span><br><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="四、AJAX"><a href="#四、AJAX" class="headerlink" title="四、AJAX"></a>四、AJAX</h4><h5 id="4-1-概念"><a href="#4-1-概念" class="headerlink" title="4.1 概念"></a>4.1 概念</h5><blockquote>
+<p>Asynchronized JavaScript And XML，异步的JS和XML。</p>
+<p>AJAX技术是一种页面局部刷新技术。</p>
+</blockquote>
+<h5 id="4-2-基本步骤"><a href="#4-2-基本步骤" class="headerlink" title="4.2 基本步骤"></a>4.2 基本步骤</h5><blockquote>
+<p>1、创建Ajax对应的XMLHTTPRequest对象。</p>
+<p>2、设置响应（回调）函数</p>
+<p>3、设置请求的方法和请求的URL</p>
+<p>4、发送请求</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"></span><br><span class="javascript">  <span class="hljs-comment">//1、创建Ajax对应的XMLHTTPRequest对象。</span></span><br><span class="javascript">  <span class="hljs-keyword">var</span> request;</span><br><span class="javascript">  <span class="hljs-keyword">if</span>(<span class="hljs-built_in">window</span>.XMLHttpRequest)&#123;</span><br><span class="javascript">    <span class="hljs-comment">// IE7+以及其他的浏览器</span></span><br><span class="javascript">    request = <span class="hljs-keyword">new</span> XMLHttpRequest();</span><br><span class="javascript">  &#125;<span class="hljs-keyword">else</span>&#123;</span><br><span class="javascript">    <span class="hljs-comment">// IE6</span></span><br><span class="javascript">    request = <span class="hljs-keyword">new</span> ActiveXObject(<span class="hljs-string">&quot;Microsoft.XMLHTTP&quot;</span>);</span><br><span class="javascript">  &#125;</span><br><span class="javascript">  <span class="hljs-comment">//2、设置响应（回调）函数</span></span><br><span class="javascript">  <span class="hljs-comment">// 当每次状态改变时会调用后面的函数</span></span><br><span class="javascript">  <span class="hljs-comment">// 有5个状态0~4，之后最后一个完成就绪状态时，才需要去调用后面的处理函数</span></span><br><span class="javascript">  request.onreadystatechange = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">resp</span>) </span>&#123;</span><br><span class="javascript">      <span class="hljs-comment">// 当请求处理完毕，且状态码为200（成功）</span></span><br><span class="javascript">      <span class="hljs-keyword">if</span> (request.readyState == <span class="hljs-number">4</span> &amp;&amp; request.status == <span class="hljs-number">200</span>)&#123;</span><br><span class="javascript">          <span class="hljs-comment">// 局部刷新页面要改变的内容</span></span><br><span class="javascript"></span><br><span class="javascript">      &#125;</span><br><span class="javascript">  &#125;;</span><br><span class="javascript">  <span class="hljs-comment">//3、设置请求的方法(GET或POST)和请求的URL，打开连接</span></span><br><span class="javascript">  <span class="hljs-comment">// true表示异步发送请求，是默认值，可以省略，如果写false，表示发送同步请求</span></span><br><span class="javascript">  request.open(<span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-string">&quot;服务器url&quot;</span>, <span class="hljs-literal">true</span>);</span><br><span class="javascript"></span><br><span class="javascript">  <span class="hljs-comment">//4、发送请求</span></span><br><span class="javascript">  <span class="hljs-comment">// send方法中可以传递参数，但是get是通过url传参，post也可以通过url传参</span></span><br><span class="javascript">  <span class="hljs-comment">// 但是post也可以通过send来传参</span></span><br><span class="javascript">  request.send();</span><br><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="4-3-AJAX发送请求的三种方式："><a href="#4-3-AJAX发送请求的三种方式：" class="headerlink" title="4.3 AJAX发送请求的三种方式："></a>4.3 AJAX发送请求的三种方式：</h5><blockquote>
+<ul>
+<li>发送普通的get请求，参数格式：name=mary&amp;sex=m&amp;age=20</li>
+<li>发送普通的post请求，参数格式：name=mary&amp;sex=m&amp;age=20</li>
+<li>发送json数据的post请求，参数格式：{“name”:”mary”, “sex”:”m”, “age”:20}</li>
+</ul>
+</blockquote>
+<h6 id="4-3-1-发送get请求"><a href="#4-3-1-发送get请求" class="headerlink" title="4.3.1 发送get请求"></a>4.3.1 发送get请求</h6><blockquote>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@WebServlet(&quot;/my.do&quot;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyGetServlet</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">HttpServlet</span> </span>&#123;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">doGet</span><span class="hljs-params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="hljs-keyword">throws</span> ServletException, IOException </span>&#123;<br>        System.out.println(req.getParameter(<span class="hljs-string">&quot;name&quot;</span>));<br>        System.out.println(req.getParameter(<span class="hljs-string">&quot;sex&quot;</span>));<br>        System.out.println(req.getParameter(<span class="hljs-string">&quot;age&quot;</span>));<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">doPost</span><span class="hljs-params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="hljs-keyword">throws</span> ServletException, IOException </span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;不接收post请求&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><code class="hljs jsp">&lt;%@ page contentType=<span class="hljs-string">&quot;text/html;charset=UTF-8&quot;</span> language=<span class="hljs-string">&quot;java&quot;</span> %&gt;<br>&lt;html&gt;<br>  &lt;head&gt;<br>    &lt;title&gt;发送GET请求&lt;/title&gt;<br>    &lt;base href=<span class="hljs-string">&quot;$&#123;pageContext.request.contextPath&#125;/&quot;</span>&gt;<br>  &lt;/head&gt;<br>  &lt;body&gt;<br>    &lt;input type=<span class="hljs-string">&quot;button&quot;</span> value=<span class="hljs-string">&quot;发送GET请求&quot;</span> onclick=<span class="hljs-string">&quot;fn1()&quot;</span>&gt;<br>  &lt;/body&gt;<br>&lt;/html&gt;<br>&lt;script&gt;<br>  <span class="hljs-function">function <span class="hljs-title">fn1</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-comment">//1、创建Ajax对应的XMLHTTPRequest对象。</span><br>    <span class="hljs-keyword">var</span> request;<br>    <span class="hljs-keyword">if</span>(window.XMLHttpRequest)&#123;<br>      <span class="hljs-comment">// IE7+以及其他的浏览器</span><br>      request = <span class="hljs-keyword">new</span> XMLHttpRequest();<br>    &#125;<span class="hljs-keyword">else</span>&#123;<br>      <span class="hljs-comment">// IE6</span><br>      request = <span class="hljs-keyword">new</span> ActiveXObject(<span class="hljs-string">&quot;Microsoft.XMLHTTP&quot;</span>);<br>    &#125;<br>    <span class="hljs-comment">//2、设置响应（回调）函数</span><br>    <span class="hljs-comment">// 当每次状态改变时会调用后面的函数</span><br>    <span class="hljs-comment">// 有5个状态0~4，之后最后一个完成就绪状态时，才需要去调用后面的处理函数</span><br>    request.onreadystatechange = function (resp) &#123;<br>      <span class="hljs-comment">// 当请求处理完毕，且状态码为200（成功）</span><br>      <span class="hljs-keyword">if</span> (request.readyState == <span class="hljs-number">4</span> &amp;&amp; request.status == <span class="hljs-number">200</span>)&#123;<br>        <span class="hljs-comment">// 局部刷新页面要改变的内容</span><br><br>      &#125;<br>    &#125;;<br>    <span class="hljs-comment">//3、设置请求的方法(GET或POST)和请求的URL，打开连接</span><br>    <span class="hljs-comment">// true表示异步发送请求，是默认值，可以省略，如果写false，表示发送同步请求</span><br>    request.open(<span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-string">&quot;my.do?name=mary&amp;sex=m&amp;age=20&quot;</span>, <span class="hljs-keyword">true</span>);<br><br>    <span class="hljs-comment">//4、发送请求</span><br>    <span class="hljs-comment">// send方法中可以传递参数，但是get是通过url传参，post也可以通过url传参</span><br>    <span class="hljs-comment">// 但是post也可以通过send来传参</span><br>    request.send();<br>  &#125;<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+
+<h6 id="4-3-2-发送post请求"><a href="#4-3-2-发送post请求" class="headerlink" title="4.3.2 发送post请求"></a>4.3.2 发送post请求</h6><blockquote>
+<p>post请求参数是可以象get一样放到url中传递的。</p>
+<p>也可以放到send中发送，但是如果放到send中发送，需要设置请求的头。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@WebServlet(&quot;/my1.do&quot;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyPostServlet</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">HttpServlet</span> </span>&#123;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">doGet</span><span class="hljs-params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="hljs-keyword">throws</span> ServletException, IOException </span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;不接收get请求&quot;</span>);<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">doPost</span><span class="hljs-params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="hljs-keyword">throws</span> ServletException, IOException </span>&#123;<br>        System.out.println(req.getParameter(<span class="hljs-string">&quot;name&quot;</span>));<br>        System.out.println(req.getParameter(<span class="hljs-string">&quot;sex&quot;</span>));<br>        System.out.println(req.getParameter(<span class="hljs-string">&quot;age&quot;</span>));<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><code class="hljs jsp">&lt;%@ page contentType=<span class="hljs-string">&quot;text/html;charset=UTF-8&quot;</span> language=<span class="hljs-string">&quot;java&quot;</span> %&gt;<br>&lt;html&gt;<br>  &lt;head&gt;<br>    &lt;title&gt;发送POST请求&lt;/title&gt;<br>    &lt;base href=<span class="hljs-string">&quot;$&#123;pageContext.request.contextPath&#125;/&quot;</span>&gt;<br>  &lt;/head&gt;<br>  &lt;body&gt;<br>    &lt;input type=<span class="hljs-string">&quot;button&quot;</span> value=<span class="hljs-string">&quot;发送POST请求&quot;</span> onclick=<span class="hljs-string">&quot;fn1()&quot;</span>&gt;<br>  &lt;/body&gt;<br>&lt;/html&gt;<br>&lt;script&gt;<br>  <span class="hljs-function">function <span class="hljs-title">fn1</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-comment">//1、创建Ajax对应的XMLHTTPRequest对象。</span><br>    <span class="hljs-keyword">var</span> request;<br>    <span class="hljs-keyword">if</span>(window.XMLHttpRequest)&#123;<br>      <span class="hljs-comment">// IE7+以及其他的浏览器</span><br>      request = <span class="hljs-keyword">new</span> XMLHttpRequest();<br>    &#125;<span class="hljs-keyword">else</span>&#123;<br>      <span class="hljs-comment">// IE6</span><br>      request = <span class="hljs-keyword">new</span> ActiveXObject(<span class="hljs-string">&quot;Microsoft.XMLHTTP&quot;</span>);<br>    &#125;<br>    <span class="hljs-comment">//2、设置响应（回调）函数</span><br>    <span class="hljs-comment">// 当每次状态改变时会调用后面的函数</span><br>    <span class="hljs-comment">// 有5个状态0~4，之后最后一个完成就绪状态时，才需要去调用后面的处理函数</span><br>    request.onreadystatechange = function (resp) &#123;<br>      <span class="hljs-comment">// 当请求处理完毕，且状态码为200（成功）</span><br>      <span class="hljs-keyword">if</span> (request.readyState == <span class="hljs-number">4</span> &amp;&amp; request.status == <span class="hljs-number">200</span>)&#123;<br>        <span class="hljs-comment">// 局部刷新页面要改变的内容</span><br><br>      &#125;<br>    &#125;;<br><br>    <span class="hljs-comment">//3、设置请求的方法(GET或POST)和请求的URL，打开连接</span><br>    <span class="hljs-comment">// true表示异步发送请求，是默认值，可以省略，如果写false，表示发送同步请求</span><br>    request.open(<span class="hljs-string">&quot;POST&quot;</span>, <span class="hljs-string">&quot;my1.do&quot;</span>, <span class="hljs-keyword">true</span>);<br><br>    <span class="hljs-comment">// 如果要在send方法中传参，需要设置此行代码，而且需要在open方法之后，send方法之前执行。</span><br>    request.setRequestHeader(<span class="hljs-string">&quot;Content-type&quot;</span>, <span class="hljs-string">&quot;application/x-www-form-urlencoded&quot;</span>);<br>    <span class="hljs-comment">//4、发送请求</span><br>    <span class="hljs-comment">// send方法中可以传递参数，但是get是通过url传参，post也可以通过url传参</span><br>    <span class="hljs-comment">// 但是post也可以通过send来传参</span><br>    request.send(<span class="hljs-string">&quot;name=mary&amp;sex=m&amp;age=21&quot;</span>);<br>  &#125;<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+
+<h6 id="4-3-3-使用post请求发送json数据"><a href="#4-3-3-使用post请求发送json数据" class="headerlink" title="4.3.3 使用post请求发送json数据"></a>4.3.3 使用post请求发送json数据</h6><blockquote>
+<ul>
+<li>要想发送json数据，只能使用post方式</li>
+<li>不能使用url来发送数据</li>
+<li>不能直接传递json，需要将json转换成字符串</li>
+<li>服务器端不能使用request.getParameter接收数据，需要使用request.getInputStream接收。</li>
+</ul>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@WebServlet(&quot;/my2.do&quot;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyJSONPostServlet</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">HttpServlet</span> </span>&#123;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">doGet</span><span class="hljs-params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="hljs-keyword">throws</span> ServletException, IOException </span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;不接收get请求&quot;</span>);<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">doPost</span><span class="hljs-params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="hljs-keyword">throws</span> ServletException, IOException </span>&#123;<br>        <span class="hljs-keyword">final</span> ServletInputStream inputStream = req.getInputStream();<br>        <span class="hljs-keyword">byte</span> [] buffer = <span class="hljs-keyword">new</span> <span class="hljs-keyword">byte</span>[<span class="hljs-number">1024</span>];<br>        <span class="hljs-keyword">int</span> len;<br>        <span class="hljs-keyword">while</span> ((len = inputStream.read(buffer)) != -<span class="hljs-number">1</span>)&#123;<br>            String str = <span class="hljs-keyword">new</span> String(buffer, <span class="hljs-number">0</span>, len);<br>            System.out.println(str);<br>        &#125;<br>        inputStream.close();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><code class="hljs jsp">&lt;%@ page contentType=<span class="hljs-string">&quot;text/html;charset=UTF-8&quot;</span> language=<span class="hljs-string">&quot;java&quot;</span> %&gt;<br>&lt;html&gt;<br>  &lt;head&gt;<br>    &lt;title&gt;发送POST请求&lt;/title&gt;<br>    &lt;base href=<span class="hljs-string">&quot;$&#123;pageContext.request.contextPath&#125;/&quot;</span>&gt;<br>  &lt;/head&gt;<br>  &lt;body&gt;<br>    &lt;input type=<span class="hljs-string">&quot;button&quot;</span> value=<span class="hljs-string">&quot;发送POST请求JSON格式&quot;</span> onclick=<span class="hljs-string">&quot;fn1()&quot;</span>&gt;<br>  &lt;/body&gt;<br>&lt;/html&gt;<br>&lt;script&gt;<br>  <span class="hljs-function">function <span class="hljs-title">fn1</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-comment">//1、创建Ajax对应的XMLHTTPRequest对象。</span><br>    <span class="hljs-keyword">var</span> request;<br>    <span class="hljs-keyword">if</span>(window.XMLHttpRequest)&#123;<br>      <span class="hljs-comment">// IE7+以及其他的浏览器</span><br>      request = <span class="hljs-keyword">new</span> XMLHttpRequest();<br>    &#125;<span class="hljs-keyword">else</span>&#123;<br>      <span class="hljs-comment">// IE6</span><br>      request = <span class="hljs-keyword">new</span> ActiveXObject(<span class="hljs-string">&quot;Microsoft.XMLHTTP&quot;</span>);<br>    &#125;<br>    <span class="hljs-comment">//2、设置响应（回调）函数</span><br>    <span class="hljs-comment">// 当每次状态改变时会调用后面的函数</span><br>    <span class="hljs-comment">// 有5个状态0~4，之后最后一个完成就绪状态时，才需要去调用后面的处理函数</span><br>    request.onreadystatechange = function (resp) &#123;<br>      <span class="hljs-comment">// 当请求处理完毕，且状态码为200（成功）</span><br>      <span class="hljs-keyword">if</span> (request.readyState == <span class="hljs-number">4</span> &amp;&amp; request.status == <span class="hljs-number">200</span>)&#123;<br>        <span class="hljs-comment">// 局部刷新页面要改变的内容</span><br><br>      &#125;<br>    &#125;;<br><br>    <span class="hljs-comment">//3、设置请求的方法(GET或POST)和请求的URL，打开连接</span><br>    <span class="hljs-comment">// true表示异步发送请求，是默认值，可以省略，如果写false，表示发送同步请求</span><br>    request.open(<span class="hljs-string">&quot;POST&quot;</span>, <span class="hljs-string">&quot;my2.do&quot;</span>, <span class="hljs-keyword">true</span>);<br><br>    <span class="hljs-comment">// 如果要在send方法中传参，需要设置此行代码，而且需要在open方法之后，send方法之前执行。</span><br>    request.setRequestHeader(<span class="hljs-string">&quot;Content-type&quot;</span>, <span class="hljs-string">&quot;application/json;charset=utf-8&quot;</span>);<br>    <span class="hljs-comment">//4、发送请求</span><br>    <span class="hljs-comment">// send方法中可以传递参数，但是get是通过url传参，post也可以通过url传参</span><br>    <span class="hljs-comment">// 但是post也可以通过send来传参</span><br>    <span class="hljs-keyword">var</span> u = &#123;<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;jack&quot;</span>, <span class="hljs-string">&quot;sex&quot;</span>:<span class="hljs-string">&quot;f&quot;</span>, <span class="hljs-string">&quot;age&quot;</span>:<span class="hljs-number">20</span>&#125;;<br>    request.send(JSON.stringify(u));<br>  &#125;<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+
+<h5 id="4-4-AJAX接收响应"><a href="#4-4-AJAX接收响应" class="headerlink" title="4.4 AJAX接收响应"></a>4.4 AJAX接收响应</h5><blockquote>
+<p>服务器处理AJAX请求，只能使用print的方式响应。</p>
+<p><a href>注意：</a>AJAX请求对应的服务器响应一定不能直接使用重定向和请求转发。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@WebServlet(&quot;/my.do&quot;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyGetServlet</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">HttpServlet</span> </span>&#123;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">doGet</span><span class="hljs-params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="hljs-keyword">throws</span> ServletException, IOException </span>&#123;<br>        System.out.println(req.getParameter(<span class="hljs-string">&quot;name&quot;</span>));<br>        System.out.println(req.getParameter(<span class="hljs-string">&quot;sex&quot;</span>));<br>        System.out.println(req.getParameter(<span class="hljs-string">&quot;age&quot;</span>));<br><span class="hljs-comment">//        resp.setContentType(&quot;text/html;charset=utf-8&quot;);</span><br>        resp.setContentType(<span class="hljs-string">&quot;application/json;charset=utf-8&quot;</span>);<br>        <span class="hljs-keyword">final</span> PrintWriter out = resp.getWriter();<br>        Student student = <span class="hljs-keyword">new</span> Student(<span class="hljs-number">1</span>, <span class="hljs-string">&quot;张三&quot;</span>, <span class="hljs-string">&quot;男&quot;</span>, <span class="hljs-number">20</span>);<br>        <span class="hljs-keyword">final</span> String s = JSON.toJSONString(student);<br>        out.print(s);<br>        out.close();<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">doPost</span><span class="hljs-params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="hljs-keyword">throws</span> ServletException, IOException </span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;不接收post请求&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs javascript">request.onreadystatechange = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-comment">// 当请求处理完毕，且状态码为200（成功）</span><br>    <span class="hljs-keyword">if</span> (request.readyState == <span class="hljs-number">4</span> &amp;&amp; request.status == <span class="hljs-number">200</span>)&#123;<br>        <span class="hljs-comment">// 局部刷新页面要改变的内容</span><br>        <span class="hljs-keyword">var</span> obj = <span class="hljs-built_in">JSON</span>.parse(request.responseText);<br>        <span class="hljs-built_in">console</span>.log(obj);<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+<h4 id="五、AJAX案例"><a href="#五、AJAX案例" class="headerlink" title="五、AJAX案例"></a>五、AJAX案例</h4><h5 id="5-1-检查用户名是否存在"><a href="#5-1-检查用户名是否存在" class="headerlink" title="5.1 检查用户名是否存在"></a>5.1 检查用户名是否存在</h5><blockquote>
+<p>当用户注册时，需要检查该用户名的唯一性，检查后，将结果直接在页面上使用文字的方式提示。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@WebServlet(&quot;/check.do&quot;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CheckUsernameServlet</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">HttpServlet</span> </span>&#123;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">doGet</span><span class="hljs-params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="hljs-keyword">throws</span> ServletException, IOException </span>&#123;<br>        <span class="hljs-keyword">final</span> String username = req.getParameter(<span class="hljs-string">&quot;username&quot;</span>);<br>        resp.setContentType(<span class="hljs-string">&quot;application/json;charset=utf-8&quot;</span>);<br>        <span class="hljs-keyword">final</span> PrintWriter out = resp.getWriter();<br>        <span class="hljs-keyword">if</span> (username.equals(<span class="hljs-string">&quot;zhangsan&quot;</span>))&#123;<br>            out.print(<span class="hljs-string">&quot;&#123;\&quot;isExist\&quot;:true&#125;&quot;</span>);<br>        &#125;<span class="hljs-keyword">else</span>&#123;<br>            out.print(<span class="hljs-string">&quot;&#123;\&quot;isExist\&quot;:false&#125;&quot;</span>);<br>        &#125;<br>        out.close();<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">doPost</span><span class="hljs-params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="hljs-keyword">throws</span> ServletException, IOException </span>&#123;<br>        doGet(req, resp);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><code class="hljs jsp">&lt;%@ page contentType=<span class="hljs-string">&quot;text/html;charset=UTF-8&quot;</span> language=<span class="hljs-string">&quot;java&quot;</span> %&gt;<br>&lt;html&gt;<br>  &lt;head&gt;<br>    &lt;title&gt;注册&lt;/title&gt;<br>    &lt;base href=<span class="hljs-string">&quot;$&#123;pageContext.request.contextPath&#125;/&quot;</span>&gt;<br>  &lt;/head&gt;<br>  &lt;body&gt;<br>    &lt;form action=<span class="hljs-string">&quot;&quot;</span> method=<span class="hljs-string">&quot;post&quot;</span>&gt;<br>      年龄：&lt;input type=<span class="hljs-string">&quot;text&quot;</span> name=<span class="hljs-string">&quot;age&quot;</span>&gt;&lt;br/&gt;<br>      用户名：&lt;input type=<span class="hljs-string">&quot;text&quot;</span> name=<span class="hljs-string">&quot;username&quot;</span> id=<span class="hljs-string">&quot;username&quot;</span> onblur=<span class="hljs-string">&quot;fnCheck()&quot;</span>&gt;<br>      &lt;span id=<span class="hljs-string">&quot;usernameSpan&quot;</span>&gt;&lt;/span&gt;<br>      &lt;br/&gt;<br>      密码：&lt;input type=<span class="hljs-string">&quot;text&quot;</span> name=<span class="hljs-string">&quot;pwd&quot;</span>&gt;&lt;br/&gt;<br>      &lt;input type=<span class="hljs-string">&quot;submit&quot;</span> value=<span class="hljs-string">&quot;注册&quot;</span>&gt;<br>    &lt;/form&gt;<br>  &lt;/body&gt;<br>&lt;/html&gt;<br>&lt;script&gt;<br>  <span class="hljs-function">function <span class="hljs-title">fnCheck</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-comment">// 得到用户名</span><br>    <span class="hljs-keyword">var</span> u = document.getElementById(<span class="hljs-string">&quot;username&quot;</span>).value;<br>    <span class="hljs-comment">// 发送ajax请求</span><br>    <span class="hljs-comment">//1、创建Ajax对应的XMLHTTPRequest对象。</span><br>    <span class="hljs-keyword">var</span> request;<br>    <span class="hljs-keyword">if</span>(window.XMLHttpRequest)&#123;<br>      <span class="hljs-comment">// IE7+以及其他的浏览器</span><br>      request = <span class="hljs-keyword">new</span> XMLHttpRequest();<br>    &#125;<span class="hljs-keyword">else</span>&#123;<br>      <span class="hljs-comment">// IE6</span><br>      request = <span class="hljs-keyword">new</span> ActiveXObject(<span class="hljs-string">&quot;Microsoft.XMLHTTP&quot;</span>);<br>    &#125;<br>    <span class="hljs-comment">//2、设置响应（回调）函数</span><br>    <span class="hljs-comment">// 当每次状态改变时会调用后面的函数</span><br>    <span class="hljs-comment">// 有5个状态0~4，之后最后一个完成就绪状态时，才需要去调用后面的处理函数</span><br>    request.onreadystatechange = function () &#123;<br>      <span class="hljs-comment">// 当请求处理完毕，且状态码为200（成功）</span><br>      <span class="hljs-keyword">if</span> (request.readyState == <span class="hljs-number">4</span> &amp;&amp; request.status == <span class="hljs-number">200</span>)&#123;<br>        <span class="hljs-comment">// 局部刷新页面要改变的内容</span><br>        <span class="hljs-keyword">var</span> obj = JSON.parse(request.responseText);<br>        console.log(obj);<br>        <span class="hljs-keyword">var</span> s = document.getElementById(<span class="hljs-string">&quot;usernameSpan&quot;</span>);<br>        <span class="hljs-keyword">if</span> (obj.isExist)&#123;<br>          s.innerText = <span class="hljs-string">&quot;该用户名已存在！&quot;</span>;<br>          s.style.color = <span class="hljs-string">&quot;red&quot;</span>;<br>        &#125;<span class="hljs-keyword">else</span>&#123;<br>          s.innerText = <span class="hljs-string">&quot;该用户名可以使用&quot;</span>;<br>          s.style.color = <span class="hljs-string">&quot;green&quot;</span>;<br>        &#125;<br>      &#125;<br>    &#125;;<br>    <span class="hljs-comment">//3、设置请求的方法(GET或POST)和请求的URL，打开连接</span><br>    <span class="hljs-comment">// true表示异步发送请求，是默认值，可以省略，如果写false，表示发送同步请求</span><br>    request.open(<span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-string">&quot;check.do?username=&quot;</span>+u, <span class="hljs-keyword">true</span>);<br><br>    <span class="hljs-comment">//4、发送请求</span><br>    <span class="hljs-comment">// send方法中可以传递参数，但是get是通过url传参，post也可以通过url传参</span><br>    <span class="hljs-comment">// 但是post也可以通过send来传参</span><br>    request.send();<br>  &#125;<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+
+<h5 id="5-2-省市联动"><a href="#5-2-省市联动" class="headerlink" title="5.2 省市联动"></a>5.2 省市联动</h5><blockquote>
+<p>两个下拉框，第一个下拉框显示省份，当选择某一个省份后，另一个下拉框显示该省份对应的城市。</p>
+</blockquote>
+<blockquote>
+<p>涉及到业务：</p>
+<p>1、查询所有的省份。</p>
+<p>2、根据某一个省份的id，来查询相应的城市。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Data</span><br><span class="hljs-meta">@AllArgsConstructor</span><br><span class="hljs-meta">@NoArgsConstructor</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Province</span> </span>&#123;<br>    <span class="hljs-keyword">private</span> Integer id;<br>    <span class="hljs-keyword">private</span> String name;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Data</span><br><span class="hljs-meta">@AllArgsConstructor</span><br><span class="hljs-meta">@NoArgsConstructor</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">City</span> </span>&#123;<br>    <span class="hljs-keyword">private</span> Integer id;<br>    <span class="hljs-keyword">private</span> String name;<br>    <span class="hljs-keyword">private</span> Integer provinceId;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ProvinceService</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> List&lt;Province&gt; <span class="hljs-title">findAll</span><span class="hljs-params">()</span></span>&#123;<br>        <span class="hljs-keyword">return</span> Arrays.asList(<br>                <span class="hljs-keyword">new</span> Province(<span class="hljs-number">1</span>, <span class="hljs-string">&quot;湖北&quot;</span>),<br>                <span class="hljs-keyword">new</span> Province(<span class="hljs-number">2</span>, <span class="hljs-string">&quot;湖南&quot;</span>),<br>                <span class="hljs-keyword">new</span> Province(<span class="hljs-number">3</span>, <span class="hljs-string">&quot;河南&quot;</span>)<br>        );<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CityService</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> List&lt;City&gt; <span class="hljs-title">findAllByProvinceId</span><span class="hljs-params">(Integer provinceId)</span></span>&#123;<br>        <span class="hljs-keyword">if</span> (provinceId == <span class="hljs-number">1</span>)&#123;<br>            <span class="hljs-keyword">return</span> Arrays.asList(<br>                    <span class="hljs-keyword">new</span> City(<span class="hljs-number">1</span>, <span class="hljs-string">&quot;武汉&quot;</span>,<span class="hljs-number">1</span>),<br>                    <span class="hljs-keyword">new</span> City(<span class="hljs-number">2</span>, <span class="hljs-string">&quot;黄石&quot;</span>,<span class="hljs-number">1</span>),<br>                    <span class="hljs-keyword">new</span> City(<span class="hljs-number">3</span>, <span class="hljs-string">&quot;鄂州&quot;</span>,<span class="hljs-number">1</span>)<br>            );<br>        &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (provinceId == <span class="hljs-number">2</span>)&#123;<br>            <span class="hljs-keyword">return</span> Arrays.asList(<br>                    <span class="hljs-keyword">new</span> City(<span class="hljs-number">4</span>, <span class="hljs-string">&quot;长沙&quot;</span>,<span class="hljs-number">2</span>),<br>                    <span class="hljs-keyword">new</span> City(<span class="hljs-number">5</span>, <span class="hljs-string">&quot;岳阳&quot;</span>,<span class="hljs-number">2</span>),<br>                    <span class="hljs-keyword">new</span> City(<span class="hljs-number">6</span>, <span class="hljs-string">&quot;湘潭&quot;</span>,<span class="hljs-number">2</span>)<br>            );<br>        &#125;<span class="hljs-keyword">else</span>&#123;<br>            <span class="hljs-keyword">return</span> Arrays.asList(<br>                    <span class="hljs-keyword">new</span> City(<span class="hljs-number">7</span>, <span class="hljs-string">&quot;郑州&quot;</span>,<span class="hljs-number">3</span>),<br>                    <span class="hljs-keyword">new</span> City(<span class="hljs-number">8</span>, <span class="hljs-string">&quot;洛阳&quot;</span>,<span class="hljs-number">3</span>),<br>                    <span class="hljs-keyword">new</span> City(<span class="hljs-number">9</span>, <span class="hljs-string">&quot;南阳&quot;</span>,<span class="hljs-number">3</span>)<br>            );<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@WebServlet(&quot;/province.do&quot;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ProvinceServlet</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">HttpServlet</span> </span>&#123;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">doGet</span><span class="hljs-params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="hljs-keyword">throws</span> ServletException, IOException </span>&#123;<br>        ProvinceService provinceService = <span class="hljs-keyword">new</span> ProvinceService();<br>        resp.setContentType(<span class="hljs-string">&quot;application/json;charset=utf-8&quot;</span>);<br>        <span class="hljs-keyword">final</span> PrintWriter out = resp.getWriter();<br>        <span class="hljs-keyword">final</span> List&lt;Province&gt; list = provinceService.findAll();<br>        <span class="hljs-keyword">final</span> String s = JSON.toJSONString(list);<br>        out.print(s);<br>        out.close();<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">doPost</span><span class="hljs-params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="hljs-keyword">throws</span> ServletException, IOException </span>&#123;<br>        doGet(req, resp);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@WebServlet(&quot;/city.do&quot;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CityServlet</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">HttpServlet</span> </span>&#123;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">doGet</span><span class="hljs-params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="hljs-keyword">throws</span> ServletException, IOException </span>&#123;<br>        <span class="hljs-keyword">final</span> String id = req.getParameter(<span class="hljs-string">&quot;provinceId&quot;</span>);<br>        <span class="hljs-keyword">int</span> nid = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">try</span> &#123;<br>            nid = Integer.parseInt(id);<br>        &#125;<span class="hljs-keyword">catch</span> (Exception e)&#123;<br>            e.printStackTrace();<br>        &#125;<br>        CityService cityService = <span class="hljs-keyword">new</span> CityService();<br>        resp.setContentType(<span class="hljs-string">&quot;application/json;charset=utf-8&quot;</span>);<br>        <span class="hljs-keyword">final</span> PrintWriter out = resp.getWriter();<br>        <span class="hljs-keyword">final</span> List&lt;City&gt; list = cityService.findAllByProvinceId(nid);<br>        <span class="hljs-keyword">final</span> String s = JSON.toJSONString(list);<br>        out.print(s);<br>        out.close();<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">doPost</span><span class="hljs-params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="hljs-keyword">throws</span> ServletException, IOException </span>&#123;<br>        doGet(req, resp);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><code class="hljs jsp">&lt;%@ page contentType=<span class="hljs-string">&quot;text/html;charset=UTF-8&quot;</span> language=<span class="hljs-string">&quot;java&quot;</span> %&gt;<br>&lt;html&gt;<br>&lt;head&gt;<br>    &lt;title&gt;省市联动&lt;/title&gt;<br>    &lt;base href=<span class="hljs-string">&quot;$&#123;pageContext.request.contextPath&#125;/&quot;</span>&gt;<br>&lt;/head&gt;<br>&lt;body onload=<span class="hljs-string">&quot;fnLoad()&quot;</span>&gt;<br>    &lt;select name=<span class="hljs-string">&quot;province&quot;</span> id=<span class="hljs-string">&quot;province&quot;</span> onchange=<span class="hljs-string">&quot;fnChange()&quot;</span>&gt;<br>        &lt;option value=<span class="hljs-string">&quot;&quot;</span>&gt;请选择&lt;/option&gt;<br>    &lt;/select&gt;<br>    &lt;select name=<span class="hljs-string">&quot;city&quot;</span> id=<span class="hljs-string">&quot;city&quot;</span>&gt;<br>        &lt;option value=<span class="hljs-string">&quot;&quot;</span>&gt;请选择&lt;/option&gt;<br>    &lt;/select&gt;<br>&lt;/body&gt;<br>&lt;/html&gt;<br>&lt;script&gt;<br>    <span class="hljs-function">function <span class="hljs-title">fnLoad</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-comment">// 发送ajax请求</span><br>        <span class="hljs-comment">//1、创建Ajax对应的XMLHTTPRequest对象。</span><br>        <span class="hljs-keyword">var</span> request;<br>        <span class="hljs-keyword">if</span>(window.XMLHttpRequest)&#123;<br>            <span class="hljs-comment">// IE7+以及其他的浏览器</span><br>            request = <span class="hljs-keyword">new</span> XMLHttpRequest();<br>        &#125;<span class="hljs-keyword">else</span>&#123;<br>            <span class="hljs-comment">// IE6</span><br>            request = <span class="hljs-keyword">new</span> ActiveXObject(<span class="hljs-string">&quot;Microsoft.XMLHTTP&quot;</span>);<br>        &#125;<br>        <span class="hljs-comment">//2、设置响应（回调）函数</span><br>        <span class="hljs-comment">// 当每次状态改变时会调用后面的函数</span><br>        <span class="hljs-comment">// 有5个状态0~4，之后最后一个完成就绪状态时，才需要去调用后面的处理函数</span><br>        request.onreadystatechange = function () &#123;<br>            <span class="hljs-comment">// 当请求处理完毕，且状态码为200（成功）</span><br>            <span class="hljs-keyword">if</span> (request.readyState == <span class="hljs-number">4</span> &amp;&amp; request.status == <span class="hljs-number">200</span>)&#123;<br>                <span class="hljs-comment">// 局部刷新页面要改变的内容</span><br>                <span class="hljs-keyword">var</span> arr = JSON.parse(request.responseText);<br>                console.log(arr);<br>                <span class="hljs-keyword">var</span> province = document.getElementById(<span class="hljs-string">&quot;province&quot;</span>);<br>                <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i in arr)&#123;<br>                    <span class="hljs-comment">// 创建一个option</span><br>                    <span class="hljs-keyword">var</span> option = <span class="hljs-keyword">new</span> Option(arr[i].name, arr[i].id);<br>                    <span class="hljs-comment">// 给province添加一个option</span><br>                    province.options.add(option);<br>                &#125;<br>            &#125;<br>        &#125;;<br>        <span class="hljs-comment">//3、设置请求的方法(GET或POST)和请求的URL，打开连接</span><br>        <span class="hljs-comment">// true表示异步发送请求，是默认值，可以省略，如果写false，表示发送同步请求</span><br>        request.open(<span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-string">&quot;province.do&quot;</span>, <span class="hljs-keyword">true</span>);<br><br>        <span class="hljs-comment">//4、发送请求</span><br>        <span class="hljs-comment">// send方法中可以传递参数，但是get是通过url传参，post也可以通过url传参</span><br>        <span class="hljs-comment">// 但是post也可以通过send来传参</span><br>        request.send();<br>    &#125;<br><br>    <span class="hljs-function">function <span class="hljs-title">fnChange</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-comment">// 得到省份下拉框的值</span><br>        <span class="hljs-keyword">var</span> p = document.getElementById(<span class="hljs-string">&quot;province&quot;</span>).value;<br>        console.log(p);<br>        <span class="hljs-comment">// 发送ajax请求</span><br>        <span class="hljs-comment">//1、创建Ajax对应的XMLHTTPRequest对象。</span><br>        <span class="hljs-keyword">var</span> request;<br>        <span class="hljs-keyword">if</span>(window.XMLHttpRequest)&#123;<br>            <span class="hljs-comment">// IE7+以及其他的浏览器</span><br>            request = <span class="hljs-keyword">new</span> XMLHttpRequest();<br>        &#125;<span class="hljs-keyword">else</span>&#123;<br>            <span class="hljs-comment">// IE6</span><br>            request = <span class="hljs-keyword">new</span> ActiveXObject(<span class="hljs-string">&quot;Microsoft.XMLHTTP&quot;</span>);<br>        &#125;<br>        <span class="hljs-comment">//2、设置响应（回调）函数</span><br>        <span class="hljs-comment">// 当每次状态改变时会调用后面的函数</span><br>        <span class="hljs-comment">// 有5个状态0~4，之后最后一个完成就绪状态时，才需要去调用后面的处理函数</span><br>        request.onreadystatechange = function () &#123;<br>            <span class="hljs-comment">// 当请求处理完毕，且状态码为200（成功）</span><br>            <span class="hljs-keyword">if</span> (request.readyState == <span class="hljs-number">4</span> &amp;&amp; request.status == <span class="hljs-number">200</span>)&#123;<br>                <span class="hljs-comment">// 局部刷新页面要改变的内容</span><br>                <span class="hljs-keyword">var</span> arr = JSON.parse(request.responseText);<br>                console.log(arr);<br>                <span class="hljs-keyword">var</span> city = document.getElementById(<span class="hljs-string">&quot;city&quot;</span>);<br>                city.options.length = <span class="hljs-number">1</span>;<br>                <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i in arr)&#123;<br>                    <span class="hljs-comment">// 创建一个option</span><br>                    <span class="hljs-keyword">var</span> option = <span class="hljs-keyword">new</span> Option(arr[i].name, arr[i].id);<br>                    <span class="hljs-comment">// 给province添加一个option</span><br>                    city.options.add(option);<br>                &#125;<br>            &#125;<br>        &#125;;<br>        <span class="hljs-comment">//3、设置请求的方法(GET或POST)和请求的URL，打开连接</span><br>        <span class="hljs-comment">// true表示异步发送请求，是默认值，可以省略，如果写false，表示发送同步请求</span><br>        request.open(<span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-string">&quot;city.do?provinceId=&quot;</span> + p, <span class="hljs-keyword">true</span>);<br><br>        <span class="hljs-comment">//4、发送请求</span><br>        <span class="hljs-comment">// send方法中可以传递参数，但是get是通过url传参，post也可以通过url传参</span><br>        <span class="hljs-comment">// 但是post也可以通过send来传参</span><br>        request.send();<br>    &#125;<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+                    
+                  </div>
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/10/20/hello-world%20(zh-CN)/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2019/10/22/IO%E6%A1%86%E6%9E%B6/">
+                        <span class="hidden-mobile">IO框架</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"eJTg2E7lFVi4dnRJvshHXwAv-gzGzoHsz","appKey":"3u6s4XYeWREVbc16xYzSUnVd","path":"window.location.pathname","placeholder":null,"avatar":"retro","meta":["nick","mail","link"],"requiredFields":["nick"],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":true,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":true},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          Fluid.plugins.initFancyBox('#valine .vcontent img:not(.vemoji)');
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-x-md">
+    <div class="container custom post-custom mx-auto">
+      <img src="https://octodex.github.com/images/jetpacktocat.png" srcset="/img/loading.gif" lazyload class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;">
+    </div>
+  </div>
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访客数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+  <script type="text/javascript" src="/js/clicklove.js"></script>
+  <!--浏览器搞笑标题-->
+<script type="text/javascript" src="/js/FunnyTitle.js"></script>
+<script type="text/javascript">
+$("a.iconfont icon-image").on('click',function(){
+  console.log("a");
+  if($("#bg-iframe")[0])
+  {
+    $("#bg-iframe").remove()
+  }else{
+    $("#banner").append("<iframe id='bg-iframe' style='position: fixed;right: 0px;bottom: 0px;min-width: 100%;min-height: 100%;height: auto;width: auto;z-index: -1;' src='/html/3D光影花瓣掉落.html'></iframe>");
+  }
+})
+</script>
+</body>
+</html>

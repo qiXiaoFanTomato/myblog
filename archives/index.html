@@ -46,7 +46,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"localhost","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":true},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"localhost","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":true},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"eJTg2E7lFVi4dnRJvshHXwAv-gzGzoHsz","app_key":"3u6s4XYeWREVbc16xYzSUnVd","server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -55,6 +55,7 @@
 
 <body>
   <header style="height: 60vh;">
+    
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -143,6 +144,18 @@
             </li>
           
         
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0)">
+                <i class="iconfont icon-image"></i>
+                切换背景
+              </a>
+            </li>
+          
+        
         
           <li class="nav-item" id="search-btn">
             <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
@@ -164,6 +177,7 @@
     <div class="banner" id="banner" parallax=true
          style="background: url('/img/default.png') ;
            background-size: cover;">
+           
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
@@ -192,13 +206,43 @@
                 
 
 <div class="list-group">
-  <p class="h4">共计 5 篇文章</p>
+  <p class="h4">共计 17 篇文章</p>
   <hr>
   
   
     
       
       <p class="h5">2021</p>
+    
+    <a href="/2021/10/22/RBAC%E8%A7%92%E8%89%B2%E6%9D%83%E9%99%90%E7%B3%BB%E7%BB%9F/" class="list-group-item list-group-item-action">
+      <span class="archive-post-title">RBAC角色权限系统</span>
+      <time style="float: right;">10-22</time>
+    </a>
+  
+    
+    <a href="/2021/10/22/Mybatis/" class="list-group-item list-group-item-action">
+      <span class="archive-post-title">Mybatis</span>
+      <time style="float: right;">10-22</time>
+    </a>
+  
+    
+    <a href="/2021/10/22/Maven/" class="list-group-item list-group-item-action">
+      <span class="archive-post-title">Maven</span>
+      <time style="float: right;">10-22</time>
+    </a>
+  
+    
+    <a href="/2021/10/22/VUE/" class="list-group-item list-group-item-action">
+      <span class="archive-post-title">VUE</span>
+      <time style="float: right;">10-22</time>
+    </a>
+  
+    
+    <a href="/2021/10/22/%E9%9D%A2%E8%AF%95%E9%A2%98/" class="list-group-item list-group-item-action">
+      <span class="archive-post-title">面试题</span>
+      <time style="float: right;">10-22</time>
+    </a>
+  
     
     <a href="/2021/10/20/Java%E6%B5%8B%E8%AF%95%E7%AC%AC%E4%B8%89%E9%98%B6%E6%AE%B5/" class="list-group-item list-group-item-action">
       <span class="archive-post-title">Java测试第三阶段</span>
@@ -213,7 +257,7 @@
   
     
     <a href="/2021/10/20/springboot/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">springboot</span>
+      <span class="archive-post-title">SpringBoot</span>
       <time style="float: right;">10-20</time>
     </a>
   
@@ -227,13 +271,19 @@
       
       <p class="h5">2019</p>
     
-    <a href="/2019/10/10/about/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">关于页</span>
-      <time style="float: right;">10-10</time>
+    <a href="/2019/10/22/AJAX/" class="list-group-item list-group-item-action">
+      <span class="archive-post-title">AJAX</span>
+      <time style="float: right;">10-22</time>
     </a>
   
 </div>
 
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/#board">2</a><a class="extend next" rel="next" href="/archives/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
 
 
 
@@ -280,7 +330,7 @@
 
   <footer class="text-center mt-5 py-3">
   <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span> 
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
   </div>
   
   <div class="statistics">
@@ -289,21 +339,22 @@
 
     
       
-        <!-- 不蒜子统计PV -->
-        <span id="busuanzi_container_site_pv" style="display: none">
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
             总访问量 
-            <span id="busuanzi_value_site_pv"></span>
+            <span id="leancloud-site-pv"></span>
              次
           </span>
       
       
-        <!-- 不蒜子统计UV -->
-        <span id="busuanzi_container_site_uv" style="display: none">
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
             总访客数 
-            <span id="busuanzi_value_site_uv"></span>
+            <span id="leancloud-site-uv"></span>
              人
           </span>
       
+
     
   </div>
 
@@ -352,8 +403,8 @@
 
 
 
-  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
+  <script defer src="/js/leancloud.js" ></script>
 
 
 
@@ -386,5 +437,18 @@
 <script  src="/js/boot.js" ></script>
 
   <script type="text/javascript" src="/js/clicklove.js"></script>
+  <!--浏览器搞笑标题-->
+<script type="text/javascript" src="/js/FunnyTitle.js"></script>
+<script type="text/javascript">
+$("a.iconfont icon-image").on('click',function(){
+  console.log("a");
+  if($("#bg-iframe")[0])
+  {
+    $("#bg-iframe").remove()
+  }else{
+    $("#banner").append("<iframe id='bg-iframe' style='position: fixed;right: 0px;bottom: 0px;min-width: 100%;min-height: 100%;height: auto;width: auto;z-index: -1;' src='/html/3D光影花瓣掉落.html'></iframe>");
+  }
+})
+</script>
 </body>
 </html>

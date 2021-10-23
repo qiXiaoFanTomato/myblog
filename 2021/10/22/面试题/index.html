@@ -1,0 +1,684 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon1.ico">
+  <link rel="icon" href="/img/favicon1.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="番茄">
+  <meta name="keywords" content="">
+  <meta name="description" content="面试题一. Java基础  基本数据类型； 冒泡排序（手写）、二分法查找（手写）、二叉树遍历（前序、中序、后序，手写） 重载与重写的区别； 字符串的常用方法有哪些； Java中如何实现科学计算，BigDecimal； 接口与抽象类的区别（要带版本谈） Collection与Collections的区别； ArrayList底层是如何实现的？LinkedList底层是如何实现的？ ArrayList">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试题">
+<meta property="og:url" content="http://localhost:4000/2021/10/22/%E9%9D%A2%E8%AF%95%E9%A2%98/index.html">
+<meta property="og:site_name" content="启小凡">
+<meta property="og:description" content="面试题一. Java基础  基本数据类型； 冒泡排序（手写）、二分法查找（手写）、二叉树遍历（前序、中序、后序，手写） 重载与重写的区别； 字符串的常用方法有哪些； Java中如何实现科学计算，BigDecimal； 接口与抽象类的区别（要带版本谈） Collection与Collections的区别； ArrayList底层是如何实现的？LinkedList底层是如何实现的？ ArrayList">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-10-22T02:00:00.000Z">
+<meta property="article:modified_time" content="2021-10-22T09:45:46.999Z">
+<meta property="article:author" content="番茄">
+<meta name="twitter:card" content="summary_large_image">
+  
+  <title>面试题 - 启小凡</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"localhost","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":true},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"eJTg2E7lFVi4dnRJvshHXwAv-gzGzoHsz","app_key":"3u6s4XYeWREVbc16xYzSUnVd","server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>启小凡</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0)">
+                <i class="iconfont icon-image"></i>
+                切换背景
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') ;
+           background-size: cover;">
+           
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="面试题">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      番茄
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-10-22 10:00" pubdate>
+        2021年10月22日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.5k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      5 分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-page-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">面试题</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2021年10月22日 下午
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h2 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h2><h3 id="一-Java基础"><a href="#一-Java基础" class="headerlink" title="一. Java基础"></a>一. Java基础</h3><blockquote>
+<ol>
+<li>基本数据类型；</li>
+<li>冒泡排序（手写）、二分法查找（手写）、二叉树遍历（前序、中序、后序，手写）</li>
+<li>重载与重写的区别；</li>
+<li>字符串的常用方法有哪些；</li>
+<li>Java中如何实现科学计算，BigDecimal；</li>
+<li>接口与抽象类的区别（要带版本谈）</li>
+<li>Collection与Collections的区别；</li>
+<li>ArrayList底层是如何实现的？LinkedList底层是如何实现的？</li>
+<li>ArrayList 默认长度？是怎么实现扩容的？</li>
+<li>ArrayList与LinkedList的区别；</li>
+<li>Set与List的区别；</li>
+<li>HashMap底层是如何实现的？</li>
+<li>HashMap初始化长度？是如何扩容的？</li>
+<li>HashMap的桶位为什么是2的倍数？</li>
+<li>HashMap线程不安全体现在什么地方?</li>
+<li>HashMap与HashTable的区别；</li>
+<li>线程的创建方式？</li>
+<li>线程的状态?</li>
+<li>在工作中有没有用到过多线程？</li>
+<li>wait 和 sleep 有什么区别？</li>
+<li>有几种线程池？为什么要使用线程池？</li>
+<li>CAS(Compare And Swap) 的过程？</li>
+<li>描述下什么是AQS？</li>
+<li>StringBuffer 与 StringBuilder的区别；</li>
+<li>导致多线程不全安的因素；</li>
+<li>Volatile 关键字的作用？它为什么不能解决原子性的问题？</li>
+<li>ConcurrentHashMap 在JDK7和JDK8中是如何实现的？</li>
+<li>JUC有哪些类？</li>
+<li>JDK8的新特性？Stream流的性能如何？</li>
+<li>什么是函数式接口？</li>
+<li>Synchronized底层是如何实现的？</li>
+<li>Synchronized锁升级的过程；</li>
+<li>IO流的类有哪些？IO流的分类？</li>
+<li>JUC中重入锁中公平锁与非公平锁是怎么实现的？</li>
+<li>反射中常见的类？反射在项目中用在哪里？</li>
+<li>单例模式(手写)</li>
+<li>说出几种设计模式？以及在项目中在哪里用过？</li>
+</ol>
+</blockquote>
+<h3 id="二-网络"><a href="#二-网络" class="headerlink" title="二. 网络"></a>二. 网络</h3><blockquote>
+<ol>
+<li>http协议三次握手四次挥手的过程</li>
+<li>http协议的请求头有哪些？</li>
+<li>http协议的响应头有哪些？</li>
+<li>TCP/IP七层网络协议；四层网络协议；</li>
+<li>TCP和UDP协议的区别；</li>
+<li>http协议与https协议；</li>
+<li>Websocket协议简单说一下；</li>
+</ol>
+</blockquote>
+<h3 id="三-数据库"><a href="#三-数据库" class="headerlink" title="三. 数据库"></a>三. 数据库</h3><blockquote>
+<ol>
+<li>组函数有哪些？</li>
+<li>数据库的优化方式有哪些？</li>
+<li>B-Tree与B+Tree的区别？</li>
+<li>explain主要查看哪些参数？</li>
+<li>什么是回表查询？</li>
+<li>最左原则？</li>
+<li>数据库的行转列；</li>
+<li>MyISAM存储引擎与InnoDB存储引擎的区别？</li>
+<li>数据库设计的三大范式</li>
+<li>数据库的隔离级别？</li>
+<li>列举几个SQL注入</li>
+<li>什么是事务？事务的四种特性？</li>
+<li>什么是脏读、什么是幻读、什么是不可重复读？</li>
+</ol>
+</blockquote>
+<h3 id="四-JDBC"><a href="#四-JDBC" class="headerlink" title="四. JDBC"></a>四. JDBC</h3><blockquote>
+<p>JDBC的执行流程</p>
+</blockquote>
+<h3 id="五-JSP与Servlet"><a href="#五-JSP与Servlet" class="headerlink" title="五. JSP与Servlet"></a>五. JSP与Servlet</h3><blockquote>
+<ol>
+<li>jsp的执行流程</li>
+<li>请求转发与重定向；</li>
+<li>jsp的内置对象；</li>
+<li>工作中日志的级别是什么?</li>
+</ol>
+</blockquote>
+<h3 id="六-SpringMVC"><a href="#六-SpringMVC" class="headerlink" title="六. SpringMVC"></a>六. SpringMVC</h3><blockquote>
+<ol>
+<li>什么是 MVC 设计模式？</li>
+<li>SpringMVC的执行流程；</li>
+<li>SpringMVC 常用的注解有哪些？</li>
+<li>过滤器与拦截器的区别？</li>
+</ol>
+</blockquote>
+<h3 id="七-MyBatis"><a href="#七-MyBatis" class="headerlink" title="七. MyBatis"></a>七. MyBatis</h3><blockquote>
+<ol>
+<li>Mybatis底层是如何实现的？</li>
+<li>#与$的区别；</li>
+<li>多对一、一对多查询；</li>
+<li>通用 sql 如何抽取？</li>
+<li>Mybatis 的批量插入如何实现？</li>
+</ol>
+</blockquote>
+<h3 id="八-Spring"><a href="#八-Spring" class="headerlink" title="八. Spring"></a>八. Spring</h3><blockquote>
+<ol>
+<li>什么是IOC、DI？</li>
+<li>什么是AOP，AOP底层的实现方式？</li>
+<li>AOP在项目中哪里用过？</li>
+<li>Spring Bean的生命周期；</li>
+<li>Spring 如何解决循环依赖？三级缓存有哪些？</li>
+<li>BeanFactory与FactoryBean的区别？</li>
+<li>Spring 事务的七种传播机制？</li>
+<li>Spring 事务是如何实现的？（配置的代码要能背下来）</li>
+</ol>
+</blockquote>
+<h3 id="九-SpringBoot"><a href="#九-SpringBoot" class="headerlink" title="九. SpringBoot"></a>九. SpringBoot</h3><blockquote>
+<ol>
+<li>为什么要使用 SpringBoot.</li>
+<li>SpringBoot常用的注解有哪些？</li>
+<li>SpringBoot的启动流程；</li>
+<li>SpringBoot如何自定义 starter? 你在工作中有没有定义过？</li>
+</ol>
+</blockquote>
+<h3 id="十-Vue"><a href="#十-Vue" class="headerlink" title="十. Vue"></a>十. Vue</h3><blockquote>
+<ol>
+<li>Vue的常用指令有哪些？</li>
+<li>什么是渐进式框架？</li>
+<li>什么是组件化编程？</li>
+<li>聊聊 mvvm 设计模式；</li>
+<li>简单说说路由？</li>
+</ol>
+</blockquote>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E9%9D%A2%E8%AF%95/">面试</a>
+                    
+                  </div>
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/10/22/VUE/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">VUE</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/10/20/Java%E6%B5%8B%E8%AF%95%E7%AC%AC%E4%B8%89%E9%98%B6%E6%AE%B5/">
+                        <span class="hidden-mobile">Java测试第三阶段</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"eJTg2E7lFVi4dnRJvshHXwAv-gzGzoHsz","appKey":"3u6s4XYeWREVbc16xYzSUnVd","path":"window.location.pathname","placeholder":null,"avatar":"retro","meta":["nick","mail","link"],"requiredFields":["nick"],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":true,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":true},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          Fluid.plugins.initFancyBox('#valine .vcontent img:not(.vemoji)');
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-x-md">
+    <div class="container custom post-custom mx-auto">
+      <img src="https://octodex.github.com/images/jetpacktocat.png" srcset="/img/loading.gif" lazyload class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;">
+    </div>
+  </div>
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访客数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+  <script type="text/javascript" src="/js/clicklove.js"></script>
+  <!--浏览器搞笑标题-->
+<script type="text/javascript" src="/js/FunnyTitle.js"></script>
+<script type="text/javascript">
+$("a.iconfont icon-image").on('click',function(){
+  console.log("a");
+  if($("#bg-iframe")[0])
+  {
+    $("#bg-iframe").remove()
+  }else{
+    $("#banner").append("<iframe id='bg-iframe' style='position: fixed;right: 0px;bottom: 0px;min-width: 100%;min-height: 100%;height: auto;width: auto;z-index: -1;' src='/html/3D光影花瓣掉落.html'></iframe>");
+  }
+})
+</script>
+</body>
+</html>

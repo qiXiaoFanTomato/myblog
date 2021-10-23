@@ -46,7 +46,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"localhost","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":true},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"localhost","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":true},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"eJTg2E7lFVi4dnRJvshHXwAv-gzGzoHsz","app_key":"3u6s4XYeWREVbc16xYzSUnVd","server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -55,6 +55,7 @@
 
 <body>
   <header style="height: 60vh;">
+    
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -143,6 +144,18 @@
             </li>
           
         
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0)">
+                <i class="iconfont icon-image"></i>
+                切换背景
+              </a>
+            </li>
+          
+        
         
           <li class="nav-item" id="search-btn">
             <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
@@ -164,6 +177,7 @@
     <div class="banner" id="banner" parallax=true
          style="background: url('/img/default.png') ;
            background-size: cover;">
+           
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
@@ -205,17 +219,17 @@
     <div class="category row">
       <a
         class="category-item collapsed list-group-item category-item-action col-10 col-md-11"
-        id="heading-2a2d595e6ed9a0b24f027f2b63b134d6" role="tab" data-toggle="collapse" href="#collapse-2a2d595e6ed9a0b24f027f2b63b134d6"
+        id="heading-d52387880e1ea22817a72d3759213819" role="tab" data-toggle="collapse" href="#collapse-d52387880e1ea22817a72d3759213819"
         aria-expanded="false"
       >
-        spring
+        Java
         <i class="iconfont icon-arrowright"></i>
       </a>
-      <a href="/categories/spring/" class="category-count col-2 col-md-1">
+      <a href="/categories/Java/" class="category-count col-2 col-md-1">
         <i class="iconfont icon-articles"></i>
-        <span>1</span>
+        <span>9</span>
       </a>
-      <div class="category-collapse collapse" id="collapse-2a2d595e6ed9a0b24f027f2b63b134d6" role="tabpanel" aria-labelledby="heading-2a2d595e6ed9a0b24f027f2b63b134d6">
+      <div class="category-collapse collapse" id="collapse-d52387880e1ea22817a72d3759213819" role="tabpanel" aria-labelledby="heading-d52387880e1ea22817a72d3759213819">
         
         
           
@@ -224,8 +238,148 @@
     
       
       
+        <a href="/2021/10/22/RBAC%E8%A7%92%E8%89%B2%E6%9D%83%E9%99%90%E7%B3%BB%E7%BB%9F/" class="list-group-item list-group-item-action">
+          <span class="category-post">RBAC角色权限系统</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2021/10/22/Mybatis/" class="list-group-item list-group-item-action">
+          <span class="category-post">Mybatis</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2021/10/22/Maven/" class="list-group-item list-group-item-action">
+          <span class="category-post">Maven</span>
+        </a>
+      
+    
+      
+      
         <a href="/2021/10/20/springboot/" class="list-group-item list-group-item-action">
-          <span class="category-post">springboot</span>
+          <span class="category-post">SpringBoot</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2019/10/22/IO%E6%A1%86%E6%9E%B6/" class="list-group-item list-group-item-action">
+          <span class="category-post">IO框架</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2019/10/22/Java8%E6%96%B0%E7%89%B9%E6%80%A7/" class="list-group-item list-group-item-action">
+          <span class="category-post">Java8新特性</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2019/10/22/%E5%8F%8D%E5%B0%84%E4%B8%8E%E6%B3%A8%E8%A7%A3/" class="list-group-item list-group-item-action">
+          <span class="category-post">反射与注解</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2019/10/22/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" class="list-group-item list-group-item-action">
+          <span class="category-post">网络编程</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2019/10/22/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="list-group-item list-group-item-action">
+          <span class="category-post">多线程</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    <div class="category row">
+      <a
+        class="category-item collapsed list-group-item category-item-action col-10 col-md-11"
+        id="heading-9abfe4a03928eb88a75a5cd95822dfef" role="tab" data-toggle="collapse" href="#collapse-9abfe4a03928eb88a75a5cd95822dfef"
+        aria-expanded="false"
+      >
+        前端
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      <a href="/categories/%E5%89%8D%E7%AB%AF/" class="category-count col-2 col-md-1">
+        <i class="iconfont icon-articles"></i>
+        <span>3</span>
+      </a>
+      <div class="category-collapse collapse" id="collapse-9abfe4a03928eb88a75a5cd95822dfef" role="tabpanel" aria-labelledby="heading-9abfe4a03928eb88a75a5cd95822dfef">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/2021/10/22/VUE/" class="list-group-item list-group-item-action">
+          <span class="category-post">VUE</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2019/10/22/AJAX/" class="list-group-item list-group-item-action">
+          <span class="category-post">AJAX</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2019/10/22/JQuery/" class="list-group-item list-group-item-action">
+          <span class="category-post">JQuery</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    <div class="category row">
+      <a
+        class="category-item collapsed list-group-item category-item-action col-10 col-md-11"
+        id="heading-1573c74e227f14ded2daa71bb049ecda" role="tab" data-toggle="collapse" href="#collapse-1573c74e227f14ded2daa71bb049ecda"
+        aria-expanded="false"
+      >
+        面试
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      <a href="/categories/%E9%9D%A2%E8%AF%95/" class="category-count col-2 col-md-1">
+        <i class="iconfont icon-articles"></i>
+        <span>1</span>
+      </a>
+      <div class="category-collapse collapse" id="collapse-1573c74e227f14ded2daa71bb049ecda" role="tabpanel" aria-labelledby="heading-1573c74e227f14ded2daa71bb049ecda">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/2021/10/22/%E9%9D%A2%E8%AF%95%E9%A2%98/" class="list-group-item list-group-item-action">
+          <span class="category-post">面试题</span>
         </a>
       
     
@@ -279,7 +433,7 @@
 
   <footer class="text-center mt-5 py-3">
   <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span> 
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
   </div>
   
   <div class="statistics">
@@ -288,21 +442,22 @@
 
     
       
-        <!-- 不蒜子统计PV -->
-        <span id="busuanzi_container_site_pv" style="display: none">
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
             总访问量 
-            <span id="busuanzi_value_site_pv"></span>
+            <span id="leancloud-site-pv"></span>
              次
           </span>
       
       
-        <!-- 不蒜子统计UV -->
-        <span id="busuanzi_container_site_uv" style="display: none">
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
             总访客数 
-            <span id="busuanzi_value_site_uv"></span>
+            <span id="leancloud-site-uv"></span>
              人
           </span>
       
+
     
   </div>
 
@@ -351,8 +506,8 @@
 
 
 
-  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
+  <script defer src="/js/leancloud.js" ></script>
 
 
 
@@ -385,5 +540,18 @@
 <script  src="/js/boot.js" ></script>
 
   <script type="text/javascript" src="/js/clicklove.js"></script>
+  <!--浏览器搞笑标题-->
+<script type="text/javascript" src="/js/FunnyTitle.js"></script>
+<script type="text/javascript">
+$("a.iconfont icon-image").on('click',function(){
+  console.log("a");
+  if($("#bg-iframe")[0])
+  {
+    $("#bg-iframe").remove()
+  }else{
+    $("#banner").append("<iframe id='bg-iframe' style='position: fixed;right: 0px;bottom: 0px;min-width: 100%;min-height: 100%;height: auto;width: auto;z-index: -1;' src='/html/3D光影花瓣掉落.html'></iframe>");
+  }
+})
+</script>
 </body>
 </html>
