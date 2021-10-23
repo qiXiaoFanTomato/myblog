@@ -7,10 +7,12 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon1.ico">
-  <link rel="icon" href="/img/favicon1.ico">
+  <link rel="apple-touch-icon" sizes="76x76" href="/myblog/img/favicon1.ico">
+  <link rel="icon" href="/myblog/img/favicon1.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   
   <meta name="theme-color" content="#2f4154">
   <meta name="description" content="">
@@ -19,7 +21,7 @@
   <meta name="description" content="面试题一. Java基础  基本数据类型； 冒泡排序（手写）、二分法查找（手写）、二叉树遍历（前序、中序、后序，手写） 重载与重写的区别； 字符串的常用方法有哪些； Java中如何实现科学计算，BigDecimal； 接口与抽象类的区别（要带版本谈） Collection与Collections的区别； ArrayList底层是如何实现的？LinkedList底层是如何实现的？ ArrayList">
 <meta property="og:type" content="article">
 <meta property="og:title" content="面试题">
-<meta property="og:url" content="http://localhost:4000/2021/10/22/%E9%9D%A2%E8%AF%95%E9%A2%98/index.html">
+<meta property="og:url" content="https://q_xiaofan.gitee.io/myblog/2021/10/22/%E9%9D%A2%E8%AF%95%E9%A2%98/index.html">
 <meta property="og:site_name" content="启小凡">
 <meta property="og:description" content="面试题一. Java基础  基本数据类型； 冒泡排序（手写）、二分法查找（手写）、二叉树遍历（前序、中序、后序，手写） 重载与重写的区别； 字符串的常用方法有哪些； Java中如何实现科学计算，BigDecimal； 接口与抽象类的区别（要带版本谈） Collection与Collections的区别； ArrayList底层是如何实现的？LinkedList底层是如何实现的？ ArrayList">
 <meta property="og:locale" content="zh_CN">
@@ -34,7 +36,7 @@
 
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
-  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+  <link  rel="stylesheet" href="/myblog/lib/hint/hint.min.css" />
 
   
     
@@ -58,17 +60,17 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
 
 
-<link  rel="stylesheet" href="/css/main.css" />
+<link  rel="stylesheet" href="/myblog/css/main.css" />
 
 <!-- 自定义样式保持在最底部 -->
 
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"localhost","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":true},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"eJTg2E7lFVi4dnRJvshHXwAv-gzGzoHsz","app_key":"3u6s4XYeWREVbc16xYzSUnVd","server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"q_xiaofan.gitee.io","root":"/myblog/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":true},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"eJTg2E7lFVi4dnRJvshHXwAv-gzGzoHsz","app_key":"3u6s4XYeWREVbc16xYzSUnVd","server_url":null,"path":"window.location.pathname"}},"search_path":"/myblog/local-search.xml"};
   </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
+  <script  src="/myblog/js/utils.js" ></script>
+  <script  src="/myblog/js/color-schema.js" ></script>
 <meta name="generator" content="Hexo 5.4.0"></head>
 
 
@@ -77,7 +79,7 @@
     
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="/myblog/">
       <strong>启小凡</strong>
     </a>
 
@@ -96,7 +98,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/">
+              <a class="nav-link" href="/myblog/">
                 <i class="iconfont icon-home-fill"></i>
                 首页
               </a>
@@ -108,7 +110,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/">
+              <a class="nav-link" href="/myblog/archives/">
                 <i class="iconfont icon-archive-fill"></i>
                 归档
               </a>
@@ -120,7 +122,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/">
+              <a class="nav-link" href="/myblog/categories/">
                 <i class="iconfont icon-category-fill"></i>
                 分类
               </a>
@@ -132,7 +134,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/">
+              <a class="nav-link" href="/myblog/tags/">
                 <i class="iconfont icon-tags-fill"></i>
                 标签
               </a>
@@ -144,7 +146,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
+              <a class="nav-link" href="/myblog/about/">
                 <i class="iconfont icon-user-fill"></i>
                 关于
               </a>
@@ -156,7 +158,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/links/">
+              <a class="nav-link" href="/myblog/links/">
                 <i class="iconfont icon-link-fill"></i>
                 友链
               </a>
@@ -194,7 +196,7 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/img/default.png') ;
+         style="background: url('/myblog/img/default.png') ;
            background-size: cover;">
            
       <div class="full-bg-img">
@@ -416,7 +418,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E9%9D%A2%E8%AF%95/">面试</a>
+                      <a class="hover-with-bg" href="/myblog/categories/%E9%9D%A2%E8%AF%95/">面试</a>
                     
                   </div>
                 
@@ -434,7 +436,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/10/22/VUE/">
+                      <a href="/myblog/2021/10/22/VUE/">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">VUE</span>
                         <span class="visible-mobile">上一篇</span>
@@ -444,7 +446,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/10/20/Java%E6%B5%8B%E8%AF%95%E7%AC%AC%E4%B8%89%E9%98%B6%E6%AE%B5/">
+                      <a href="/myblog/2021/10/20/Java%E6%B5%8B%E8%AF%95%E7%AC%AC%E4%B8%89%E9%98%B6%E6%AE%B5/">
                         <span class="hidden-mobile">Java测试第三阶段</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -505,7 +507,7 @@
 
   <div class="col-lg-7 mx-auto nopadding-x-md">
     <div class="container custom post-custom mx-auto">
-      <img src="https://octodex.github.com/images/jetpacktocat.png" srcset="/img/loading.gif" lazyload class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;">
+      <img src="https://octodex.github.com/images/jetpacktocat.png" srcset="/myblog/img/loading.gif" lazyload class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;">
     </div>
   </div>
 
@@ -598,18 +600,18 @@
 
 <script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
 <script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
+<script  src="/myblog/js/events.js" ></script>
+<script  src="/myblog/js/plugins.js" ></script>
 
 <!-- Plugins -->
 
 
-  <script  src="/js/local-search.js" ></script>
+  <script  src="/myblog/js/local-search.js" ></script>
 
 
 
   
-    <script  src="/js/img-lazyload.js" ></script>
+    <script  src="/myblog/js/img-lazyload.js" ></script>
   
 
 
@@ -634,7 +636,7 @@
 
 
 
-  <script defer src="/js/leancloud.js" ></script>
+  <script defer src="/myblog/js/leancloud.js" ></script>
 
 
 
@@ -664,7 +666,7 @@
 
 
 <!-- 主题的启动项 保持在最底部 -->
-<script  src="/js/boot.js" ></script>
+<script  src="/myblog/js/boot.js" ></script>
 
   <script type="text/javascript" src="/js/clicklove.js"></script>
   <!--浏览器搞笑标题-->

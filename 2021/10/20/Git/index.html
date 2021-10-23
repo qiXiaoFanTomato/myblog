@@ -7,10 +7,12 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon1.ico">
-  <link rel="icon" href="/img/favicon1.ico">
+  <link rel="apple-touch-icon" sizes="76x76" href="/myblog/img/favicon1.ico">
+  <link rel="icon" href="/myblog/img/favicon1.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   
   <meta name="theme-color" content="#2f4154">
   <meta name="description" content="">
@@ -19,87 +21,87 @@
   <meta name="description" content="一、引言   在单人开发过程中，需要进行版本管理，以利于开发进度的控制。  在多人开发过程中，不仅需要版本管理，还需要进行多人协同控制。    二、介绍   Git是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。 Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。 官网：https:&#x2F;&#x2F;git-scm.com">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git">
-<meta property="og:url" content="http://localhost:4000/2021/10/20/Git/index.html">
+<meta property="og:url" content="https://q_xiaofan.gitee.io/myblog/2021/10/20/Git/index.html">
 <meta property="og:site_name" content="启小凡">
 <meta property="og:description" content="一、引言   在单人开发过程中，需要进行版本管理，以利于开发进度的控制。  在多人开发过程中，不仅需要版本管理，还需要进行多人协同控制。    二、介绍   Git是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。 Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。 官网：https:&#x2F;&#x2F;git-scm.com">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/logo.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/install1.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/%E6%9A%82%E5%AD%98%E5%8C%BA.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/%E6%96%B0%E5%BB%BA%E4%BB%93%E5%BA%93.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/%E6%96%B0%E5%BB%BA%E4%BB%93%E5%BA%932.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/%E6%9F%A5%E7%9C%8B%E7%8A%B6%E6%80%811.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/%E6%9A%82%E5%AD%98%E6%96%87%E4%BB%B6.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/%E6%8F%90%E4%BA%A4%E6%96%87%E4%BB%B6.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/%E7%A0%81%E4%BA%91%E6%B3%A8%E5%86%8C.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/%E7%A0%81%E4%BA%91%E7%99%BB%E5%BD%95.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/%E5%88%9B%E5%BB%BA%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%931.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/%E5%88%9B%E5%BB%BA%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%932.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/%E5%88%9B%E5%BB%BA%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%933.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/%E5%85%B3%E8%81%94%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/push%E5%88%B0%E8%BF%9C%E7%A8%8B.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/push%E5%88%B0%E8%BF%9C%E7%A8%8B_%E8%BE%93%E5%85%A5%E5%87%AD%E8%AF%81.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/clone%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/clone%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%932.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/pull%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%931.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/pull%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%932.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/%E5%88%86%E6%94%AF%E5%9B%BE%E4%BE%8B1.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/%E6%9F%A5%E7%9C%8B%E5%88%86%E6%94%AF-master.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/%E6%9F%A5%E7%9C%8B%E5%88%86%E6%94%AF.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF%E7%BB%86%E8%8A%821.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF%E7%BB%86%E8%8A%822.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF%E7%BB%86%E8%8A%823.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/%E6%8F%90%E4%BA%A4%E6%97%A5%E5%BF%97.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/%E6%8F%90%E4%BA%A4%E6%97%A5%E5%BF%972.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF%E7%BB%86%E8%8A%822.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/%E5%BF%AB%E9%80%9F%E5%88%86%E6%94%AF%E5%90%88%E5%B9%B6.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF%E7%BB%86%E8%8A%823.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/%E4%B8%89%E6%96%B9%E5%90%88%E5%B9%B6.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/%E5%86%B2%E7%AA%811.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/%E5%86%B2%E7%AA%812.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/%E5%86%B2%E7%AA%813.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/%E5%86%B2%E7%AA%814.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/%E5%86%B2%E7%AA%815.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/%E5%86%B2%E7%AA%816.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/idea-%E5%85%B3%E8%81%94git.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/idea-%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%930.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/idea-%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%931.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/idea-%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%932.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/idea-commit.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/idea-commit2.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/idea-commit3.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/idea-%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/idea-%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF2.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/idea-%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF3.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/idea-push.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/idea-push3.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/idea-push4.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/idea-push5.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/idea-clone1.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/idea-clone2.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/idea-clone3.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/idea-clone4.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/idea-pull1.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/idea-pull2.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/idea-pull3.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/idea-%E5%86%B2%E7%AA%81.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/idea-%E5%86%B2%E7%AA%812.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/%E6%B7%BB%E5%8A%A0%E5%BC%80%E5%8F%91%E6%88%90%E5%91%98.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/%E6%B7%BB%E5%8A%A0%E5%BC%80%E5%8F%91%E6%88%90%E5%91%982.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/%E6%B7%BB%E5%8A%A0%E5%BC%80%E5%8F%91%E6%88%90%E5%91%983.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/%E6%B7%BB%E5%8A%A0%E5%BC%80%E5%8F%91%E6%88%90%E5%91%984.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/%E4%BF%9D%E6%8A%A4%E5%88%86%E6%94%AF1.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/%E4%BF%9D%E6%8A%A4%E5%88%86%E6%94%AF2.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/%E5%9D%911.jpg">
-<meta property="og:image" content="http://localhost:4000/2021/10/20/Git/%E5%9D%912.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/logo.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/install1.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/%E6%9A%82%E5%AD%98%E5%8C%BA.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/%E6%96%B0%E5%BB%BA%E4%BB%93%E5%BA%93.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/%E6%96%B0%E5%BB%BA%E4%BB%93%E5%BA%932.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/%E6%9F%A5%E7%9C%8B%E7%8A%B6%E6%80%811.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/%E6%9A%82%E5%AD%98%E6%96%87%E4%BB%B6.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/%E6%8F%90%E4%BA%A4%E6%96%87%E4%BB%B6.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/%E7%A0%81%E4%BA%91%E6%B3%A8%E5%86%8C.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/%E7%A0%81%E4%BA%91%E7%99%BB%E5%BD%95.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/%E5%88%9B%E5%BB%BA%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%931.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/%E5%88%9B%E5%BB%BA%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%932.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/%E5%88%9B%E5%BB%BA%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%933.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/%E5%85%B3%E8%81%94%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/push%E5%88%B0%E8%BF%9C%E7%A8%8B.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/push%E5%88%B0%E8%BF%9C%E7%A8%8B_%E8%BE%93%E5%85%A5%E5%87%AD%E8%AF%81.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/clone%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/clone%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%932.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/pull%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%931.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/pull%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%932.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/%E5%88%86%E6%94%AF%E5%9B%BE%E4%BE%8B1.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/%E6%9F%A5%E7%9C%8B%E5%88%86%E6%94%AF-master.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/%E6%9F%A5%E7%9C%8B%E5%88%86%E6%94%AF.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF%E7%BB%86%E8%8A%821.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF%E7%BB%86%E8%8A%822.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF%E7%BB%86%E8%8A%823.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/%E6%8F%90%E4%BA%A4%E6%97%A5%E5%BF%97.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/%E6%8F%90%E4%BA%A4%E6%97%A5%E5%BF%972.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF%E7%BB%86%E8%8A%822.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/%E5%BF%AB%E9%80%9F%E5%88%86%E6%94%AF%E5%90%88%E5%B9%B6.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF%E7%BB%86%E8%8A%823.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/%E4%B8%89%E6%96%B9%E5%90%88%E5%B9%B6.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/%E5%86%B2%E7%AA%811.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/%E5%86%B2%E7%AA%812.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/%E5%86%B2%E7%AA%813.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/%E5%86%B2%E7%AA%814.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/%E5%86%B2%E7%AA%815.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/%E5%86%B2%E7%AA%816.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/idea-%E5%85%B3%E8%81%94git.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/idea-%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%930.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/idea-%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%931.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/idea-%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%932.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/idea-commit.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/idea-commit2.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/idea-commit3.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/idea-%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/idea-%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF2.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/idea-%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF3.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/idea-push.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/idea-push3.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/idea-push4.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/idea-push5.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/idea-clone1.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/idea-clone2.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/idea-clone3.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/idea-clone4.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/idea-pull1.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/idea-pull2.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/idea-pull3.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/idea-%E5%86%B2%E7%AA%81.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/idea-%E5%86%B2%E7%AA%812.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/%E6%B7%BB%E5%8A%A0%E5%BC%80%E5%8F%91%E6%88%90%E5%91%98.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/%E6%B7%BB%E5%8A%A0%E5%BC%80%E5%8F%91%E6%88%90%E5%91%982.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/%E6%B7%BB%E5%8A%A0%E5%BC%80%E5%8F%91%E6%88%90%E5%91%983.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/%E6%B7%BB%E5%8A%A0%E5%BC%80%E5%8F%91%E6%88%90%E5%91%984.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/%E4%BF%9D%E6%8A%A4%E5%88%86%E6%94%AF1.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/%E4%BF%9D%E6%8A%A4%E5%88%86%E6%94%AF2.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/%E5%9D%911.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/%E5%9D%912.jpg">
 <meta property="article:published_time" content="2021-10-20T08:05:00.000Z">
 <meta property="article:modified_time" content="2021-10-21T09:30:23.174Z">
 <meta property="article:author" content="番茄">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://localhost:4000/2021/10/20/Git/logo.jpg">
+<meta name="twitter:image" content="https://q_xiaofan.gitee.io/2021/10/20/Git/logo.jpg">
   
   <title>Git - 启小凡</title>
 
@@ -107,7 +109,7 @@
 
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
-  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+  <link  rel="stylesheet" href="/myblog/lib/hint/hint.min.css" />
 
   
     
@@ -131,17 +133,17 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
 
 
-<link  rel="stylesheet" href="/css/main.css" />
+<link  rel="stylesheet" href="/myblog/css/main.css" />
 
 <!-- 自定义样式保持在最底部 -->
 
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"localhost","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":true},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"eJTg2E7lFVi4dnRJvshHXwAv-gzGzoHsz","app_key":"3u6s4XYeWREVbc16xYzSUnVd","server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"q_xiaofan.gitee.io","root":"/myblog/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":true},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"eJTg2E7lFVi4dnRJvshHXwAv-gzGzoHsz","app_key":"3u6s4XYeWREVbc16xYzSUnVd","server_url":null,"path":"window.location.pathname"}},"search_path":"/myblog/local-search.xml"};
   </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
+  <script  src="/myblog/js/utils.js" ></script>
+  <script  src="/myblog/js/color-schema.js" ></script>
 <meta name="generator" content="Hexo 5.4.0"></head>
 
 
@@ -150,7 +152,7 @@
     
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="/myblog/">
       <strong>启小凡</strong>
     </a>
 
@@ -169,7 +171,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/">
+              <a class="nav-link" href="/myblog/">
                 <i class="iconfont icon-home-fill"></i>
                 首页
               </a>
@@ -181,7 +183,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/">
+              <a class="nav-link" href="/myblog/archives/">
                 <i class="iconfont icon-archive-fill"></i>
                 归档
               </a>
@@ -193,7 +195,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/">
+              <a class="nav-link" href="/myblog/categories/">
                 <i class="iconfont icon-category-fill"></i>
                 分类
               </a>
@@ -205,7 +207,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/">
+              <a class="nav-link" href="/myblog/tags/">
                 <i class="iconfont icon-tags-fill"></i>
                 标签
               </a>
@@ -217,7 +219,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
+              <a class="nav-link" href="/myblog/about/">
                 <i class="iconfont icon-user-fill"></i>
                 关于
               </a>
@@ -229,7 +231,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/links/">
+              <a class="nav-link" href="/myblog/links/">
                 <i class="iconfont icon-link-fill"></i>
                 友链
               </a>
@@ -267,7 +269,7 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/img/logo.jpg') ;
+         style="background: url('/myblog/img/logo.jpg') ;
            background-size: cover;">
            
       <div class="full-bg-img">
@@ -354,7 +356,7 @@
               </p>
             
             <div class="markdown-body">
-              <p><img src="/2021/10/20/Git/logo.jpg" srcset="/img/loading.gif" lazyload alt="logo">  </p>
+              <p><img src="/2021/10/20/Git/logo.jpg" srcset="/myblog/img/loading.gif" lazyload alt="logo">  </p>
 <h3 id="一、引言"><a href="#一、引言" class="headerlink" title="一、引言"></a>一、引言</h3><hr>
 <blockquote>
 <ul>
@@ -383,7 +385,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/install1.jpg" srcset="/img/loading.gif" lazyload alt="install1"></td>
+<td align="center"><img src="/2021/10/20/Git/install1.jpg" srcset="/myblog/img/loading.gif" lazyload alt="install1"></td>
 </tr>
 </tbody></table>
 <h4 id="3-2-安装"><a href="#3-2-安装" class="headerlink" title="3.2 安装"></a>3.2 安装</h4><blockquote>
@@ -422,7 +424,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/%E6%9A%82%E5%AD%98%E5%8C%BA.jpg" srcset="/img/loading.gif" lazyload alt="暂存区"></td>
+<td align="center"><img src="/2021/10/20/Git/%E6%9A%82%E5%AD%98%E5%8C%BA.jpg" srcset="/myblog/img/loading.gif" lazyload alt="暂存区"></td>
 </tr>
 </tbody></table>
 <h3 id="五、仓库"><a href="#五、仓库" class="headerlink" title="五、仓库"></a>五、仓库</h3><hr>
@@ -442,8 +444,8 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/%E6%96%B0%E5%BB%BA%E4%BB%93%E5%BA%93.jpg" srcset="/img/loading.gif" lazyload alt="新建仓库"></td>
-<td align="center"><img src="/2021/10/20/Git/%E6%96%B0%E5%BB%BA%E4%BB%93%E5%BA%932.jpg" srcset="/img/loading.gif" lazyload alt="新建仓库2"></td>
+<td align="center"><img src="/2021/10/20/Git/%E6%96%B0%E5%BB%BA%E4%BB%93%E5%BA%93.jpg" srcset="/myblog/img/loading.gif" lazyload alt="新建仓库"></td>
+<td align="center"><img src="/2021/10/20/Git/%E6%96%B0%E5%BB%BA%E4%BB%93%E5%BA%932.jpg" srcset="/myblog/img/loading.gif" lazyload alt="新建仓库2"></td>
 </tr>
 </tbody></table>
 <h4 id="5-2-工作区"><a href="#5-2-工作区" class="headerlink" title="5.2 工作区"></a>5.2 工作区</h4><blockquote>
@@ -469,7 +471,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/%E6%9F%A5%E7%9C%8B%E7%8A%B6%E6%80%811.jpg" srcset="/img/loading.gif" lazyload alt="查看状态1"></td>
+<td align="center"><img src="/2021/10/20/Git/%E6%9F%A5%E7%9C%8B%E7%8A%B6%E6%80%811.jpg" srcset="/myblog/img/loading.gif" lazyload alt="查看状态1"></td>
 </tr>
 </tbody></table>
 <h4 id="6-2-暂存文件"><a href="#6-2-暂存文件" class="headerlink" title="6.2 暂存文件"></a>6.2 暂存文件</h4><blockquote>
@@ -482,7 +484,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/%E6%9A%82%E5%AD%98%E6%96%87%E4%BB%B6.jpg" srcset="/img/loading.gif" lazyload alt="暂存文件"></td>
+<td align="center"><img src="/2021/10/20/Git/%E6%9A%82%E5%AD%98%E6%96%87%E4%BB%B6.jpg" srcset="/myblog/img/loading.gif" lazyload alt="暂存文件"></td>
 </tr>
 </tbody></table>
 <h4 id="6-3-提交文件"><a href="#6-3-提交文件" class="headerlink" title="6.3 提交文件"></a>6.3 提交文件</h4><blockquote>
@@ -495,7 +497,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/%E6%8F%90%E4%BA%A4%E6%96%87%E4%BB%B6.jpg" srcset="/img/loading.gif" lazyload alt="提交文件"></td>
+<td align="center"><img src="/2021/10/20/Git/%E6%8F%90%E4%BA%A4%E6%96%87%E4%BB%B6.jpg" srcset="/myblog/img/loading.gif" lazyload alt="提交文件"></td>
 </tr>
 </tbody></table>
 <h3 id="七、远程仓库"><a href="#七、远程仓库" class="headerlink" title="七、远程仓库"></a>七、远程仓库</h3><hr>
@@ -511,7 +513,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93.jpg" srcset="/img/loading.gif" lazyload alt="远程仓库"></td>
+<td align="center"><img src="/2021/10/20/Git/%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93.jpg" srcset="/myblog/img/loading.gif" lazyload alt="远程仓库"></td>
 </tr>
 </tbody></table>
 <h4 id="7-2-远程仓库选型"><a href="#7-2-远程仓库选型" class="headerlink" title="7.2 远程仓库选型"></a>7.2 远程仓库选型</h4><blockquote>
@@ -538,7 +540,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/%E7%A0%81%E4%BA%91%E6%B3%A8%E5%86%8C.jpg" srcset="/img/loading.gif" lazyload alt="码云注册"></td>
+<td align="center"><img src="/2021/10/20/Git/%E7%A0%81%E4%BA%91%E6%B3%A8%E5%86%8C.jpg" srcset="/myblog/img/loading.gif" lazyload alt="码云注册"></td>
 <td align="center"></td>
 </tr>
 </tbody></table>
@@ -549,7 +551,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/%E7%A0%81%E4%BA%91%E7%99%BB%E5%BD%95.jpg" srcset="/img/loading.gif" lazyload alt="码云登录"></td>
+<td align="center"><img src="/2021/10/20/Git/%E7%A0%81%E4%BA%91%E7%99%BB%E5%BD%95.jpg" srcset="/myblog/img/loading.gif" lazyload alt="码云登录"></td>
 </tr>
 </tbody></table>
 <h5 id="7-3-2-新建远程仓库"><a href="#7-3-2-新建远程仓库" class="headerlink" title="7.3.2 新建远程仓库"></a>7.3.2 新建远程仓库</h5><table>
@@ -559,7 +561,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/%E5%88%9B%E5%BB%BA%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%931.jpg" srcset="/img/loading.gif" lazyload alt="创建远程仓库1"></td>
+<td align="center"><img src="/2021/10/20/Git/%E5%88%9B%E5%BB%BA%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%931.jpg" srcset="/myblog/img/loading.gif" lazyload alt="创建远程仓库1"></td>
 </tr>
 </tbody></table>
 <table>
@@ -569,7 +571,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/%E5%88%9B%E5%BB%BA%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%932.jpg" srcset="/img/loading.gif" lazyload alt="创建远程仓库2"></td>
+<td align="center"><img src="/2021/10/20/Git/%E5%88%9B%E5%BB%BA%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%932.jpg" srcset="/myblog/img/loading.gif" lazyload alt="创建远程仓库2"></td>
 </tr>
 </tbody></table>
 <table>
@@ -579,7 +581,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/%E5%88%9B%E5%BB%BA%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%933.jpg" srcset="/img/loading.gif" lazyload alt="创建远程仓库3"></td>
+<td align="center"><img src="/2021/10/20/Git/%E5%88%9B%E5%BB%BA%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%933.jpg" srcset="/myblog/img/loading.gif" lazyload alt="创建远程仓库3"></td>
 </tr>
 </tbody></table>
 <h5 id="7-3-3-本地关联远程仓库"><a href="#7-3-3-本地关联远程仓库" class="headerlink" title="7.3.3 本地关联远程仓库"></a>7.3.3 本地关联远程仓库</h5><blockquote>
@@ -592,7 +594,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/%E5%85%B3%E8%81%94%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93.jpg" srcset="/img/loading.gif" lazyload alt="关联远程仓库"></td>
+<td align="center"><img src="/2021/10/20/Git/%E5%85%B3%E8%81%94%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93.jpg" srcset="/myblog/img/loading.gif" lazyload alt="关联远程仓库"></td>
 </tr>
 </tbody></table>
 <h5 id="7-3-4-推送文件到远程仓库"><a href="#7-3-4-推送文件到远程仓库" class="headerlink" title="7.3.4 推送文件到远程仓库"></a>7.3.4 推送文件到远程仓库</h5><blockquote>
@@ -605,7 +607,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/push%E5%88%B0%E8%BF%9C%E7%A8%8B.jpg" srcset="/img/loading.gif" lazyload alt="push到远程"></td>
+<td align="center"><img src="/2021/10/20/Git/push%E5%88%B0%E8%BF%9C%E7%A8%8B.jpg" srcset="/myblog/img/loading.gif" lazyload alt="push到远程"></td>
 </tr>
 </tbody></table>
 <table>
@@ -615,7 +617,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/push%E5%88%B0%E8%BF%9C%E7%A8%8B_%E8%BE%93%E5%85%A5%E5%87%AD%E8%AF%81.jpg" srcset="/img/loading.gif" lazyload alt="push到远程_输入凭证"></td>
+<td align="center"><img src="/2021/10/20/Git/push%E5%88%B0%E8%BF%9C%E7%A8%8B_%E8%BE%93%E5%85%A5%E5%87%AD%E8%AF%81.jpg" srcset="/myblog/img/loading.gif" lazyload alt="push到远程_输入凭证"></td>
 </tr>
 </tbody></table>
 <h5 id="7-3-5-克隆远程仓库"><a href="#7-3-5-克隆远程仓库" class="headerlink" title="7.3.5 克隆远程仓库"></a>7.3.5 克隆远程仓库</h5><blockquote>
@@ -628,7 +630,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/clone%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93.jpg" srcset="/img/loading.gif" lazyload alt="clone远程仓库"></td>
+<td align="center"><img src="/2021/10/20/Git/clone%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93.jpg" srcset="/myblog/img/loading.gif" lazyload alt="clone远程仓库"></td>
 </tr>
 </tbody></table>
 <table>
@@ -638,7 +640,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/clone%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%932.jpg" srcset="/img/loading.gif" lazyload alt="clone远程仓库2"></td>
+<td align="center"><img src="/2021/10/20/Git/clone%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%932.jpg" srcset="/myblog/img/loading.gif" lazyload alt="clone远程仓库2"></td>
 </tr>
 </tbody></table>
 <h5 id="7-3-6-代码共享"><a href="#7-3-6-代码共享" class="headerlink" title="7.3.6 代码共享"></a>7.3.6 代码共享</h5><blockquote>
@@ -651,7 +653,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/pull%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%931.jpg" srcset="/img/loading.gif" lazyload alt="pull远程仓库1"></td>
+<td align="center"><img src="/2021/10/20/Git/pull%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%931.jpg" srcset="/myblog/img/loading.gif" lazyload alt="pull远程仓库1"></td>
 </tr>
 </tbody></table>
 <table>
@@ -661,7 +663,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/pull%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%932.jpg" srcset="/img/loading.gif" lazyload alt="pull远程仓库2"></td>
+<td align="center"><img src="/2021/10/20/Git/pull%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%932.jpg" srcset="/myblog/img/loading.gif" lazyload alt="pull远程仓库2"></td>
 </tr>
 </tbody></table>
 <h5 id="7-3-7-命令汇总"><a href="#7-3-7-命令汇总" class="headerlink" title="7.3.7 命令汇总"></a>7.3.7 命令汇总</h5><table>
@@ -704,7 +706,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/%E5%88%86%E6%94%AF%E5%9B%BE%E4%BE%8B1.jpg" srcset="/img/loading.gif" lazyload alt="分支图例1"></td>
+<td align="center"><img src="/2021/10/20/Git/%E5%88%86%E6%94%AF%E5%9B%BE%E4%BE%8B1.jpg" srcset="/myblog/img/loading.gif" lazyload alt="分支图例1"></td>
 </tr>
 </tbody></table>
 <h4 id="8-2-分支操作"><a href="#8-2-分支操作" class="headerlink" title="8.2 分支操作"></a>8.2 分支操作</h4><h5 id="8-2-1-查看分支"><a href="#8-2-1-查看分支" class="headerlink" title="8.2.1 查看分支"></a>8.2.1 查看分支</h5><blockquote>
@@ -724,7 +726,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/%E6%9F%A5%E7%9C%8B%E5%88%86%E6%94%AF-master.jpg" srcset="/img/loading.gif" lazyload alt="查看分支-master"></td>
+<td align="center"><img src="/2021/10/20/Git/%E6%9F%A5%E7%9C%8B%E5%88%86%E6%94%AF-master.jpg" srcset="/myblog/img/loading.gif" lazyload alt="查看分支-master"></td>
 </tr>
 </tbody></table>
 <h5 id="8-2-2-创建分支"><a href="#8-2-2-创建分支" class="headerlink" title="8.2.2 创建分支"></a>8.2.2 创建分支</h5><blockquote>
@@ -745,7 +747,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF.jpg" srcset="/img/loading.gif" lazyload alt="新建分支"></td>
+<td align="center"><img src="/2021/10/20/Git/%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF.jpg" srcset="/myblog/img/loading.gif" lazyload alt="新建分支"></td>
 </tr>
 </tbody></table>
 <h5 id="8-2-3-切换分支"><a href="#8-2-3-切换分支" class="headerlink" title="8.2.3 切换分支"></a>8.2.3 切换分支</h5><blockquote>
@@ -763,7 +765,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF.jpg" srcset="/img/loading.gif" lazyload alt="切换分支"></td>
+<td align="center"><img src="/2021/10/20/Git/%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF.jpg" srcset="/myblog/img/loading.gif" lazyload alt="切换分支"></td>
 </tr>
 </tbody></table>
 <table>
@@ -773,7 +775,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/%E6%9F%A5%E7%9C%8B%E5%88%86%E6%94%AF.jpg" srcset="/img/loading.gif" lazyload alt="查看分支"></td>
+<td align="center"><img src="/2021/10/20/Git/%E6%9F%A5%E7%9C%8B%E5%88%86%E6%94%AF.jpg" srcset="/myblog/img/loading.gif" lazyload alt="查看分支"></td>
 </tr>
 </tbody></table>
 <h4 id="8-3-新建分支细节"><a href="#8-3-新建分支细节" class="headerlink" title="8.3 新建分支细节"></a>8.3 新建分支细节</h4><blockquote>
@@ -791,7 +793,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF%E7%BB%86%E8%8A%821.jpg" srcset="/img/loading.gif" lazyload alt="新建分支细节1"></td>
+<td align="center"><img src="/2021/10/20/Git/%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF%E7%BB%86%E8%8A%821.jpg" srcset="/myblog/img/loading.gif" lazyload alt="新建分支细节1"></td>
 </tr>
 </tbody></table>
 <h5 id="8-3-2-多分支走向"><a href="#8-3-2-多分支走向" class="headerlink" title="8.3.2 多分支走向"></a>8.3.2 多分支走向</h5><blockquote>
@@ -805,7 +807,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF%E7%BB%86%E8%8A%822.jpg" srcset="/img/loading.gif" lazyload alt="新建分支细节2"></td>
+<td align="center"><img src="/2021/10/20/Git/%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF%E7%BB%86%E8%8A%822.jpg" srcset="/myblog/img/loading.gif" lazyload alt="新建分支细节2"></td>
 </tr>
 </tbody></table>
 <table>
@@ -815,7 +817,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF%E7%BB%86%E8%8A%823.jpg" srcset="/img/loading.gif" lazyload alt="新建分支细节3"></td>
+<td align="center"><img src="/2021/10/20/Git/%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF%E7%BB%86%E8%8A%823.jpg" srcset="/myblog/img/loading.gif" lazyload alt="新建分支细节3"></td>
 </tr>
 </tbody></table>
 <h5 id="8-3-3-分支提交日志"><a href="#8-3-3-分支提交日志" class="headerlink" title="8.3.3 分支提交日志"></a>8.3.3 分支提交日志</h5><blockquote>
@@ -828,7 +830,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/%E6%8F%90%E4%BA%A4%E6%97%A5%E5%BF%97.jpg" srcset="/img/loading.gif" lazyload alt="提交日志"></td>
+<td align="center"><img src="/2021/10/20/Git/%E6%8F%90%E4%BA%A4%E6%97%A5%E5%BF%97.jpg" srcset="/myblog/img/loading.gif" lazyload alt="提交日志"></td>
 </tr>
 </tbody></table>
 <table>
@@ -838,7 +840,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/%E6%8F%90%E4%BA%A4%E6%97%A5%E5%BF%972.jpg" srcset="/img/loading.gif" lazyload alt="提交日志2"></td>
+<td align="center"><img src="/2021/10/20/Git/%E6%8F%90%E4%BA%A4%E6%97%A5%E5%BF%972.jpg" srcset="/myblog/img/loading.gif" lazyload alt="提交日志2"></td>
 </tr>
 </tbody></table>
 <h4 id="8-4-分支合并"><a href="#8-4-分支合并" class="headerlink" title="8.4 分支合并"></a>8.4 分支合并</h4><blockquote>
@@ -860,7 +862,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF%E7%BB%86%E8%8A%822.jpg" srcset="/img/loading.gif" lazyload alt="新建分支细节2"></td>
+<td align="center"><img src="/2021/10/20/Git/%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF%E7%BB%86%E8%8A%822.jpg" srcset="/myblog/img/loading.gif" lazyload alt="新建分支细节2"></td>
 </tr>
 </tbody></table>
 <table>
@@ -870,7 +872,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/%E5%BF%AB%E9%80%9F%E5%88%86%E6%94%AF%E5%90%88%E5%B9%B6.jpg" srcset="/img/loading.gif" lazyload alt="快速分支合并"></td>
+<td align="center"><img src="/2021/10/20/Git/%E5%BF%AB%E9%80%9F%E5%88%86%E6%94%AF%E5%90%88%E5%B9%B6.jpg" srcset="/myblog/img/loading.gif" lazyload alt="快速分支合并"></td>
 </tr>
 </tbody></table>
 <h5 id="8-4-2-三方合并"><a href="#8-4-2-三方合并" class="headerlink" title="8.4.2 三方合并"></a>8.4.2 三方合并</h5><blockquote>
@@ -883,7 +885,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF%E7%BB%86%E8%8A%823.jpg" srcset="/img/loading.gif" lazyload alt="新建分支细节3"></td>
+<td align="center"><img src="/2021/10/20/Git/%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF%E7%BB%86%E8%8A%823.jpg" srcset="/myblog/img/loading.gif" lazyload alt="新建分支细节3"></td>
 </tr>
 </tbody></table>
 <table>
@@ -893,7 +895,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/%E4%B8%89%E6%96%B9%E5%90%88%E5%B9%B6.jpg" srcset="/img/loading.gif" lazyload alt="三方合并"></td>
+<td align="center"><img src="/2021/10/20/Git/%E4%B8%89%E6%96%B9%E5%90%88%E5%B9%B6.jpg" srcset="/myblog/img/loading.gif" lazyload alt="三方合并"></td>
 </tr>
 </tbody></table>
 <h5 id="8-4-3-合并冲突"><a href="#8-4-3-合并冲突" class="headerlink" title="8.4.3 合并冲突"></a>8.4.3 合并冲突</h5><blockquote>
@@ -909,7 +911,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/%E5%86%B2%E7%AA%811.jpg" srcset="/img/loading.gif" lazyload alt="冲突1"></td>
+<td align="center"><img src="/2021/10/20/Git/%E5%86%B2%E7%AA%811.jpg" srcset="/myblog/img/loading.gif" lazyload alt="冲突1"></td>
 </tr>
 </tbody></table>
 <table>
@@ -919,7 +921,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/%E5%86%B2%E7%AA%812.jpg" srcset="/img/loading.gif" lazyload alt="冲突2"></td>
+<td align="center"><img src="/2021/10/20/Git/%E5%86%B2%E7%AA%812.jpg" srcset="/myblog/img/loading.gif" lazyload alt="冲突2"></td>
 </tr>
 </tbody></table>
 <blockquote>
@@ -932,7 +934,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/%E5%86%B2%E7%AA%813.jpg" srcset="/img/loading.gif" lazyload alt="冲突3"></td>
+<td align="center"><img src="/2021/10/20/Git/%E5%86%B2%E7%AA%813.jpg" srcset="/myblog/img/loading.gif" lazyload alt="冲突3"></td>
 </tr>
 </tbody></table>
 <blockquote>
@@ -945,7 +947,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/%E5%86%B2%E7%AA%814.jpg" srcset="/img/loading.gif" lazyload alt="冲突4"></td>
+<td align="center"><img src="/2021/10/20/Git/%E5%86%B2%E7%AA%814.jpg" srcset="/myblog/img/loading.gif" lazyload alt="冲突4"></td>
 </tr>
 </tbody></table>
 <h6 id="8-4-3-2-冲突解决"><a href="#8-4-3-2-冲突解决" class="headerlink" title="8.4.3.2 冲突解决"></a>8.4.3.2 冲突解决</h6><blockquote>
@@ -965,7 +967,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/%E5%86%B2%E7%AA%815.jpg" srcset="/img/loading.gif" lazyload alt="冲突5"></td>
+<td align="center"><img src="/2021/10/20/Git/%E5%86%B2%E7%AA%815.jpg" srcset="/myblog/img/loading.gif" lazyload alt="冲突5"></td>
 </tr>
 </tbody></table>
 <table>
@@ -975,7 +977,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/%E5%86%B2%E7%AA%816.jpg" srcset="/img/loading.gif" lazyload alt="冲突6"></td>
+<td align="center"><img src="/2021/10/20/Git/%E5%86%B2%E7%AA%816.jpg" srcset="/myblog/img/loading.gif" lazyload alt="冲突6"></td>
 </tr>
 </tbody></table>
 <h3 id="九、Idea关联Git"><a href="#九、Idea关联Git" class="headerlink" title="九、Idea关联Git"></a>九、Idea关联Git</h3><hr>
@@ -989,7 +991,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/idea-%E5%85%B3%E8%81%94git.jpg" srcset="/img/loading.gif" lazyload alt="idea-关联git"></td>
+<td align="center"><img src="/2021/10/20/Git/idea-%E5%85%B3%E8%81%94git.jpg" srcset="/myblog/img/loading.gif" lazyload alt="idea-关联git"></td>
 </tr>
 </tbody></table>
 <h4 id="9-2-创建仓库"><a href="#9-2-创建仓库" class="headerlink" title="9.2 创建仓库"></a>9.2 创建仓库</h4><blockquote>
@@ -1009,7 +1011,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/idea-%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%930.jpg" srcset="/img/loading.gif" lazyload alt="idea-创建仓库0"></td>
+<td align="center"><img src="/2021/10/20/Git/idea-%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%930.jpg" srcset="/myblog/img/loading.gif" lazyload alt="idea-创建仓库0"></td>
 </tr>
 </tbody></table>
 <table>
@@ -1019,10 +1021,10 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/idea-%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%931.jpg" srcset="/img/loading.gif" lazyload alt="idea-创建仓库1"></td>
+<td align="center"><img src="/2021/10/20/Git/idea-%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%931.jpg" srcset="/myblog/img/loading.gif" lazyload alt="idea-创建仓库1"></td>
 </tr>
 <tr>
-<td align="center"><img src="/2021/10/20/Git/idea-%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%932.jpg" srcset="/img/loading.gif" lazyload alt="idea-创建仓库2"></td>
+<td align="center"><img src="/2021/10/20/Git/idea-%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%932.jpg" srcset="/myblog/img/loading.gif" lazyload alt="idea-创建仓库2"></td>
 </tr>
 </tbody></table>
 <h4 id="9-3-提交-commit"><a href="#9-3-提交-commit" class="headerlink" title="9.3 提交-commit"></a>9.3 提交-commit</h4><blockquote>
@@ -1035,7 +1037,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/idea-commit.jpg" srcset="/img/loading.gif" lazyload alt="idea-commit"></td>
+<td align="center"><img src="/2021/10/20/Git/idea-commit.jpg" srcset="/myblog/img/loading.gif" lazyload alt="idea-commit"></td>
 </tr>
 </tbody></table>
 <table>
@@ -1045,7 +1047,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/idea-commit2.jpg" srcset="/img/loading.gif" lazyload alt="idea-commit2"></td>
+<td align="center"><img src="/2021/10/20/Git/idea-commit2.jpg" srcset="/myblog/img/loading.gif" lazyload alt="idea-commit2"></td>
 </tr>
 </tbody></table>
 <table>
@@ -1055,7 +1057,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/idea-commit3.jpg" srcset="/img/loading.gif" lazyload alt="idea-commit3"></td>
+<td align="center"><img src="/2021/10/20/Git/idea-commit3.jpg" srcset="/myblog/img/loading.gif" lazyload alt="idea-commit3"></td>
 </tr>
 </tbody></table>
 <h4 id="9-4-创建分支"><a href="#9-4-创建分支" class="headerlink" title="9.4 创建分支"></a>9.4 创建分支</h4><blockquote>
@@ -1068,7 +1070,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/idea-%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF.jpg" srcset="/img/loading.gif" lazyload alt="idea-新建分支"></td>
+<td align="center"><img src="/2021/10/20/Git/idea-%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF.jpg" srcset="/myblog/img/loading.gif" lazyload alt="idea-新建分支"></td>
 </tr>
 </tbody></table>
 <table>
@@ -1078,7 +1080,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/idea-%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF2.jpg" srcset="/img/loading.gif" lazyload alt="idea-新建分支2"></td>
+<td align="center"><img src="/2021/10/20/Git/idea-%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF2.jpg" srcset="/myblog/img/loading.gif" lazyload alt="idea-新建分支2"></td>
 </tr>
 </tbody></table>
 <table>
@@ -1088,7 +1090,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/idea-%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF3.jpg" srcset="/img/loading.gif" lazyload alt="idea-新建分支3"></td>
+<td align="center"><img src="/2021/10/20/Git/idea-%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF3.jpg" srcset="/myblog/img/loading.gif" lazyload alt="idea-新建分支3"></td>
 </tr>
 </tbody></table>
 <h4 id="9-5-上传到远程仓库-push"><a href="#9-5-上传到远程仓库-push" class="headerlink" title="9.5 上传到远程仓库(push)"></a>9.5 上传到远程仓库(push)</h4><blockquote>
@@ -1106,7 +1108,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/idea-push.jpg" srcset="/img/loading.gif" lazyload alt="idea-push"></td>
+<td align="center"><img src="/2021/10/20/Git/idea-push.jpg" srcset="/myblog/img/loading.gif" lazyload alt="idea-push"></td>
 </tr>
 </tbody></table>
 <table>
@@ -1116,7 +1118,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/idea-push3.jpg" srcset="/img/loading.gif" lazyload alt="idea-push3"></td>
+<td align="center"><img src="/2021/10/20/Git/idea-push3.jpg" srcset="/myblog/img/loading.gif" lazyload alt="idea-push3"></td>
 </tr>
 </tbody></table>
 <table>
@@ -1126,7 +1128,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/idea-push4.jpg" srcset="/img/loading.gif" lazyload alt="idea-push4"></td>
+<td align="center"><img src="/2021/10/20/Git/idea-push4.jpg" srcset="/myblog/img/loading.gif" lazyload alt="idea-push4"></td>
 </tr>
 </tbody></table>
 <table>
@@ -1136,7 +1138,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/idea-push5.jpg" srcset="/img/loading.gif" lazyload alt="idea-push5"></td>
+<td align="center"><img src="/2021/10/20/Git/idea-push5.jpg" srcset="/myblog/img/loading.gif" lazyload alt="idea-push5"></td>
 </tr>
 </tbody></table>
 <h4 id="9-6-复制到本地仓库-clone"><a href="#9-6-复制到本地仓库-clone" class="headerlink" title="9.6 复制到本地仓库(clone)"></a>9.6 复制到本地仓库(clone)</h4><blockquote>
@@ -1150,7 +1152,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/idea-clone1.jpg" srcset="/img/loading.gif" lazyload alt="idea-clone"></td>
+<td align="center"><img src="/2021/10/20/Git/idea-clone1.jpg" srcset="/myblog/img/loading.gif" lazyload alt="idea-clone"></td>
 </tr>
 </tbody></table>
 <table>
@@ -1160,7 +1162,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/idea-clone2.jpg" srcset="/img/loading.gif" lazyload alt="idea-clone2"></td>
+<td align="center"><img src="/2021/10/20/Git/idea-clone2.jpg" srcset="/myblog/img/loading.gif" lazyload alt="idea-clone2"></td>
 </tr>
 </tbody></table>
 <table>
@@ -1170,7 +1172,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/idea-clone3.jpg" srcset="/img/loading.gif" lazyload alt="idea-clone3"></td>
+<td align="center"><img src="/2021/10/20/Git/idea-clone3.jpg" srcset="/myblog/img/loading.gif" lazyload alt="idea-clone3"></td>
 </tr>
 </tbody></table>
 <table>
@@ -1180,7 +1182,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/idea-clone4.jpg" srcset="/img/loading.gif" lazyload alt="idea-clone4"></td>
+<td align="center"><img src="/2021/10/20/Git/idea-clone4.jpg" srcset="/myblog/img/loading.gif" lazyload alt="idea-clone4"></td>
 </tr>
 </tbody></table>
 <h4 id="9-7-更新本地项目"><a href="#9-7-更新本地项目" class="headerlink" title="9.7 更新本地项目"></a>9.7 更新本地项目</h4><blockquote>
@@ -1193,7 +1195,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/idea-pull1.jpg" srcset="/img/loading.gif" lazyload alt="idea-pull1"></td>
+<td align="center"><img src="/2021/10/20/Git/idea-pull1.jpg" srcset="/myblog/img/loading.gif" lazyload alt="idea-pull1"></td>
 </tr>
 </tbody></table>
 <table>
@@ -1203,7 +1205,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/idea-pull2.jpg" srcset="/img/loading.gif" lazyload alt="idea-pull2"></td>
+<td align="center"><img src="/2021/10/20/Git/idea-pull2.jpg" srcset="/myblog/img/loading.gif" lazyload alt="idea-pull2"></td>
 </tr>
 </tbody></table>
 <table>
@@ -1213,7 +1215,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/idea-pull3.jpg" srcset="/img/loading.gif" lazyload alt="idea-pull3"></td>
+<td align="center"><img src="/2021/10/20/Git/idea-pull3.jpg" srcset="/myblog/img/loading.gif" lazyload alt="idea-pull3"></td>
 </tr>
 </tbody></table>
 <h4 id="9-8-冲突解决"><a href="#9-8-冲突解决" class="headerlink" title="9.8 冲突解决"></a>9.8 冲突解决</h4><blockquote>
@@ -1226,7 +1228,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/idea-%E5%86%B2%E7%AA%81.jpg" srcset="/img/loading.gif" lazyload alt="idea-冲突"></td>
+<td align="center"><img src="/2021/10/20/Git/idea-%E5%86%B2%E7%AA%81.jpg" srcset="/myblog/img/loading.gif" lazyload alt="idea-冲突"></td>
 </tr>
 </tbody></table>
 <table>
@@ -1236,7 +1238,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/idea-%E5%86%B2%E7%AA%812.jpg" srcset="/img/loading.gif" lazyload alt="idea-冲突2"></td>
+<td align="center"><img src="/2021/10/20/Git/idea-%E5%86%B2%E7%AA%812.jpg" srcset="/myblog/img/loading.gif" lazyload alt="idea-冲突2"></td>
 </tr>
 </tbody></table>
 <h3 id="十、多人协同开发"><a href="#十、多人协同开发" class="headerlink" title="十、多人协同开发"></a>十、多人协同开发</h3><hr>
@@ -1263,7 +1265,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/%E6%B7%BB%E5%8A%A0%E5%BC%80%E5%8F%91%E6%88%90%E5%91%98.jpg" srcset="/img/loading.gif" lazyload alt="添加开发成员"></td>
+<td align="center"><img src="/2021/10/20/Git/%E6%B7%BB%E5%8A%A0%E5%BC%80%E5%8F%91%E6%88%90%E5%91%98.jpg" srcset="/myblog/img/loading.gif" lazyload alt="添加开发成员"></td>
 </tr>
 </tbody></table>
 <table>
@@ -1273,7 +1275,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/%E6%B7%BB%E5%8A%A0%E5%BC%80%E5%8F%91%E6%88%90%E5%91%982.jpg" srcset="/img/loading.gif" lazyload alt="添加开发成员2"></td>
+<td align="center"><img src="/2021/10/20/Git/%E6%B7%BB%E5%8A%A0%E5%BC%80%E5%8F%91%E6%88%90%E5%91%982.jpg" srcset="/myblog/img/loading.gif" lazyload alt="添加开发成员2"></td>
 </tr>
 </tbody></table>
 <table>
@@ -1283,7 +1285,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/%E6%B7%BB%E5%8A%A0%E5%BC%80%E5%8F%91%E6%88%90%E5%91%983.jpg" srcset="/img/loading.gif" lazyload alt="添加开发成员3"></td>
+<td align="center"><img src="/2021/10/20/Git/%E6%B7%BB%E5%8A%A0%E5%BC%80%E5%8F%91%E6%88%90%E5%91%983.jpg" srcset="/myblog/img/loading.gif" lazyload alt="添加开发成员3"></td>
 </tr>
 </tbody></table>
 <table>
@@ -1293,7 +1295,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/%E6%B7%BB%E5%8A%A0%E5%BC%80%E5%8F%91%E6%88%90%E5%91%984.jpg" srcset="/img/loading.gif" lazyload alt="添加开发成员4"></td>
+<td align="center"><img src="/2021/10/20/Git/%E6%B7%BB%E5%8A%A0%E5%BC%80%E5%8F%91%E6%88%90%E5%91%984.jpg" srcset="/myblog/img/loading.gif" lazyload alt="添加开发成员4"></td>
 </tr>
 </tbody></table>
 <blockquote>
@@ -1306,7 +1308,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/%E4%BF%9D%E6%8A%A4%E5%88%86%E6%94%AF1.jpg" srcset="/img/loading.gif" lazyload alt="保护分支1"></td>
+<td align="center"><img src="/2021/10/20/Git/%E4%BF%9D%E6%8A%A4%E5%88%86%E6%94%AF1.jpg" srcset="/myblog/img/loading.gif" lazyload alt="保护分支1"></td>
 </tr>
 </tbody></table>
 <table>
@@ -1316,7 +1318,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/%E4%BF%9D%E6%8A%A4%E5%88%86%E6%94%AF2.jpg" srcset="/img/loading.gif" lazyload alt="保护分支2"></td>
+<td align="center"><img src="/2021/10/20/Git/%E4%BF%9D%E6%8A%A4%E5%88%86%E6%94%AF2.jpg" srcset="/myblog/img/loading.gif" lazyload alt="保护分支2"></td>
 </tr>
 </tbody></table>
 <h4 id="10-2-开发人员"><a href="#10-2-开发人员" class="headerlink" title="10.2 开发人员"></a>10.2 开发人员</h4><blockquote>
@@ -1344,7 +1346,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/%E5%9D%911.jpg" srcset="/img/loading.gif" lazyload alt="坑1"></td>
+<td align="center"><img src="/2021/10/20/Git/%E5%9D%911.jpg" srcset="/myblog/img/loading.gif" lazyload alt="坑1"></td>
 </tr>
 </tbody></table>
 <blockquote>
@@ -1357,7 +1359,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><img src="/2021/10/20/Git/%E5%9D%912.jpg" srcset="/img/loading.gif" lazyload alt="坑2"></td>
+<td align="center"><img src="/2021/10/20/Git/%E5%9D%912.jpg" srcset="/myblog/img/loading.gif" lazyload alt="坑2"></td>
 </tr>
 </tbody></table>
 
@@ -1380,7 +1382,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/10/20/Java%E6%B5%8B%E8%AF%95%E7%AC%AC%E4%B8%89%E9%98%B6%E6%AE%B5/">
+                      <a href="/myblog/2021/10/20/Java%E6%B5%8B%E8%AF%95%E7%AC%AC%E4%B8%89%E9%98%B6%E6%AE%B5/">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">Java测试第三阶段</span>
                         <span class="visible-mobile">上一篇</span>
@@ -1390,7 +1392,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/10/20/springboot/">
+                      <a href="/myblog/2021/10/20/springboot/">
                         <span class="hidden-mobile">SpringBoot</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -1451,7 +1453,7 @@
 
   <div class="col-lg-7 mx-auto nopadding-x-md">
     <div class="container custom post-custom mx-auto">
-      <img src="https://octodex.github.com/images/jetpacktocat.png" srcset="/img/loading.gif" lazyload class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;">
+      <img src="https://octodex.github.com/images/jetpacktocat.png" srcset="/myblog/img/loading.gif" lazyload class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;">
     </div>
   </div>
 
@@ -1544,18 +1546,18 @@
 
 <script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
 <script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
+<script  src="/myblog/js/events.js" ></script>
+<script  src="/myblog/js/plugins.js" ></script>
 
 <!-- Plugins -->
 
 
-  <script  src="/js/local-search.js" ></script>
+  <script  src="/myblog/js/local-search.js" ></script>
 
 
 
   
-    <script  src="/js/img-lazyload.js" ></script>
+    <script  src="/myblog/js/img-lazyload.js" ></script>
   
 
 
@@ -1580,7 +1582,7 @@
 
 
 
-  <script defer src="/js/leancloud.js" ></script>
+  <script defer src="/myblog/js/leancloud.js" ></script>
 
 
 
@@ -1610,7 +1612,7 @@
 
 
 <!-- 主题的启动项 保持在最底部 -->
-<script  src="/js/boot.js" ></script>
+<script  src="/myblog/js/boot.js" ></script>
 
   <script type="text/javascript" src="/js/clicklove.js"></script>
   <!--浏览器搞笑标题-->
