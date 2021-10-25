@@ -177,7 +177,7 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/myblog/img/255.jpg') ;
+         style="background: url('/myblog/img/gifdefault.gif') ;
            background-size: cover;">
             
            <iframe id="bg-iframe" style="position: fixed;right: 0px;bottom: 0px;min-width: 100%;min-height: 100%;height: auto;width: auto;z-index: -1;" src="/myblog/html/3D光影花瓣掉落.html"></iframe>
@@ -938,7 +938,7 @@ min版本：项目上线时使用的版本，变量命名极简，没有注释�
   <!--浏览器搞笑标题-->
 <script type="text/javascript" src="/myblog/js/FunnyTitle.js"></script>
 <script type="text/javascript">
-$("a.iconfont icon-image").on('click',function(){
+$("#navbarSupportedContent").children("ul:eq(0)").children("li:eq(6)").find("a").on('click',function(){
   if($("#bg-iframe")[0])
   {
     $("#bg-iframe").remove()
