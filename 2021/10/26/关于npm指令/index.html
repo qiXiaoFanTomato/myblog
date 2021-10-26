@@ -25,8 +25,8 @@
 <meta property="og:site_name" content="启小凡">
 <meta property="og:description" content="npm是一个node包管理和分发工具，已经成为了非官方的发布node模块（包）的标准。有了npm，可以很快的找到特定服务要使用的包，进行下载、安装以及管理已经安装的包。              更新中~             安装 1npm install   全局安装 1$npm install -g  1npm install &lt;name&gt; --save   装的同时，将信息写">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-10-26T12:17:11.067Z">
-<meta property="article:modified_time" content="2021-10-26T12:34:14.536Z">
+<meta property="article:published_time" content="2021-10-26T12:17:00.000Z">
+<meta property="article:modified_time" content="2021-10-26T13:02:08.110Z">
 <meta property="article:author" content="番茄">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -318,7 +318,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：25 分钟前
+                  本文最后更新于：几秒前
                 
               </p>
             
@@ -329,39 +329,39 @@
           </div>
 
 <p><strong>安装</strong></p>
-<figure class="highlight cmake"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cmake">npm <span class="hljs-keyword">install</span> <br></code></pre></div></td></tr></table></figure>
+<figure class="highlight cmake"><table><tr><td class="gutter hljs hljs hljs hljs hljs hljs hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cmake">npm <span class="hljs-keyword">install</span> <br></code></pre></div></td></tr></table></figure>
 
 <p><strong>全局安装</strong></p>
-<figure class="highlight gams"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs gams"><span class="hljs-meta"><span class="hljs-meta-keyword">$npm</span> install -g</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight gams"><table><tr><td class="gutter hljs hljs hljs hljs hljs hljs hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs gams"><span class="hljs-meta"><span class="hljs-meta-keyword">$npm</span> install -g</span><br></code></pre></div></td></tr></table></figure>
 
-<figure class="highlight applescript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs applescript">npm install &lt;<span class="hljs-built_in">name</span>&gt; <span class="hljs-comment">--save</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight applescript"><table><tr><td class="gutter hljs hljs hljs hljs hljs hljs hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs applescript">npm install &lt;<span class="hljs-built_in">name</span>&gt; <span class="hljs-comment">--save</span><br></code></pre></div></td></tr></table></figure>
 
 <blockquote>
 <p>装的同时，将信息写入package.json中项目路径中如果有package.json文件时，直接使用npm install方法就可以根据dependencies配置安装所有的依赖包，这样代码提交到github时，就不用提交node_modules这个文件夹了。</p>
 </blockquote>
 <p><strong>漏洞指定到当前目录</strong></p>
-<figure class="highlight ada"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ada">npm audit fix <span class="hljs-comment">--force</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight ada"><table><tr><td class="gutter hljs hljs hljs hljs hljs hljs hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ada">npm audit fix <span class="hljs-comment">--force</span><br></code></pre></div></td></tr></table></figure>
 
 <p><strong>清除npm缓存</strong></p>
-<figure class="highlight ada"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ada">npm cache clean <span class="hljs-comment">--force</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight ada"><table><tr><td class="gutter hljs hljs hljs hljs hljs hljs hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ada">npm cache clean <span class="hljs-comment">--force</span><br></code></pre></div></td></tr></table></figure>
 
 <p><strong>打包部署</strong></p>
-<figure class="highlight routeros"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs routeros">npm <span class="hljs-builtin-name">run</span> build<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter hljs hljs hljs hljs hljs hljs hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs routeros">npm <span class="hljs-builtin-name">run</span> build<br></code></pre></div></td></tr></table></figure>
 
 <blockquote>
 <p>将生成的dist目录下的文件放入到tomcat或者nginx下，启动服务器，即可访问</p>
 </blockquote>
 <p><strong>检查包</strong></p>
-<figure class="highlight coffeescript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs coffeescript"><span class="hljs-built_in">npm</span> outdated<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight coffeescript"><table><tr><td class="gutter hljs hljs hljs hljs hljs hljs hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs coffeescript"><span class="hljs-built_in">npm</span> outdated<br></code></pre></div></td></tr></table></figure>
 
 <blockquote>
 <p>检查包是否已经过时，此命令会列出所有已经过时的包，可以及时进行包的更新</p>
 </blockquote>
 <p><strong>更新</strong></p>
-<figure class="highlight coffeescript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs coffeescript"><span class="hljs-built_in">npm</span> update moduleName<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight coffeescript"><table><tr><td class="gutter hljs hljs hljs hljs hljs hljs hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs coffeescript"><span class="hljs-built_in">npm</span> update moduleName<br></code></pre></div></td></tr></table></figure>
 
 <p><strong>卸载</strong></p>
-<figure class="highlight coffeescript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs coffeescript"><span class="hljs-built_in">npm</span> uninstall moudleName<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight coffeescript"><table><tr><td class="gutter hljs hljs hljs hljs hljs hljs hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs coffeescript"><span class="hljs-built_in">npm</span> uninstall moudleName<br></code></pre></div></td></tr></table></figure>
 
 
 
@@ -370,6 +370,13 @@
             <hr>
             <div>
               <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/myblog/categories/node/">node</a>
+                    
+                  </div>
                 
                 
               </div>
