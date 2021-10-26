@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9pYUlkUWZFcmljOVR3NkxZSlZTR0o0c2J1NG9DV1N3M0prMXliaWFPODdYZG1wbmVncllKanFWWlRMQkVBMVZQYXJ4cE1oRTd5d2pvU0tTRmlhWUltUXQ1WUEvNjQw?x-oss-process=image/format,png">
 <meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9pYUlkUWZFcmljOVR3NkxZSlZTR0o0c2J1NG9DV1N3M0preHp3Z3RKMFQxekV6ZGRxZ0U5WHQyOGE4dFVZcE1Dcnd6RmljdXZkRkxIc2dIVFhFUkxjUlBHUS82NDA?x-oss-process=image/format,png">
 <meta property="article:published_time" content="2021-10-26T12:38:16.459Z">
-<meta property="article:modified_time" content="2021-10-26T12:54:17.052Z">
+<meta property="article:modified_time" content="2021-10-26T12:58:08.642Z">
 <meta property="article:author" content="番茄">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9pYUlkUWZFcmljOVR3NkxZSlZTR0o0c2J1NG9DV1N3M0prTlg1bGljOHFteUlmcXJxMzRzVVZxYmxtZGtDZVBjSFBYNzluMGc5UTVjRVN1VjQ3MEtzcDE5dy82NDA?x-oss-process=image/format,png">
@@ -601,6 +601,11 @@
 <p><strong><code>@Transactional</code>被声明的测试方法的数据会回滚，避免污染测试数据。</strong></p>
 <p><strong><code>@WithMockUser</code> Spring Security 提供的，用来模拟一个真实用户，并且可以赋予权限。</strong></p>
 <figure class="highlight go"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs go">@Test<br>@Transactional<br>@WithMockUser(username = <span class="hljs-string">&quot;user-id-18163138155&quot;</span>, authorities = <span class="hljs-string">&quot;ROLE_TEACHER&quot;</span>)<br>void should_import_student_success() throws Exception &#123;<br>        ......<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<div class="note note-success">
+            <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/zhenghongcs/article/details/105852356">(8条消息) SpringBoot常用注解大全，一键收藏了！_macrozheng的专栏-CSDN博客</a></p>
+          </div>
+
             </div>
             <hr>
             <div>
