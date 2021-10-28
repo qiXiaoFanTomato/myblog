@@ -1,0 +1,1092 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/myblog/img/favicon1.ico">
+  <link rel="icon" href="/myblog/img/favicon1.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="番茄">
+  <meta name="keywords" content="">
+  <meta name="description" content="Linux操作系统 一. linux操作系统的基本介绍​    Linux是一套免费使用和自由传播的类unix操作系统。那么什么是类unix操作系统呢？在1969年由unix之父Ken Thompson在AT&amp;T(American Telephone &amp; Telegraph, 美国电话电报公司，现在为美国第二大运营商，第一大运营商为Verizon Wireless)的贝尔实验室主导">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux操作系统">
+<meta property="og:url" content="https://q_xiaofan.gitee.io/myblog/2021/10/28/Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.html">
+<meta property="og:site_name" content="启小凡">
+<meta property="og:description" content="Linux操作系统 一. linux操作系统的基本介绍​    Linux是一套免费使用和自由传播的类unix操作系统。那么什么是类unix操作系统呢？在1969年由unix之父Ken Thompson在AT&amp;T(American Telephone &amp; Telegraph, 美国电话电报公司，现在为美国第二大运营商，第一大运营商为Verizon Wireless)的贝尔实验室主导">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/myblog/2021/10/28/Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/1.jpg">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/myblog/2021/10/28/Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/2.png">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/myblog/2021/10/28/Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/3.png">
+<meta property="og:image" content="https://q_xiaofan.gitee.io/myblog/2021/10/28/Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/4.png">
+<meta property="article:published_time" content="2021-10-28T09:51:00.000Z">
+<meta property="article:modified_time" content="2021-10-28T09:58:01.737Z">
+<meta property="article:author" content="番茄">
+<meta property="article:tag" content="网络">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://q_xiaofan.gitee.io/myblog/2021/10/28/Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/1.jpg">
+  
+  <title>Linux操作系统 - 启小凡</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/myblog/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/myblog/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"q_xiaofan.gitee.io","root":"/myblog/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":true},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":6,"color":"#29d","options":{"showSpinner":true,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"eJTg2E7lFVi4dnRJvshHXwAv-gzGzoHsz","app_key":"3u6s4XYeWREVbc16xYzSUnVd","server_url":null,"path":"window.location.pathname"}},"search_path":"/myblog/local-search.xml"};
+  </script>
+  <script  src="/myblog/js/utils.js" ></script>
+  <script  src="/myblog/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/myblog/">
+      <strong>启小凡</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/myblog/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/myblog/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/myblog/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/myblog/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/myblog/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/myblog/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="JavaScript:void(0)">
+                <i class="iconfont icon-image"></i>
+                切换背景
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-image"></i>
+                背景
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="JavaScript:void(0)">
+                    
+                    飘零
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="JavaScript:void(0)">
+                    
+                    溢彩
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="JavaScript:void(0)">
+                    
+                    无限
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/myblog/img/default.png') ;
+           background-size: cover;">
+           
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Linux操作系统">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      番茄
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-10-28 17:51" pubdate>
+        2021年10月28日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      11k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      34 分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-page-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Linux操作系统</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：几秒前
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h2 id="Linux操作系统"><a href="#Linux操作系统" class="headerlink" title="Linux操作系统"></a>Linux操作系统</h2><hr>
+<h3 id="一-linux操作系统的基本介绍"><a href="#一-linux操作系统的基本介绍" class="headerlink" title="一. linux操作系统的基本介绍"></a>一. linux操作系统的基本介绍</h3><p>​    Linux是一套免费使用和自由传播的类unix操作系统。那么什么是类unix操作系统呢？在1969年由unix之父Ken Thompson在AT&amp;T(American Telephone &amp; Telegraph, 美国电话电报公司，现在为美国第二大运营商，第一大运营商为<em>Verizon</em> Wireless)的贝尔实验室主导研发的，当时完全是出于好奇或者兴趣。</p>
+<p>​    在1974年7月首次unix首次与外界接触，当unix到达第五版的时候，以“仅用于教育目的”为协议，提供给各大学作为教学之用，成为当时操作系统课程中的范例教材。各大学公司开始通过Unix源码对Unix进行了各种各样的改进和扩展。于是，Unix开始广泛流行。在1979年，unix的V7版本发布，许可证开始禁止大学使用Unix的源码，包括在授课中学习。到了1980年，unix开始一发不可收拾地开发不停地出现各种各样的变种。</p>
+<p>​    Linux操作系统包括但不限于unix所有的功能，是开源免费的，不需支付任何费用便能获取到它的源代码，可以根据自己的需求进行修改。Linux操作系统是由Linus Benedict Torvalds(林纳斯·本纳第克特·托瓦兹)在大学的时候编写的，并邀请大家进行完善，从此Linux操作系统成为服务器领域的首选操作系统。</p>
+<p>​    我们所熟知的Centos、redhat、ubuntu等操作系统都是基于linux内核(kernel)基础上进行开发，形成了自己的产品。那么在本次课程中我们为大家使用的是ubuntu操作系统讲解Linux操作系统的基本使用。</p>
+<hr>
+<h3 id="二-Linux操作系统的安装"><a href="#二-Linux操作系统的安装" class="headerlink" title="二. Linux操作系统的安装"></a>二. Linux操作系统的安装</h3><p>​    ubuntu操作系统安装以及链接工具的安装参照视频，视频地址为：    </p>
+<hr>
+<h3 id="三-Linux的目录结构"><a href="#三-Linux的目录结构" class="headerlink" title="三. Linux的目录结构"></a>三. Linux的目录结构</h3><p>​    linux的目录结构与windows有很大的区别，windows有盘符的概念，例如C盘，D盘等。而Linux的目录结构类似于一棵倒着的树，最顶层的就是根目录：如下图所示</p>
+<p><img src="/myblog/2021/10/28/Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/1.jpg" srcset="/myblog/img/loading.gif" lazyload alt="目录结构"></p>
+<table>
+<thead>
+<tr>
+<th align="center">目录名</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">/bin</td>
+<td align="center">存放最经常使用的命令</td>
+</tr>
+<tr>
+<td align="center">/boot</td>
+<td align="center">存放启动Linux操作系统的时候的一些核心文件</td>
+</tr>
+<tr>
+<td align="center">/etc</td>
+<td align="center">存放系统管理和配置文件</td>
+</tr>
+<tr>
+<td align="center">/dev</td>
+<td align="center">用于存放设备文件</td>
+</tr>
+<tr>
+<td align="center">/home</td>
+<td align="center">存放的用户的目录，每个用户都有一个属于自己的目录</td>
+</tr>
+<tr>
+<td align="center">/opt</td>
+<td align="center">额外安装的可选应用程序包所放置的位置。一般情况下，我们可以把tomcat等都安装到这里。</td>
+</tr>
+<tr>
+<td align="center">/usr</td>
+<td align="center">用于存放系统应用程序，比较重要的目录/usr/local 本地系统管理员软件安装目录</td>
+</tr>
+<tr>
+<td align="center">/var</td>
+<td align="center">用于存放运行时需要改变数据的文件，也是某些大文件的溢出区，比方说各种服务的日志文件（系统启动日志等。）等。</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="四-Linux系统的基本操作"><a href="#四-Linux系统的基本操作" class="headerlink" title="四. Linux系统的基本操作"></a>四. Linux系统的基本操作</h3><h4 id="1-目录的切换（change-directory）"><a href="#1-目录的切换（change-directory）" class="headerlink" title="1. 目录的切换（change directory）"></a>1. 目录的切换（change directory）</h4><ul>
+<li>cd /test: 切换到 /test目录下进行操作。</li>
+<li>cd -: 切回到上一此编辑的目录。</li>
+<li>cd ~: 切回到当前用户的家目录。</li>
+<li>cd ..: 切到道歉目录的上一级目录。</li>
+</ul>
+<h4 id="2-文件内容的查看"><a href="#2-文件内容的查看" class="headerlink" title="2. 文件内容的查看"></a>2. 文件内容的查看</h4><ul>
+<li>cat：查看文件的全部内容</li>
+<li>head: 默认查看文件内容的前10行</li>
+<li>tail：默认查看文件内容的后10行</li>
+<li>more：分页查看文件内容，使用空格键向下翻页，但是只能向下翻页。</li>
+<li>less：分页查看文件内容，使用空格键向下翻页，也可使用PgUp和PgDown实现向上、向下翻页。</li>
+</ul>
+<h4 id="3-查看文件夹中的内容"><a href="#3-查看文件夹中的内容" class="headerlink" title="3. 查看文件夹中的内容"></a>3. 查看文件夹中的内容</h4><ul>
+<li><p>ls(list)：查看文件夹中的内容</p>
+</li>
+<li><p>ls -a: 查看文件夹中的内容，包括隐藏文件</p>
+</li>
+<li><p>ls -l(可以简写成ll): 查看文件夹中的内容的详细信息</p>
+<p><img src="/myblog/2021/10/28/Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/2.png" srcset="/myblog/img/loading.gif" lazyload alt="详细信息"></p>
+<p>  查看到文件夹的详细信息后，会看到有七栏，那么我们分别来解释一下是什么意思：</p>
+<p>​    第一栏：有10个符号，第一个符号表示表示文件的属性，-表示是文件，d是目录，l是连接文件；后面9为分别分三组，每组均为rwx，r是可读，w是可写，x是可执行，第一组表示当前的用户的权限，第二组是用户组的权限；第三组是其他用户的权限。</p>
+<p>​    第二栏：是文件或者文件夹的个数，如果说文件就为1，如果目录的情况下就是该目录下文件夹的个数，其中包括当前目录和上级目录。</p>
+<p>​    第三栏：当前文件或者文件夹所属的用户。</p>
+<p>​    第四栏：当前文件或者文件夹所属的用户组。</p>
+<p>​    第五栏：当前文件或者文件夹的大小，单位为KB。</p>
+<p>​    第六栏：创建的时间。</p>
+<p>​    第七栏：文件或者文件夹或者链接的名字。</p>
+</li>
+</ul>
+<h4 id="4-相对路径、绝对路径"><a href="#4-相对路径、绝对路径" class="headerlink" title="4. 相对路径、绝对路径"></a>4. 相对路径、绝对路径</h4><p>​         要高清相对路径首先要搞清楚.和..的这两个概念，一个点表示当前目录，即我们当前操作所处的目录；两个点表示上一级目录。</p>
+<p>​    相对路径，所谓相对就必须要有一个参照物，例如两个同学A和他的同桌B，并且他们两个此时此刻正坐在一起。假如现在有人问A：“B在哪里？”，A回答道：“B就在我身边呀。”，那么此时A的回答就是以自己为参照物，B就在他身边。</p>
+<p>​    绝对路径，就是以一个顶级的地址，而且这个地址我们都知道，例如“宇宙”、“地球”、“中国”、“北京”等都可以选择作为我们的顶级地址，我们同样以上面提到过的A和B这两个同桌为例，A还有另外一种回答：“他在地球上中国北京市昌平区区XX路XX楼X层XX房第X排第X个”，那么A这种回答的方式就是以地球作为顶级目录，然后逐层往下找。</p>
+<p>​    那么我们在Linux操作系统中，相对路径所选择的参照物就是我们当前执行操作所处的目录；绝对路径所选择的顶级目录就是我们的根(/)目录。</p>
+<h4 id="5-文件夹、文件的创建"><a href="#5-文件夹、文件的创建" class="headerlink" title="5. 文件夹、文件的创建"></a>5. 文件夹、文件的创建</h4><ul>
+<li><strong>touch test:</strong> 创建一个名为test的文件。</li>
+<li>mkdir test: 创建一个名为test的文件夹。</li>
+<li>mkdir -p /a/b: 创建目录a, 然后在目录a下创建目录b.</li>
+</ul>
+<h4 id="6-文件、文件夹的删除"><a href="#6-文件、文件夹的删除" class="headerlink" title="6. 文件、文件夹的删除"></a>6. 文件、文件夹的删除</h4><ul>
+<li>rm test: 删除名为test的文件或者空的文件夹，会出现询问是否要删除。</li>
+<li>rm -f test: 删除名为test的文件或者空的文件夹，不会出现提示。</li>
+<li>rm -rf test: 删除名为test的文件或者文件夹，-r是recursion，递归的意思。</li>
+</ul>
+<h4 id="7-文件或者文件夹的拷贝"><a href="#7-文件或者文件夹的拷贝" class="headerlink" title="7. 文件或者文件夹的拷贝"></a>7. 文件或者文件夹的拷贝</h4><ul>
+<li>cp ./test  /data: 将当前目录下的test文件拷贝到 /data目录下。</li>
+<li>cp /test/a.txt /datas: 将/test目录下的a.txt文件靠别到/datas目录下。</li>
+<li>cp -r /test /datas: 将/test目录拷贝到/datas目录下，-r是recursion，递归的意思，无论/test文件夹是否为空。</li>
+<li>cp -r /test/* /datas/: 将/test目录下的所有内容拷贝到/datas目录下。</li>
+</ul>
+<h4 id="8-文件、文件夹的移动"><a href="#8-文件、文件夹的移动" class="headerlink" title="8.文件、文件夹的移动"></a>8.文件、文件夹的移动</h4><ul>
+<li>mv test /datas: 将当前目录下的test文件或者文件夹移动到/datas目录下。</li>
+<li>mv /test/* /datas: 将/test目录下的所有内容移动到/datas目录下。</li>
+</ul>
+<h4 id="9-文件、文件夹的重命令"><a href="#9-文件、文件夹的重命令" class="headerlink" title="9.文件、文件夹的重命令"></a>9.文件、文件夹的重命令</h4><ul>
+<li> mv test test1: 将test目录或者文件重命名为test1。</li>
+</ul>
+<hr>
+<h3 id="五-文件、文件夹的上传、下载"><a href="#五-文件、文件夹的上传、下载" class="headerlink" title="五. 文件、文件夹的上传、下载"></a>五. 文件、文件夹的上传、下载</h3><p>​    我们可以直接使用xshell提供的工具实现文件的上传与下载。</p>
+<p><img src="/myblog/2021/10/28/Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/3.png" srcset="/myblog/img/loading.gif" lazyload alt="上传、下载"></p>
+<hr>
+<h3 id="六-vi、vim的使用"><a href="#六-vi、vim的使用" class="headerlink" title="六. vi、vim的使用"></a>六. vi、vim的使用</h3><p>​    vi为linux操作系统自带的文本编辑器，其功能非常的强大，我们必须要掌握其使用，为我们修改各种配置或者编写脚本文件奠定基础。其快捷键命令如下：</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>含义</th>
+<th>命令的模式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong><font color="red">Esc</font></strong> (重点)</td>
+<td>从编辑模式进入到命令行模式</td>
+<td>编辑模式</td>
+</tr>
+<tr>
+<td><strong><font color="red">i</font></strong> (重点)</td>
+<td>在当前字符前插入</td>
+<td>编辑模式</td>
+</tr>
+<tr>
+<td><strong><font color="red">a</font></strong></td>
+<td>在当前字符后插入</td>
+<td>编辑模式</td>
+</tr>
+<tr>
+<td>A</td>
+<td>在当前行末进行插入</td>
+<td>编辑模式</td>
+</tr>
+<tr>
+<td>I</td>
+<td>在当前开头进行插入</td>
+<td>编辑模式</td>
+</tr>
+<tr>
+<td><strong><font color="red">o</font></strong> (重点)</td>
+<td>进入到当前行的下一行进行编辑</td>
+<td>编辑模式</td>
+</tr>
+<tr>
+<td><strong><font color="red">O</font></strong> (重点)</td>
+<td>进入到当前行的上一行进行编辑</td>
+<td>编辑模式</td>
+</tr>
+<tr>
+<td><strong><font color="red">yy</font></strong> (重点)</td>
+<td>复制一行</td>
+<td>编辑模式</td>
+</tr>
+<tr>
+<td><strong><font color="red">p</font></strong> (重点)</td>
+<td>粘贴yy复制的一行内容</td>
+<td>编辑模式</td>
+</tr>
+<tr>
+<td><strong><font color="red">dd</font></strong> (重点)</td>
+<td>删除一行</td>
+<td>编辑模式</td>
+</tr>
+<tr>
+<td><strong><font color="red">h</font></strong> (重点)</td>
+<td>向左移动光标</td>
+<td>编辑模式</td>
+</tr>
+<tr>
+<td><strong><font color="red">l </font></strong> (重点)</td>
+<td>向右移动光标</td>
+<td>编辑模式</td>
+</tr>
+<tr>
+<td><strong><font color="red">j</font></strong> (重点)</td>
+<td>光标向上移动</td>
+<td>编辑模式</td>
+</tr>
+<tr>
+<td><strong><font color="red">k</font></strong> (重点)</td>
+<td>光标向下移动</td>
+<td>编辑模式</td>
+</tr>
+<tr>
+<td><strong><font color="red">G</font></strong></td>
+<td>光标移动文件的末尾</td>
+<td>命令行模式</td>
+</tr>
+<tr>
+<td><strong><font color="red">gg</font></strong></td>
+<td>光标移动到文件的开头</td>
+<td>命令行模式</td>
+</tr>
+<tr>
+<td><strong><font color="red">q</font></strong></td>
+<td>退出文件</td>
+<td>命令行模式</td>
+</tr>
+<tr>
+<td><strong><font color="red">:wq</font></strong> (重点)</td>
+<td>保存并退出</td>
+<td>命令行模式</td>
+</tr>
+<tr>
+<td><strong><font color="red">:set nu!</font></strong> (重点)</td>
+<td>设置或取消行号</td>
+<td>命令行模式</td>
+</tr>
+<tr>
+<td><strong><font color="red">u</font></strong> (重点)</td>
+<td>撤销上一次操作</td>
+<td>命令行模式</td>
+</tr>
+<tr>
+<td>w</td>
+<td>光标跳到下一个单词的首字母</td>
+<td>命令行模式</td>
+</tr>
+<tr>
+<td>b</td>
+<td>光标跳到上一个单词的首字母</td>
+<td>命令行模式</td>
+</tr>
+<tr>
+<td>$</td>
+<td>光标跳到该行的末尾</td>
+<td>命令行模式</td>
+</tr>
+<tr>
+<td>0</td>
+<td>光标跳到该行的开头</td>
+<td>命令行模式</td>
+</tr>
+<tr>
+<td><strong><font color="red">:/public</font></strong></td>
+<td>查找出public这个单词</td>
+<td>命令行模式</td>
+</tr>
+<tr>
+<td><strong><font color="red">n</font></strong></td>
+<td>跳转到下一个查找到内容</td>
+<td>命令行模式</td>
+</tr>
+<tr>
+<td><strong><font color="red">N</font></strong></td>
+<td>查找到上一个查找到的内容</td>
+<td>命令行模式</td>
+</tr>
+<tr>
+<td>:/public\c</td>
+<td>大小写不敏感查找</td>
+<td>命令行模式</td>
+</tr>
+<tr>
+<td>:%s/abc/QQ</td>
+<td>将当前行的第一个abc换成QQ</td>
+<td>命令行模式</td>
+</tr>
+<tr>
+<td>:%s/abc/QQ/g</td>
+<td>将整行所有的abc替换为QQ</td>
+<td>命令行模式</td>
+</tr>
+<tr>
+<td>:%s/abc/QQ/gi</td>
+<td>将全文的所有的abc忽略大小写换成qq,</td>
+<td>命令行模式</td>
+</tr>
+<tr>
+<td>:5,12s/abc/QQ/gi</td>
+<td>将第5到12行所有的abc忽略大小写换成QQ</td>
+<td>命令行模式</td>
+</tr>
+</tbody></table>
+<h3 id="七-内容过滤"><a href="#七-内容过滤" class="headerlink" title="七. 内容过滤"></a>七. 内容过滤</h3><ul>
+<li>grep abc test.txt: 查找出test.txt文件中所有包含abc的行</li>
+</ul>
+<h3 id="八-管道操作-面试"><a href="#八-管道操作-面试" class="headerlink" title="八. 管道操作(面试)"></a>八. 管道操作(面试)</h3><p>**<font color="red">管道操作就是将上一步操作的结果作为下一部操作的数据源，使用 “|” 符号。</font>**例如：</p>
+<ul>
+<li>ll | grep abc: 查找出当前文件夹下名字含有abc的文件夹或者文件。</li>
+</ul>
+<p>练习：1. 查看/etc/passwd文件的第5到第8行的内容。（head -8 passwod | tail -4）</p>
+<p>​           2.查看/etc/passwd文件的倒数第10行到倒数第3行的内容。</p>
+<h3 id="九-进程的管理"><a href="#九-进程的管理" class="headerlink" title="九. 进程的管理"></a>九. 进程的管理</h3><h4 id="1-查看所有的进程"><a href="#1-查看所有的进程" class="headerlink" title="1. 查看所有的进程"></a>1. 查看所有的进程</h4><ul>
+<li>ps -ef: 查看当前操作系统中所有正在运行的进程的详细信息，我们需要关注的是“进程号”</li>
+<li>ps -ef | grep tomcat: 查看tomcat这个进程的信息。</li>
+</ul>
+<h4 id="2-关闭进程-杀死进程"><a href="#2-关闭进程-杀死进程" class="headerlink" title="2.关闭进程(杀死进程)"></a>2.关闭进程(杀死进程)</h4><p>​    在关闭进程之前我们需要查看需要杀死的进程的pid，然后通过kill命令关闭进程。通过kill -l 命令查看可以使用的杀死进程的方式，如下图所示：</p>
+<p><img src="/myblog/2021/10/28/Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/4.png" srcset="/myblog/img/loading.gif" lazyload alt="关闭进程"></p>
+<p>那么杀死进程的方式如下：</p>
+<ul>
+<li>kill -kill 5678 或者 kill -9 5678: 杀死进程号为5678的进程。</li>
+</ul>
+<p>​       为什么可以使用 -kill 或者 -9 呢？我们通过kill -l 可以看到杀死进程的方式有64种，所有的方式都形如SIG***，我们将SIG去掉后的单词，就可以作为kill后的参数；又或者我们直接使用该命令对应的变好，例如 SIGKILL 对应的编号为9，所以我们也可以使用 -9 作为参数。</p>
+<h3 id="九-服务管理"><a href="#九-服务管理" class="headerlink" title="九.服务管理"></a>九.服务管理</h3><ul>
+<li>systemctl: 查看所有的服务。</li>
+<li>systemctl status 服务名: 查看服务状态</li>
+<li>systemctl stop 服务名: 关闭服务</li>
+<li>systemctl restart 服务名: 重启服务。</li>
+</ul>
+<h3 id="十-软件的解压与压缩"><a href="#十-软件的解压与压缩" class="headerlink" title="十.软件的解压与压缩"></a>十.软件的解压与压缩</h3><p>​    在linux操作系统中我们最常见的两种文件是tar.gz和zip文件，那么针对这两种文件我们有不同的压缩和解压缩的方式。</p>
+<p>tar.gz文件的解压、压缩，在实际工作中参数v不需要加，可能会导致机器卡死：</p>
+<ul>
+<li>tar -zxvf jdk-8u60-linux-x64.tar.gz: 将jdk-8u60-linux-x64.tar.gz文件解压到当前目录。</li>
+<li>tar -zxvf jdk-8u60-linux-x64.tar.gz -C /test: 将jdk-8u60-linux-x64.tar.gz解压到 /test目录下。</li>
+<li>tar -zcvf hello.tar.gz jdk1.8.0_60: 将 jdk1.8.0_60文件夹压缩成hello.tar.gz文件。</li>
+</ul>
+<p>zip文件的压缩与解压，在使用zip解压缩文件需要安装zip软件：</p>
+<ul>
+<li>unzip apache-tomcat-8.5.2-src.zip: 将apache-tomcat-8.5.2-src.zip文件解压到的当前目录。</li>
+<li>unzip apache-tomcat-8.5.2-src.zip -d /test: 将apache-tomcat-8.5.2-src.zip文件解压到 /test目录下。</li>
+<li>zip -r apache.zip apache-tomcat-8.5.2-src： 将apache-tomcat-8.5.2-src文件压缩成apache.zip文件。</li>
+</ul>
+<p><strong><font color="red">注意：在使用unzip或者zip命令的时候，会报错，原因是因为没有zip的这个软件，需要使用yum install zip这个命令进行安装。</font></strong></p>
+<h3 id="十一-用户、用户组的管理-知道"><a href="#十一-用户、用户组的管理-知道" class="headerlink" title="十一.用户、用户组的管理(知道)"></a>十一.用户、用户组的管理(知道)</h3><h4 id="1-用户相关的操作"><a href="#1-用户相关的操作" class="headerlink" title="1.用户相关的操作"></a>1.用户相关的操作</h4><ul>
+<li><strong><font color="red">passwd qf</font></strong>: 修改qf这个用户的密码。</li>
+<li><strong><font color="red">useradd test</font></strong>: 添加test用户。</li>
+<li>cat /etc/passwd: 查看系统中拥有多少用户。</li>
+<li><strong><font color="red">su - test</font></strong>: 切换到test用户。</li>
+<li>userdel test: 删除test用户。</li>
+<li><strong><font color="red">userdel -r test</font></strong>: 删除test用户，并删除其家目录。</li>
+</ul>
+<h4 id="2-用户组相关操作"><a href="#2-用户组相关操作" class="headerlink" title="2.用户组相关操作"></a>2.用户组相关操作</h4><ul>
+<li>groupadd test: 添加名为test的用户组。</li>
+<li>cat /etc/group: 查看所有的用户组。</li>
+<li>groupdel test: 删除test用户组。</li>
+<li>useradd -m test -g test: 创建一个test用户，并指定其用户组为test。</li>
+<li>usermod test -g abc: 将test用户的组改为abc.</li>
+</ul>
+<h3 id="十二-yum的方式安装软件"><a href="#十二-yum的方式安装软件" class="headerlink" title="十二. yum的方式安装软件"></a>十二. yum的方式安装软件</h3><h4 id="12-1-配置yum源"><a href="#12-1-配置yum源" class="headerlink" title="12.1 配置yum源"></a>12.1 配置yum源</h4><blockquote>
+<p>将 <code>/etc/yum.repo.d/Centos-Base.repo</code> 进行备份：</p>
+</blockquote>
+<figure class="highlight reasonml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs reasonml">mv CentOS-<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Base</span>.</span></span>repo CentOS-<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Base</span>.</span></span>repo.bak<br></code></pre></div></td></tr></table></figure>
+
+<blockquote>
+<p>下载阿里的yum源：<a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/repo/Centos-7.repo">http://mirrors.aliyun.com/repo/Centos-7.repo</a>， 然后将文件上传到<code>/etc/yum.repo.d/， 命名为：Centos-Base.repo</code></p>
+</blockquote>
+<h4 id="12-2-安装软件"><a href="#12-2-安装软件" class="headerlink" title="12.2 安装软件"></a>12.2 安装软件</h4><blockquote>
+<p>安装 unzip:  yum install -y unzip</p>
+</blockquote>
+<h3 id="十三-文件权限的管理"><a href="#十三-文件权限的管理" class="headerlink" title="十三. 文件权限的管理"></a>十三. 文件权限的管理</h3><p>​    前面我们已经讲过，对于一个文件或者文件夹，我们用户和用户组可以有rwx的权限。那么我们可以通过chmod命令修改文件的读写和执行权限。</p>
+<ul>
+<li>chmod u+w profile: 将profile文件所属的用户加入写权限。</li>
+<li>chmod 775 profile: 将profile文件所属的文件拥有rwx权限，用户组拥有rwx权限，其他用户拥有r-x权限。</li>
+</ul>
+<blockquote>
+<p>写权限：a) 对于文件夹，写权限表示是否可以在文件夹下新建文件（文件夹），以及删除删除。</p>
+<p>​                 b) 对于文件来说，就是无法写入内容。</p>
+<p>执行权限：a) 对于文件，表示进入文件夹的权限；就算拥有了写权限，那么也是无法进入的。</p>
+<p>​                     b) 对于文件来讲，一般都是shell脚本(.sh结尾的文件)，是否可以执行。</p>
+<p>读权限：对于文件来说，是无法查看文件内容的。</p>
+</blockquote>
+<h5 id="13-1-文件夹的授权"><a href="#13-1-文件夹的授权" class="headerlink" title="13.1 文件夹的授权"></a>13.1 文件夹的授权</h5><blockquote>
+<p>将 <code>apache-tomcat-8.5.59</code> 整个文件夹按照递归的方式，将所有权授予 test 用户。</p>
+</blockquote>
+<blockquote>
+<p>chown -R  test   apache-tomcat-8.5.59</p>
+</blockquote>
+<h3 id="十四-软件的安装"><a href="#十四-软件的安装" class="headerlink" title="十四. 软件的安装"></a>十四. 软件的安装</h3><h4 id="1-jdk的安装"><a href="#1-jdk的安装" class="headerlink" title="1.jdk的安装"></a>1.jdk的安装</h4><p>​    a. 解压 tar -zxvf jdk-8u60-linux-x64.tar.gz</p>
+<p>​    b.进入到jdk的家目录，拷贝其家目录的路径。</p>
+<p>​    c.配置环境变量，需要修改/etc/profile文件，加上如下两行内容</p>
+<figure class="highlight routeros"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs routeros"><span class="hljs-builtin-name">export</span> <span class="hljs-attribute">JAVA_HOME</span>=/datas/jdk1.8.0_60<br><br><span class="hljs-builtin-name">export</span> <span class="hljs-attribute">PATH</span>=<span class="hljs-variable">$JAVA_HOME</span>/bin:$PATH<br></code></pre></div></td></tr></table></figure>
+
+<p>​    d.刷新环境变量：source /ect/profile</p>
+<h4 id="2-tomcat的安装"><a href="#2-tomcat的安装" class="headerlink" title="2.tomcat的安装"></a>2.tomcat的安装</h4><p>​    a.解压：tar -zxvf  apache-tomcat-8.5.42.tar.gz</p>
+<p>​    b.进入到/datas/apache-tomcat-8.5.42/bin/</p>
+<p>​    c. ./startup.sh</p>
+<h4 id="3-mysql的安装"><a href="#3-mysql的安装" class="headerlink" title="3.mysql的安装"></a>3.mysql的安装</h4><p>第一步，安装wget:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cmake">yum <span class="hljs-keyword">install</span> -y wget   <span class="hljs-comment">#安装wget</span><br></code></pre></div></td></tr></table></figure>
+
+<p>第二步，安装mysql专有yum源：</p>
+<figure class="highlight apache"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">wget</span> http://dev.mysql.com/get/mysql<span class="hljs-number">57</span>-community-release-el<span class="hljs-number">7</span>-<span class="hljs-number">7</span>.noarch.rpm<br><br><span class="hljs-attribute">yum</span> localinstall -y mysql<span class="hljs-number">57</span>-community-release-el<span class="hljs-number">7</span>-<span class="hljs-number">7</span>.noarch.rpm<br></code></pre></div></td></tr></table></figure>
+
+<p>第三步，安装mysql:</p>
+<figure class="highlight axapta"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs axapta">yum install -y mysql-community-<span class="hljs-keyword">server</span><br></code></pre></div></td></tr></table></figure>
+
+<p>第四步，启动mysql:</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs crmsh">systemctl status mysqld<br>systemctl <span class="hljs-literal">start</span> mysqld.service<br></code></pre></div></td></tr></table></figure>
+
+<p>第五步，进入mysql:</p>
+<figure class="highlight maxima"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs maxima">mysql -uroot -p  #会提示输入密码，/<span class="hljs-built_in">var</span>/<span class="hljs-built_in">log</span>/mysqld.<span class="hljs-built_in">log</span>文件，中记录着mysql的临时密码。<br></code></pre></div></td></tr></table></figure>
+
+<p>第六步，重置为自己的密码：</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">alter user &#x27;root&#x27;@&#x27;localhost&#x27; identified by &#x27;Ab123456cd!!&#x27;;<br></code></pre></div></td></tr></table></figure>
+
+<p>第七步(可选)，如果想让其他机器的用户访问该myql，需要授权：</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">grant all on *.* to &#x27;root&#x27;@&#x27;%&#x27; identified by &#x27;Ab123456cd!!&#x27;;  #授权<br>flush privileges; <br></code></pre></div></td></tr></table></figure>
+
+<p>第八步，开启自动启动：</p>
+<figure class="highlight routeros"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs routeros">systemctl <span class="hljs-builtin-name">enable</span> mysqld<br></code></pre></div></td></tr></table></figure>
+
+<h3 id="十五-磁盘扩容-了解"><a href="#十五-磁盘扩容-了解" class="headerlink" title="十五. 磁盘扩容(了解)"></a>十五. 磁盘扩容(了解)</h3><p>​    磁盘扩容使用到LVM(Logic Volume Manager)技术.</p>
+<p>​    a. 在虚拟机上增加一块磁盘。</p>
+<p>​    b. 对磁盘进行分区：fdisk  /dev/sdb​    </p>
+<figure class="highlight pgsql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs pgsql">root@ubuntu:~# fdisk /dev/sdb<br><br>Welcome <span class="hljs-keyword">to</span> fdisk (util-linux <span class="hljs-number">2.31</span><span class="hljs-number">.1</span>).<br>Changes will remain <span class="hljs-keyword">in</span> memory <span class="hljs-keyword">only</span>, <span class="hljs-keyword">until</span> you decide <span class="hljs-keyword">to</span> <span class="hljs-keyword">write</span> them.<br>Be careful <span class="hljs-keyword">before</span> <span class="hljs-keyword">using</span> the <span class="hljs-keyword">write</span> command.<br><br>Device does <span class="hljs-keyword">not</span> contain a recognized <span class="hljs-keyword">partition</span> <span class="hljs-keyword">table</span>.<br>Created a <span class="hljs-built_in">new</span> DOS disklabel <span class="hljs-keyword">with</span> disk identifier <span class="hljs-number">0x927bf0e2</span>.<br><br>Command (m <span class="hljs-keyword">for</span> help): n<br><span class="hljs-keyword">Partition</span> <span class="hljs-keyword">type</span><br>   p   <span class="hljs-keyword">primary</span> (<span class="hljs-number">0</span> <span class="hljs-keyword">primary</span>, <span class="hljs-number">0</span> extended, <span class="hljs-number">4</span> free)<br>   e   extended (container <span class="hljs-keyword">for</span> logical partitions)<br><span class="hljs-keyword">Select</span> (<span class="hljs-keyword">default</span> p): p<br><span class="hljs-keyword">Partition</span> number (<span class="hljs-number">1</span><span class="hljs-number">-4</span>, <span class="hljs-keyword">default</span> <span class="hljs-number">1</span>): <br>First sector (<span class="hljs-number">2048</span><span class="hljs-number">-20971519</span>, <span class="hljs-keyword">default</span> <span class="hljs-number">2048</span>): <br>Last sector, +sectors <span class="hljs-keyword">or</span> +size&#123;K,M,G,T,P&#125; (<span class="hljs-number">2048</span><span class="hljs-number">-20971519</span>, <span class="hljs-keyword">default</span> <span class="hljs-number">20971519</span>): <br><br>Created a <span class="hljs-built_in">new</span> <span class="hljs-keyword">partition</span> <span class="hljs-number">1</span> <span class="hljs-keyword">of</span> <span class="hljs-keyword">type</span> <span class="hljs-string">&#x27;Linux&#x27;</span> <span class="hljs-keyword">and</span> <span class="hljs-keyword">of</span> size <span class="hljs-number">10</span> GiB.<br><br>Command (m <span class="hljs-keyword">for</span> help): w<br>The <span class="hljs-keyword">partition</span> <span class="hljs-keyword">table</span> has been altered.<br>Calling ioctl() <span class="hljs-keyword">to</span> re-<span class="hljs-keyword">read</span> <span class="hljs-keyword">partition</span> <span class="hljs-keyword">table</span>.<br>Syncing disks.<br></code></pre></div></td></tr></table></figure>
+
+<p>​    c. 对磁盘格式化：mkfs -t ext4 /dev/sdb1，可以通过mount命令查看文件的格式。</p>
+<figure class="highlight apache"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">root</span>@ubuntu:~# mkfs -t ext<span class="hljs-number">4</span> /dev/sdb<span class="hljs-number">1</span><br><span class="hljs-attribute">mke2fs</span> <span class="hljs-number">1</span>.<span class="hljs-number">44</span>.<span class="hljs-number">1</span> (<span class="hljs-number">24</span>-Mar-<span class="hljs-number">2018</span>)<br><span class="hljs-attribute">Creating</span> filesystem with <span class="hljs-number">2621184</span> <span class="hljs-number">4</span>k blocks and <span class="hljs-number">655360</span> inodes<br><span class="hljs-attribute">Filesystem</span> UUID: e<span class="hljs-number">7746867</span>-<span class="hljs-number">675</span>b-<span class="hljs-number">4</span>c<span class="hljs-number">59</span>-<span class="hljs-number">9</span>fe<span class="hljs-number">1</span>-<span class="hljs-number">7</span>e<span class="hljs-number">0011</span>e<span class="hljs-number">4</span>fc<span class="hljs-number">8</span>a<br><span class="hljs-attribute">Superblock</span> backups stored <span class="hljs-literal">on</span> blocks: <br><span class="hljs-attribute">32768</span>, <span class="hljs-number">98304</span>, <span class="hljs-number">163840</span>, <span class="hljs-number">229376</span>, <span class="hljs-number">294912</span>, <span class="hljs-number">819200</span>, <span class="hljs-number">884736</span>, <span class="hljs-number">1605632</span><br><br><span class="hljs-attribute">Allocating</span> group tables: done                            <br><span class="hljs-attribute">Writing</span> inode tables: done                            <br><span class="hljs-attribute">Creating</span> journal (<span class="hljs-number">16384</span> blocks): done<br><span class="hljs-attribute">Writing</span> superblocks and filesystem accounting information: done <br></code></pre></div></td></tr></table></figure>
+
+<p>​    d. 创建物理卷：pvcreate /dev/sdb1</p>
+<figure class="highlight apache"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">root</span>@ubuntu:~# pvcreate /dev/sdb<span class="hljs-number">1</span><br>  <span class="hljs-attribute">WARNING</span>: Device for PV iM<span class="hljs-number">84</span>L<span class="hljs-number">6</span>-hkJb-P<span class="hljs-number">91</span>v-J<span class="hljs-number">48</span>U-gGeD-uBhp-Xf<span class="hljs-number">6</span>tGv not found or rejected by a filter.<br><span class="hljs-attribute">WARNING</span>: ext<span class="hljs-number">4</span> signature detected <span class="hljs-literal">on</span> /dev/sdb<span class="hljs-number">1</span> at offset <span class="hljs-number">1080</span>. Wipe it?<span class="hljs-meta"> [y/n]: y</span><br><span class="hljs-meta">  Wiping ext4 signature on /dev/sdb1.</span><br><span class="hljs-meta">  Physical volume &quot;/dev/sdb1&quot; successfully created.</span><br></code></pre></div></td></tr></table></figure>
+
+<p>​    e. 查看所有的物理卷：pvscan</p>
+<figure class="highlight apache"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">root</span>@ubuntu:~# pvscan<br>  <span class="hljs-attribute">PV</span> /dev/sda<span class="hljs-number">3</span>   VG ubuntu-vg       lvm<span class="hljs-number">2</span><span class="hljs-meta"> [&lt;19.00 GiB / &lt;15.00 GiB free]</span><br>  <span class="hljs-attribute">PV</span> /dev/sdb<span class="hljs-number">1</span>                      lvm<span class="hljs-number">2</span><span class="hljs-meta"> [&lt;10.00 GiB]</span><br>  <span class="hljs-attribute">Total</span>: <span class="hljs-number">2</span><span class="hljs-meta"> [&lt;29.00 GiB] / in use: 1 [&lt;19.00 GiB] / in no VG: 1 [&lt;10.00 GiB]</span><br></code></pre></div></td></tr></table></figure>
+
+<p>​    f. 查看卷组：vgdisplay</p>
+<figure class="highlight irpf90"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs irpf90">root@ubuntu:~# vgdisplay<br>  --- Volume group ---<br>  VG <span class="hljs-keyword">Name</span>               ubuntu-vg<br>  System ID             <br>  <span class="hljs-keyword">Format</span>                lvm2<br>  Metadata Areas        <span class="hljs-number">1</span><br>  Metadata <span class="hljs-keyword">Sequence</span> No  <span class="hljs-number">2</span><br>  VG <span class="hljs-keyword">Access</span>             read/<span class="hljs-built_in">write</span><br>  VG <span class="hljs-keyword">Status</span>             resizable<br>  <span class="hljs-built_in">MAX</span> LV                <span class="hljs-number">0</span><br>  Cur LV                <span class="hljs-number">1</span><br>  Open LV               <span class="hljs-number">1</span><br>  <span class="hljs-built_in">Max</span> PV                <span class="hljs-number">0</span><br>  Cur PV                <span class="hljs-number">1</span><br>  Act PV                <span class="hljs-number">1</span><br>  VG <span class="hljs-built_in">Size</span>               &lt;<span class="hljs-number">19.00</span> GiB<br>  PE <span class="hljs-built_in">Size</span>               <span class="hljs-number">4.00</span> MiB<br>  Total PE              <span class="hljs-number">4863</span><br>  Alloc PE / <span class="hljs-built_in">Size</span>       <span class="hljs-number">1024</span> / <span class="hljs-number">4.00</span> GiB<br>  <span class="hljs-keyword">Free</span>  PE / <span class="hljs-built_in">Size</span>       <span class="hljs-number">3839</span> / &lt;<span class="hljs-number">15.00</span> GiB<br>  VG UUID               <span class="hljs-number">41</span>dd8K-nWqX-rrVd-seqy-dW6H-ypLL-<span class="hljs-number">8</span>Sd8vw<br></code></pre></div></td></tr></table></figure>
+
+<p>​    g. 将 /dev/sdb1加入到 ubuntu-vg这个组：vgextend ubuntu-vg /dev/sdb1</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs crmsh">root@ubuntu:~<span class="hljs-comment"># vgextend ubuntu-vg /dev/sdb1</span><br>  Volume <span class="hljs-keyword">group</span> <span class="hljs-title">&quot;ubuntu-vg</span><span class="hljs-string">&quot; successfully extended</span><br></code></pre></div></td></tr></table></figure>
+
+<p>​    h.再次查看卷组信息：vgdisplay</p>
+<figure class="highlight irpf90"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs irpf90">root@ubuntu:~# vgdisplay<br>  --- Volume group ---<br>  VG <span class="hljs-keyword">Name</span>               ubuntu-vg<br>  System ID             <br>  <span class="hljs-keyword">Format</span>                lvm2<br>  Metadata Areas        <span class="hljs-number">2</span><br>  Metadata <span class="hljs-keyword">Sequence</span> No  <span class="hljs-number">3</span><br>  VG <span class="hljs-keyword">Access</span>             read/<span class="hljs-built_in">write</span><br>  VG <span class="hljs-keyword">Status</span>             resizable<br>  <span class="hljs-built_in">MAX</span> LV                <span class="hljs-number">0</span><br>  Cur LV                <span class="hljs-number">1</span><br>  Open LV               <span class="hljs-number">1</span><br>  <span class="hljs-built_in">Max</span> PV                <span class="hljs-number">0</span><br>  Cur PV                <span class="hljs-number">2</span><br>  Act PV                <span class="hljs-number">2</span><br>  VG <span class="hljs-built_in">Size</span>               <span class="hljs-number">28.99</span> GiB<br>  PE <span class="hljs-built_in">Size</span>               <span class="hljs-number">4.00</span> MiB<br>  Total PE              <span class="hljs-number">7422</span><br>  Alloc PE / <span class="hljs-built_in">Size</span>       <span class="hljs-number">1024</span> / <span class="hljs-number">4.00</span> GiB<br>  <span class="hljs-keyword">Free</span>  PE / <span class="hljs-built_in">Size</span>       <span class="hljs-number">6398</span> / <span class="hljs-number">24.99</span> GiB<br>  VG UUID               <span class="hljs-number">41</span>dd8K-nWqX-rrVd-seqy-dW6H-ypLL-<span class="hljs-number">8</span>Sd8vw<br></code></pre></div></td></tr></table></figure>
+
+<p>​    i. 查看物理卷信息：pvscan</p>
+<figure class="highlight apache"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">root</span>@ubuntu:~# pvscan<br>  <span class="hljs-attribute">PV</span> /dev/sda<span class="hljs-number">3</span>   VG ubuntu-vg       lvm<span class="hljs-number">2</span><span class="hljs-meta"> [&lt;19.00 GiB / &lt;15.00 GiB free]</span><br>  <span class="hljs-attribute">PV</span> /dev/sdb<span class="hljs-number">1</span>   VG ubuntu-vg       lvm<span class="hljs-number">2</span><span class="hljs-meta"> [&lt;10.00 GiB / &lt;10.00 GiB free]</span><br>  <span class="hljs-attribute">Total</span>: <span class="hljs-number">2</span><span class="hljs-meta"> [28.99 GiB] / in use: 2 [28.99 GiB] / in no VG: 0 [0   ]</span><br></code></pre></div></td></tr></table></figure>
+
+<p>​    k. 扩展逻辑卷：lvextend -L +5G /dev/ubuntu-vg/ubuntu-lv</p>
+<figure class="highlight apache"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">root</span>@ubuntu:~# lvextend -L +<span class="hljs-number">5</span>G /dev/ubuntu-vg/ubuntu-lv<br>  <span class="hljs-attribute">Size</span> of logical volume ubuntu-vg/ubuntu-lv changed from <span class="hljs-number">4</span>.<span class="hljs-number">00</span> GiB (<span class="hljs-number">1024</span> extents) to <span class="hljs-number">9</span>.<span class="hljs-number">00</span> GiB (<span class="hljs-number">2304</span> extents).<br>  <span class="hljs-attribute">Logical</span> volume ubuntu-vg/ubuntu-lv successfully resized.<br></code></pre></div></td></tr></table></figure>
+
+<p>​    l. 刷新磁盘：resize2fs /dev/ubuntu-vg/ubuntu-lv</p>
+<figure class="highlight apache"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">root</span>@ubuntu:~# resize<span class="hljs-number">2</span>fs /dev/ubuntu-vg/ubuntu-lv<br><span class="hljs-attribute">resize2fs</span> <span class="hljs-number">1</span>.<span class="hljs-number">44</span>.<span class="hljs-number">1</span> (<span class="hljs-number">24</span>-Mar-<span class="hljs-number">2018</span>)<br><span class="hljs-attribute">Filesystem</span> at /dev/ubuntu-vg/ubuntu-lv is mounted <span class="hljs-literal">on</span> /; <span class="hljs-literal">on</span>-line resizing required<br><span class="hljs-attribute">old_desc_blocks</span> = <span class="hljs-number">1</span>, new_desc_blocks = <span class="hljs-number">2</span><br><span class="hljs-attribute">The</span> filesystem <span class="hljs-literal">on</span> /dev/ubuntu-vg/ubuntu-lv is now <span class="hljs-number">2359296</span> (<span class="hljs-number">4</span>k) blocks long.<br></code></pre></div></td></tr></table></figure>
+
+<h3 id="十六-其他命令"><a href="#十六-其他命令" class="headerlink" title="十六. 其他命令"></a>十六. 其他命令</h3><ul>
+<li>du -h: 查看文件夹的大小，会以树状的结构展示。</li>
+<li>du -h –max-depth=1: 只查看一层文件夹的大小(h是human，是以人类可读的方式查看)</li>
+<li>ll -h: 查看文件的大小。</li>
+<li>lvmdiskscan: 检测各种类型的存储设备。</li>
+<li>pwd: 查看当前操作所在的绝对路径。</li>
+<li>su - root: 切换到root用户。</li>
+<li>echo “hello world” &gt; test.txt: 将“hello world”写入到test.txt文件内，回覆盖文件中现有的内容。</li>
+<li>echo “How are you?” &gt;&gt; test.txt: 将“How are you?”追加到test.txt文件的末尾。</li>
+<li>netstat -tnpl 查看端口。</li>
+<li>systemctl stauts firewalld : 查看防火墙的状态。</li>
+<li>systemctl disable firewalld: 开机禁用防火墙。</li>
+<li>find  /  -name ‘mysql’: 递归查找 / 目录下包含了mysql的文件或者文件夹。</li>
+<li>find / -name  ‘*mysql*‘ :  递归查找 / 目录下名字中包含了mysql的文件或者文件夹。</li>
+</ul>
+<h3 id="十七-其他问题"><a href="#十七-其他问题" class="headerlink" title="十七. 其他问题"></a>十七. 其他问题</h3><p>​    ubuntu操作系统安装完毕后，当我们给root用户设置密码后，无法通过客户端工具连接到服务器，我们可以将/etc/ssh/sshd_config文件中的第32行 PermitRootLogin  prohibit-password改为 PermitRootLogin  yes，问题就能得到解决。</p>
+<p>​    </p>
+<h4 id><a href="#" class="headerlink" title></a></h4>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/myblog/categories/Linux/">Linux</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/myblog/tags/%E7%BD%91%E7%BB%9C/">网络</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/myblog/2021/10/28/123/">
+                        <span class="hidden-mobile">面试题详解</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"eJTg2E7lFVi4dnRJvshHXwAv-gzGzoHsz","appKey":"3u6s4XYeWREVbc16xYzSUnVd","path":"window.location.pathname","placeholder":null,"avatar":"retro","meta":["nick","mail","link"],"requiredFields":["nick"],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":true,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":true},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          Fluid.plugins.initFancyBox('#valine .vcontent img:not(.vemoji)');
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-x-md">
+    <div class="container custom post-custom mx-auto">
+      <img src="https://octodex.github.com/images/jetpacktocat.png" class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;">
+    </div>
+  </div>
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访客数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":true,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/myblog/js/events.js" ></script>
+<script  src="/myblog/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/myblog/js/local-search.js" ></script>
+
+
+
+  
+    
+      <script  src="/myblog/js/img-lazyload.js" ></script>
+    
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+  <script defer src="/myblog/js/leancloud.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/myblog/js/boot.js" ></script>
+
+  <!-- 鼠标点击爱心 -->
+  <script type="text/javascript" src="/myblog/js/clicklove.js"></script>
+  <!--浏览器搞笑标题-->
+<script type="text/javascript" src="/myblog/js/FunnyTitle.js"></script>
+<script type="text/javascript">
+$("#navbarSupportedContent").children("ul:eq(0)").children("li:eq(6)").find("a").on('click',function(){
+  if($("#bg-iframe")[0])
+  {
+    $("#bg-iframe").remove()
+  }else{
+    $("#banner").append("<iframe id='bg-iframe' style='position: fixed;right: 0px;bottom: 0px;min-width: 100%;min-height: 100%;height: auto;width: auto;z-index: -1;' src='/myblog/html/飘零.html'></iframe>");
+  }
+})
+
+$(function(){
+  $(".dropdown-menu a").each(function(){
+    $(this).click(function(){
+      var a=$.trim($(this).text());
+      
+      if(a=="飘零")
+      {
+        $("#bg-iframe").attr("src","/myblog/html/飘零.html");
+      }
+      if(a=="溢彩")
+      {
+        $("#bg-iframe").attr("src","/myblog/html/溢彩.html");
+      }
+      if(a=="无限")
+      {
+        $("#bg-iframe").attr("src","");
+        $("#banner").css("background","url('/myblog/img/无限.gif')");
+      }
+    });
+  });
+});
+</script>
+</body>
+</html>
