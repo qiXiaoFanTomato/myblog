@@ -1413,16 +1413,16 @@
 <script  src="/js/boot.js" ></script>
 
   <!-- 鼠标点击爱心 -->
-  <script type="text/javascript" src="/myblog/js/clicklove.js"></script>
+  <script type="text/javascript" src="/js/clicklove.js"></script>
   <!--浏览器搞笑标题-->
-<script type="text/javascript" src="/myblog/js/FunnyTitle.js"></script>
+<script type="text/javascript" src="/js/FunnyTitle.js"></script>
 <script type="text/javascript">
 $("#navbarSupportedContent").children("ul:eq(0)").children("li:eq(6)").find("a").on('click',function(){
   if($("#bg-iframe")[0])
   {
     $("#bg-iframe").remove()
   }else{
-    $("#banner").append("<iframe id='bg-iframe' style='position: fixed;right: 0px;bottom: 0px;min-width: 100%;min-height: 100%;height: auto;width: auto;z-index: -1;' src='/myblog/html/飘零.html'></iframe>");
+    $("#banner").append("<iframe id='bg-iframe' style='position: fixed;right: 0px;bottom: 0px;min-width: 100%;min-height: 100%;height: auto;width: auto;z-index: -1;' src='/html/飘零.html'></iframe>");
   }
 })
 
@@ -1433,16 +1433,16 @@ $(function(){
       
       if(a=="飘零")
       {
-        $("#bg-iframe").attr("src","/myblog/html/飘零.html");
+        $("#bg-iframe").attr("src","/html/飘零.html");
       }
       if(a=="溢彩")
       {
-        $("#bg-iframe").attr("src","/myblog/html/溢彩.html");
+        $("#bg-iframe").attr("src","/html/溢彩.html");
       }
       if(a=="无限")
       {
         $("#bg-iframe").attr("src","");
-        $("#banner").css("background","url('/myblog/img/无限.gif')");
+        $("#banner").css("background","url('/img/无限.gif')");
       }
     });
   });
