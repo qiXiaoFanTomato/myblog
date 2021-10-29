@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/myblog/img/favicon1.ico">
-  <link rel="icon" href="/myblog/img/favicon1.ico">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon1.ico">
+  <link rel="icon" href="/img/favicon1.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -21,16 +21,16 @@
   <meta name="description" content="SpringMVC一、SpringMVC框架简介 使用Servlet遇到的问题：  参数的传递，封装成对象 类型的转换 Servlet功能单一，往往需要很多个 编码处理 文件上传 异常处理 界面的跳转 数据的传递（作用域） json的处理 与spring框架的整合问题    SpringMVC框架是一个MVC模式的框架，用来实现MVC模式，并且简化了开发过程。   SpringMVC与Strut">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringMVC">
-<meta property="og:url" content="https://q_xiaofan.gitee.io/myblog/2021/10/24/SpringMVC/index.html">
+<meta property="og:url" content="http://www.qixiaofan.icu/2021/10/24/SpringMVC/index.html">
 <meta property="og:site_name" content="启小凡">
 <meta property="og:description" content="SpringMVC一、SpringMVC框架简介 使用Servlet遇到的问题：  参数的传递，封装成对象 类型的转换 Servlet功能单一，往往需要很多个 编码处理 文件上传 异常处理 界面的跳转 数据的传递（作用域） json的处理 与spring框架的整合问题    SpringMVC框架是一个MVC模式的框架，用来实现MVC模式，并且简化了开发过程。   SpringMVC与Strut">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://q_xiaofan.gitee.io/myblog/2021/10/24/SpringMVC/%E6%B5%81%E7%A8%8B%E5%9B%BE.png">
+<meta property="og:image" content="http://www.qixiaofan.icu/myblog/2021/10/24/SpringMVC/%E6%B5%81%E7%A8%8B%E5%9B%BE.png">
 <meta property="article:published_time" content="2021-10-24T12:24:00.000Z">
 <meta property="article:modified_time" content="2021-10-28T00:58:19.569Z">
 <meta property="article:author" content="番茄">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://q_xiaofan.gitee.io/myblog/2021/10/24/SpringMVC/%E6%B5%81%E7%A8%8B%E5%9B%BE.png">
+<meta name="twitter:image" content="http://www.qixiaofan.icu/myblog/2021/10/24/SpringMVC/%E6%B5%81%E7%A8%8B%E5%9B%BE.png">
   
   <title>SpringMVC - 启小凡</title>
 
@@ -38,7 +38,7 @@
 
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
-  <link  rel="stylesheet" href="/myblog/lib/hint/hint.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
 
   
     
@@ -62,17 +62,17 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
 
 
-<link  rel="stylesheet" href="/myblog/css/main.css" />
+<link  rel="stylesheet" href="/css/main.css" />
 
 <!-- 自定义样式保持在最底部 -->
 
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"q_xiaofan.gitee.io","root":"/myblog/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":true},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":6,"color":"#29d","options":{"showSpinner":true,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"eJTg2E7lFVi4dnRJvshHXwAv-gzGzoHsz","app_key":"3u6s4XYeWREVbc16xYzSUnVd","server_url":null,"path":"window.location.pathname"}},"search_path":"/myblog/local-search.xml"};
+    var CONFIG = {"hostname":"www.qixiaofan.icu","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":true},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":6,"color":"#29d","options":{"showSpinner":true,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"eJTg2E7lFVi4dnRJvshHXwAv-gzGzoHsz","app_key":"3u6s4XYeWREVbc16xYzSUnVd","server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
   </script>
-  <script  src="/myblog/js/utils.js" ></script>
-  <script  src="/myblog/js/color-schema.js" ></script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
 <meta name="generator" content="Hexo 5.4.0"></head>
 
 
@@ -81,7 +81,7 @@
     
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/myblog/">
+    <a class="navbar-brand" href="/">
       <strong>启小凡</strong>
     </a>
 
@@ -100,7 +100,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/myblog/">
+              <a class="nav-link" href="/">
                 <i class="iconfont icon-home-fill"></i>
                 首页
               </a>
@@ -112,7 +112,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/myblog/archives/">
+              <a class="nav-link" href="/archives/">
                 <i class="iconfont icon-archive-fill"></i>
                 归档
               </a>
@@ -124,7 +124,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/myblog/categories/">
+              <a class="nav-link" href="/categories/">
                 <i class="iconfont icon-category-fill"></i>
                 分类
               </a>
@@ -136,7 +136,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/myblog/tags/">
+              <a class="nav-link" href="/tags/">
                 <i class="iconfont icon-tags-fill"></i>
                 标签
               </a>
@@ -148,7 +148,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/myblog/about/">
+              <a class="nav-link" href="/about/">
                 <i class="iconfont icon-user-fill"></i>
                 关于
               </a>
@@ -160,7 +160,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/myblog/links/">
+              <a class="nav-link" href="/links/">
                 <i class="iconfont icon-link-fill"></i>
                 友链
               </a>
@@ -238,7 +238,7 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/myblog/img/default.png') ;
+         style="background: url('/img/default.png') ;
            background-size: cover;">
            
       <div class="full-bg-img">
@@ -649,7 +649,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/myblog/2021/10/24/shiro%E6%A1%86%E6%9E%B6/">
+                      <a href="/2021/10/24/shiro%E6%A1%86%E6%9E%B6/">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">shiro使用</span>
                         <span class="visible-mobile">上一篇</span>
@@ -659,7 +659,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/myblog/2021/10/24/UML%E5%9F%BA%E6%9C%AC%E5%9B%BE%E4%BE%8B/">
+                      <a href="/2021/10/24/UML%E5%9F%BA%E6%9C%AC%E5%9B%BE%E4%BE%8B/">
                         <span class="hidden-mobile">UML基本图例</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -813,19 +813,19 @@
 
 <script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
 <script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
-<script  src="/myblog/js/events.js" ></script>
-<script  src="/myblog/js/plugins.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
 
 <!-- Plugins -->
 
 
-  <script  src="/myblog/js/local-search.js" ></script>
+  <script  src="/js/local-search.js" ></script>
 
 
 
   
     
-      <script  src="/myblog/js/img-lazyload.js" ></script>
+      <script  src="/js/img-lazyload.js" ></script>
     
   
 
@@ -851,7 +851,7 @@
 
 
 
-  <script defer src="/myblog/js/leancloud.js" ></script>
+  <script defer src="/js/leancloud.js" ></script>
 
 
 
@@ -894,7 +894,7 @@
 
 
 <!-- 主题的启动项 保持在最底部 -->
-<script  src="/myblog/js/boot.js" ></script>
+<script  src="/js/boot.js" ></script>
 
   <!-- 鼠标点击爱心 -->
   <script type="text/javascript" src="/myblog/js/clicklove.js"></script>
