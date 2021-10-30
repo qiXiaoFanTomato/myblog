@@ -43,6 +43,10 @@
 
 <!-- 自定义样式保持在最底部 -->
 
+  
+<link rel="stylesheet" href="/css/imgmousemoves.css">
+
+
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
@@ -54,6 +58,7 @@
 
 
 <body>
+  <div class="mouseimg"></div>
   <header style="height: 100vh;">
     
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
@@ -1007,6 +1012,9 @@ min版本：项目上线时使用的版本，变量命名极简，没有注释�
   <script type="text/javascript" src="/js/clicklove.js"></script>
   <!--浏览器搞笑标题-->
 <script type="text/javascript" src="/js/FunnyTitle.js"></script>
+<!-- 鼠标跟随 -->
+<script type="text/javascript" src="/js/imgMouseMoves.js"></script>
+
 <script type="text/javascript">
 $("#navbarSupportedContent").children("ul:eq(0)").children("li:eq(6)").find("a").on('click',function(){
   if($("#bg-iframe")[0])
